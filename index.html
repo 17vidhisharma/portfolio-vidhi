@@ -1,19 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidhi A. Sharma | Data & Strategy Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vidhi A. Sharma | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background-color: #fffaf2; padding: 1rem;
+      display: flex; justify-content: center; gap: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000;
+    }
+    nav a {
+      color: #5b3a29; text-decoration: none; font-weight: bold;
+    }
+    section {
+      padding: 5rem 1rem 3rem; max-width: 800px; margin: auto;
+    }
+    .two-column {
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    @media(min-width: 768px) {
+      .two-column { flex-direction: row; justify-content: space-between; }
+      .two-column > div { width: 48%; }
+    }
+    .project-card {
+      background: white; border: 1px solid #ddd0c8; padding: 1rem;
+      border-radius: 8px; margin-bottom: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .socials a {
+      margin-right: 10px; text-decoration: none; color: #5b3a29;
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero section -->
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#why-hire">Why Hire Me</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section id="hero">
     <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi Profile" class="profile-img">
     <h1>Vidhi A. Sharma</h1>
     <p>Turning Data Into Decisions. Dashboards That Don't Suck.</p>
     <a href="Vidhi Arun Sharma resume .pdf" download class="btn">Download Resume</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Vidhi, your friendly neighborhood analytics nerd with charm, curiosity, and just enough caffeine. I'm pursuing my Master’s in Applied Business Analytics at Boston University — turning raw data into strategic gold is my thing. Whether it’s optimizing operations, building dashboards that actually get used, or making AI behave, I bring brain, wit, and heart to every project.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>New York Real Estate Analysis</h3>
+      <p>Dug into decades of housing data to unearth pricing patterns, run multiple regression models, and forecast what NYC’s skyline might look like in data terms. Delivered actionable insights in a stakeholder-friendly format.</p>
+    </div>
+    <div class="project-card">
+      <h3>Stickley Adhesives Operations Report</h3>
+      <p>Channeled my inner operations manager to dissect factory-level inefficiencies. Applied lean strategies and process mapping to cut delays, boost throughput, and streamline communication across teams.</p>
+    </div>
+    <div class="project-card">
+      <h3>Skincare Sales Data Analysis</h3>
+      <p>Inspired by my own beauty-buying habits (no shame), I scraped and modeled skincare data to understand seasonal trends and pricing strategies. Built a dashboard that’s both aesthetically pleasing and strategically sound.</p>
+    </div>
+    <div class="project-card">
+      <h3>Job Growth: AI vs Non-AI</h3>
+      <p>In a world debating AI's rise, I took a data-first approach. Tracked job market evolution across tech and non-tech industries using Spark, R, and AWS. Result? An interactive dashboard that tells the future (almost).</p>
+    </div>
+  </section>
+
+  <section id="why-hire">
+    <h2>Why Hire Me</h2>
+    <div class="two-column">
+      <div>
+        <p>Because I ask better questions than ChatGPT. And then I build the dashboards that answer them.</p>
+        <p>My reports are as sharp as my humor, and my process is cleaner than a dev’s VS Code on presentation day. I bring structure to ambiguity and storytelling to strategy.</p>
+      </div>
+      <div>
+        <p>I don't just look at KPIs — I understand the story behind them. If you're after someone who’s part data analyst, part strategist, part creative — I’m your unicorn.</p>
+        <p>Also, I make killer chai. Just saying.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: Thoughts on dashboards, data drama, and life in analytics.</p>
+    <a href="blog.html" class="btn">Read More</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
+    <div class="socials">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="https://github.com/VidhiSharma2000" target="_blank">GitHub</a>
+    </div>
   </section>
 </body>
 </html>
