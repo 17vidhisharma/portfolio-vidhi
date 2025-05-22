@@ -1,115 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidhi A. Sharma | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhi A. Sharma | Business Analyst Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-    nav {
-      position: fixed; top: 0; left: 0; width: 100%;
-      background-color: #fffaf2; padding: 1rem;
-      display: flex; justify-content: center; gap: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000;
-    }
-    nav a {
-      color: #5b3a29; text-decoration: none; font-weight: bold;
-    }
-    section {
-      padding: 5rem 1rem 3rem; max-width: 800px; margin: auto;
-    }
-    .two-column {
-      display: flex; flex-direction: column; gap: 1.5rem;
-    }
-    @media(min-width: 768px) {
-      .two-column { flex-direction: row; justify-content: space-between; }
-      .two-column > div { width: 48%; }
-    }
-    .project-card {
-      background: white; border: 1px solid #ddd0c8; padding: 1rem;
-      border-radius: 8px; margin-bottom: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .socials a {
-      margin-right: 10px; text-decoration: none; color: #5b3a29;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav>
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#why-hire">Why Hire Me</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-wrapper">
+      <span class="logo">Vidhi A. Sharma</span>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <section id="hero">
-    <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi Profile" class="profile-img">
-    <h1>Vidhi A. Sharma</h1>
-    <p>Turning Data Into Decisions. Dashboards That Don't Suck.</p>
-    <a href="Vidhi Arun Sharma resume .pdf" download class="btn">Download Resume</a>
-  </section>
-
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
-    <p>I’m Vidhi, your friendly neighborhood analytics nerd with charm, curiosity, and just enough caffeine. I'm pursuing my Master’s in Applied Business Analytics at Boston University — turning raw data into strategic gold is my thing. Whether it’s optimizing operations, building dashboards that actually get used, or making AI behave, I bring brain, wit, and heart to every project.</p>
+    <p>Hello! I'm Vidhi, a passionate analytics student currently pursuing my Master of Science in Applied Business Analytics at Boston University. With a background in Computer Science and professional experience as a Business Analyst, I'm developing advanced skills to tackle complex problems through technology and analytics.</p>
   </section>
 
-  <section id="projects">
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skill-cards">
+      <div class="skill-card accent-blue">
+        <h3>Data Analytics</h3>
+        <p>SQL, Python, R, Tableau, Power BI, MS Excel, SAS, Dataiku, Azure, PostgreSQL</p>
+      </div>
+      <div class="skill-card accent-green">
+        <h3>Database & Process Management</h3>
+        <p>ETL workflows, data pipelines, automation, CRM, SAP, Salesforce, resource planning</p>
+      </div>
+      <div class="skill-card accent-rose">
+        <h3>Technical Development</h3>
+        <p>HTML, CSS, JavaScript, full-stack basics, version control, GitHub, AWS</p>
+      </div>
+      <div class="skill-card accent-gold">
+        <h3>Professional Strengths</h3>
+        <p>Storytelling, leadership, communication, adaptability, strategic thinking, initiative</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="project-card">
-      <h3>New York Real Estate Analysis</h3>
-      <p>Dug into decades of housing data to unearth pricing patterns, run multiple regression models, and forecast what NYC’s skyline might look like in data terms. Delivered actionable insights in a stakeholder-friendly format.</p>
-    </div>
-    <div class="project-card">
-      <h3>Stickley Adhesives Operations Report</h3>
-      <p>Channeled my inner operations manager to dissect factory-level inefficiencies. Applied lean strategies and process mapping to cut delays, boost throughput, and streamline communication across teams.</p>
-    </div>
-    <div class="project-card">
-      <h3>Skincare Sales Data Analysis</h3>
-      <p>Inspired by my own beauty-buying habits (no shame), I scraped and modeled skincare data to understand seasonal trends and pricing strategies. Built a dashboard that’s both aesthetically pleasing and strategically sound.</p>
-    </div>
-    <div class="project-card">
-      <h3>Job Growth: AI vs Non-AI</h3>
-      <p>In a world debating AI's rise, I took a data-first approach. Tracked job market evolution across tech and non-tech industries using Spark, R, and AWS. Result? An interactive dashboard that tells the future (almost).</p>
-    </div>
-  </section>
-
-  <section id="why-hire">
-    <h2>Why Hire Me</h2>
-    <div class="two-column">
-      <div>
-        <p>Because I ask better questions than ChatGPT. And then I build the dashboards that answer them.</p>
-        <p>My reports are as sharp as my humor, and my process is cleaner than a dev’s VS Code on presentation day. I bring structure to ambiguity and storytelling to strategy.</p>
+    <div class="project-list">
+      <div class="project-box">
+        <h3>New York Real Estate Analysis</h3>
+        <p>Forecasted pricing trends across boroughs using regression, time series, and visual storytelling to support data-driven property investment decisions.</p>
       </div>
-      <div>
-        <p>I don't just look at KPIs — I understand the story behind them. If you're after someone who’s part data analyst, part strategist, part creative — I’m your unicorn.</p>
-        <p>Also, I make killer chai. Just saying.</p>
+      <div class="project-box">
+        <h3>Skincare Sales Analysis</h3>
+        <p>Explored seasonal demand, pricing strategies, and customer behavior using Power BI dashboards and SQL queries. Made data beautiful — literally.</p>
+      </div>
+      <div class="project-box">
+        <h3>Job Growth: AI vs Non-AI</h3>
+        <p>Compared the explosion of AI-related jobs vs. traditional roles using R and Apache Spark on AWS. Built an interactive dashboard deployed via EC2.</p>
+      </div>
+      <div class="project-box">
+        <h3>Stickley Adhesives Operations</h3>
+        <p>Identified process bottlenecks and optimized workflows with operations mapping, improving delivery timelines and communication efficiency.</p>
       </div>
     </div>
   </section>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>Coming soon: Thoughts on dashboards, data drama, and life in analytics.</p>
-    <a href="blog.html" class="btn">Read More</a>
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="experience-item">
+      <h3>Maharaj Multi-Systems <span>— Business Analyst</span></h3>
+      <p><em>Jan 2024 – July 2024</em></p>
+      <ul>
+        <li>Improved workflow efficiency by 15% via operational data optimization.</li>
+        <li>Reduced processing errors by 25% through streamlined verification protocols.</li>
+        <li>Collaborated cross-functionally to improve overall data accuracy and reporting.</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <h3>PCMC <span>— Data Analytics Intern</span></h3>
+      <p><em>Aug 2022 – Aug 2023</em></p>
+      <ul>
+        <li>Reduced resolution time by 20% via improved diagnostics and deployment cycles.</li>
+        <li>Enhanced client retention and support through clear, data-backed communication.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="experience-item">
+      <h3>Boston University <span>— MS in Applied Business Analytics</span></h3>
+      <p><em>Sep 2024 – Present</em></p>
+    </div>
+    <div class="experience-item">
+      <h3>MIT World Peace University <span>— BSc in Computer Science</span></h3>
+      <p><em>Aug 2019 – Oct 2022</em></p>
+    </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
-    <div class="socials">
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      <a href="https://github.com/VidhiSharma2000" target="_blank">GitHub</a>
-    </div>
+    <p><strong>Email:</strong> <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">linkedin.com/in/17vidhisharma</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/VidhiSharma2000" target="_blank">github.com/VidhiSharma2000</a></p>
+    <p><strong>Location:</strong> Boston, MA</p>
   </section>
 </body>
 </html>
