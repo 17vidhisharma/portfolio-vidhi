@@ -1,561 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidhi A. Sharma | Data & Strategy</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vidhi A. Sharma | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <nav class="nav">
-      <div class="nav__logo">Vidhi</div>
-      <ul class="nav__menu">
-        <li><a href="#home" class="nav__link active">Home</a></li>
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#work" class="nav__link">Work</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="blog.html" class="nav__link">Blog</a></li>
-        <li><a href="#contact" class="nav__link nav__cta">Contact</a></li>
-      </ul>
-      <div class="nav__toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Vidhi</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1 class="hero__title">
-              <span class="hero__title-main">Data Analyst</span>
-              <span class="hero__title-sub">& Strategic Thinker</span>
-            </h1>
-            <p class="hero__description">
-              I transform complex data into actionable business insights, creating dashboards that drive decisions and optimizing operations that fuel growth.
-            </p>
-            <div class="hero__actions">
-              <a href="#work" class="btn btn--primary">View My Work</a>
-              <a href="https://github.com/VidhiSharma2000/portfolio-vidhi/raw/main/Vidhi%20Arun%20Sharma%20resume.pdf" 
-                 download class="btn btn--outline">Download CV</a>
-            </div>
-          </div>
-          <div class="hero__image">
-            <div class="hero__image-wrapper">
-              <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi Sharma" class="hero__img">
-              <div class="hero__image-bg"></div>
-            </div>
-          </div>
+    <main class="content">
+      <section class="hero">
+        <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi A. Sharma" class="hero-img" />
+        <h2>Vidhi A. Sharma</h2>
+        <p>Turning strategy into stories. One dashboard at a time.</p>
+        <a href="Vidhi Arun Sharma resume .pdf" download class="btn">📄 Resume</a>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I’m a Boston-based analytics grad student with a background in data science and operations. I blend strategy, curiosity, and caffeine to solve problems that matter — and make dashboards people actually use. My vibe? Smart, sharp, and a little bit sarcastic (the good kind).</p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <p><strong>Boston University</strong><br/>M.S. in Applied Business Analytics (2024–Present)</p>
+        <p><strong>MIT World Peace University</strong><br/>B.S. in Computer Science (2019–2022)</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>SQL, Python, R, Tableau, Power BI</li>
+          <li>A/B Testing, Forecasting, KPI Design</li>
+          <li>HTML, CSS, JavaScript, Git, AWS</li>
+          <li>Data Pipelines, Automation, Dashboards</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <h3>New York Real Estate Analysis</h3>
+          <p>Modeled NYC housing data with regression + time series forecasting. Identified what actually drives property pricing and built stakeholder-ready visual reports.</p>
+          <div class="screenshot-placeholder">[📸 Add Screenshot Here]</div>
         </div>
-      </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-header__subtitle">Get to know me</span>
-          <h2 class="section-header__title">About Me</h2>
+        <div class="project">
+          <h3>Stickley Adhesives Operations Report</h3>
+          <p>Mapped production bottlenecks and redesigned workflows. Proposed lean optimization steps that could increase output by 12% and cut cycle time significantly.</p>
+          <div class="screenshot-placeholder">[📸 Add Screenshot Here]</div>
         </div>
-        
-        <div class="about__content">
-          <div class="about__text">
-            <div class="about__intro">
-              <h3>I'm Vidhi, a data analyst who speaks both human and machine language.</h3>
-              <p>Currently pursuing my Master's in Applied Business Analytics at Boston University, I specialize in transforming raw data into strategic insights that drive real business impact.</p>
-            </div>
-            
-            <div class="about__details">
-              <p>My approach combines technical expertise with business acumen—I don't just analyze data, I solve problems. Whether it's reducing processing errors by 25%, improving workflow efficiency by 15%, or boosting client retention by 30%, I deliver measurable results.</p>
-              
-              <p>When I'm not diving deep into datasets, you'll find me volunteering with organizations focused on education and animal welfare, or analyzing my own skincare spending habits (yes, I have a dashboard for that).</p>
-            </div>
-            
-            <div class="about__values">
-              <div class="value-item">
-                <div class="value-item__icon">
-                  <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="value-item__content">
-                  <h4>Problem Solver</h4>
-                  <p>I don't just present data—I solve business challenges with data-driven solutions</p>
-                </div>
-              </div>
-              
-              <div class="value-item">
-                <div class="value-item__icon">
-                  <i class="fas fa-users"></i>
-                </div>
-                <div class="value-item__content">
-                  <h4>Collaborative</h4>
-                  <p>I bridge the gap between technical teams and business stakeholders</p>
-                </div>
-              </div>
-              
-              <div class="value-item">
-                <div class="value-item__icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="value-item__content">
-                  <h4>Results-Driven</h4>
-                  <p>Every analysis I do is designed to drive measurable business outcomes</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="about__stats">
-            <div class="stat-card">
-              <div class="stat-card__number">2+</div>
-              <div class="stat-card__label">Years Experience</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__number">15+</div>
-              <div class="stat-card__label">Projects Completed</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__number">30%</div>
-              <div class="stat-card__label">Avg. Efficiency Gain</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card__number">25%</div>
-              <div class="stat-card__label">Error Reduction</div>
-            </div>
-          </div>
+
+        <div class="project">
+          <h3>Skincare Sales Dashboard</h3>
+          <p>Analyzed personal + public beauty spending. Built an interactive Power BI dashboard to show seasonal buying patterns and price sensitivity by category.</p>
+          <div class="screenshot-placeholder">[📸 Add Screenshot Here]</div>
         </div>
-      </div>
-    </section>
 
-    <!-- Work Section -->
-    <section id="work" class="work">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-header__subtitle">My Portfolio</span>
-          <h2 class="section-header__title">Featured Work</h2>
+        <div class="project">
+          <h3>AI vs Non-AI Job Growth (AWS + Spark)</h3>
+          <p>Compared tech vs traditional job markets using real-time datasets. Created a polished dashboard tracking trends, salaries, and regional demand over time.</p>
+          <div class="screenshot-placeholder">[📸 Add Screenshot Here]</div>
         </div>
-        
-        <div class="work__grid">
-          <article class="project-card project-card--featured">
-            <div class="project-card__image">
-              <img src="project-nyrealestate.jpg" alt="NYC Real Estate Analysis">
-              <div class="project-card__overlay">
-                <div class="project-card__category">Data Analysis</div>
-              </div>
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">NYC Real Estate Market Analysis</h3>
-              <p class="project-card__description">
-                Comprehensive time series analysis and predictive modeling of residential real estate sales across NYC boroughs, achieving 85%+ forecast accuracy.
-              </p>
-              <div class="project-card__details">
-                <div class="project-detail">
-                  <strong>Impact:</strong> Built predictive models for sales forecasting with 85%+ accuracy
-                </div>
-                <div class="project-detail">
-                  <strong>Scope:</strong> Analyzed 5+ years of transaction data across multiple boroughs
-                </div>
-                <div class="project-detail">
-                  <strong>Tools:</strong> R, Time Series Analysis, ARIMA, Multiple Regression
-                </div>
-              </div>
-              <div class="project-card__tags">
-                <span class="tag">R Programming</span>
-                <span class="tag">Statistical Modeling</span>
-                <span class="tag">Forecasting</span>
-              </div>
-            </div>
-          </article>
+      </section>
 
-          <article class="project-card">
-            <div class="project-card__image">
-              <img src="project-jobgrowth.jpg" alt="AI Job Growth Analysis">
-              <div class="project-card__overlay">
-                <div class="project-card__category">AWS Deployment</div>
-              </div>
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">AI vs Non-AI Job Market Analysis</h3>
-              <p class="project-card__description">
-                Real-time analysis of employment trends with interactive AWS dashboard deployment, processing 50,000+ job postings.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">AWS</span>
-                <span class="tag">Apache Spark</span>
-                <span class="tag">Market Analysis</span>
-              </div>
-            </div>
-          </article>
+      <section id="experience">
+        <h2>Experience</h2>
+        <h4>Maharaj Multi-Systems — Business Analyst</h4>
+        <p><em>Jan 2024 – Jul 2024</em></p>
+        <p>Started as an internship, extended into a full-time role to meet urgent needs. Role ended as scheduled to begin my graduate program.</p>
+        <ul>
+          <li>Increased internal efficiency by 15% with dashboards and process audits</li>
+          <li>Reduced data errors by 25% through optimized QA routines</li>
+        </ul>
 
-          <article class="project-card">
-            <div class="project-card__image">
-              <img src="project-stickley.jpg" alt="Operations Optimization">
-              <div class="project-card__overlay">
-                <div class="project-card__category">Operations</div>
-              </div>
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Operations Optimization Analysis</h3>
-              <p class="project-card__description">
-                Process analysis identifying bottlenecks and proposing solutions projected to reduce cycle time by 15%.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Lean Methodology</span>
-                <span class="tag">Process Optimization</span>
-                <span class="tag">KPI Analysis</span>
-              </div>
-            </div>
-          </article>
+        <h4>Pimpri Chinchwad Media Comm. — Data Analytics Intern</h4>
+        <p><em>Aug 2022 – Aug 2023</em></p>
+        <ul>
+          <li>Deployed data tools and support systems for faster troubleshooting</li>
+          <li>Contributed to analytics for infrastructure rollouts and services</li>
+        </ul>
+      </section>
 
-          <article class="project-card">
-            <div class="project-card__image">
-              <img src="project-skincare.jpg" alt="Consumer Analytics">
-              <div class="project-card__overlay">
-                <div class="project-card__category">Business Intelligence</div>
-              </div>
-            </div>
-            <div class="project-card__content">
-              <h3 class="project-card__title">Consumer Behavior Analytics</h3>
-              <p class="project-card__description">
-                Interactive Power BI dashboard analyzing beauty industry trends with price optimization model increasing revenue potential by 18%.
-              </p>
-              <div class="project-card__tags">
-                <span class="tag">Power BI</span>
-                <span class="tag">Consumer Analytics</span>
-                <span class="tag">Price Optimization</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-header__subtitle">What I bring to the table</span>
-          <h2 class="section-header__title">Skills & Expertise</h2>
-        </div>
-        
-        <div class="skills__content">
-          <div class="skills__intro">
-            <h3>I combine technical expertise with business acumen to deliver actionable insights</h3>
-            <p>My toolkit spans the entire data lifecycle—from collection and processing to analysis and visualization, with a focus on driving measurable business outcomes.</p>
-          </div>
-          
-          <div class="skills__grid">
-            <div class="skill-category">
-              <div class="skill-category__header">
-                <div class="skill-category__icon">
-                  <i class="fas fa-chart-bar"></i>
-                </div>
-                <h4 class="skill-category__title">Data Analytics</h4>
-              </div>
-              <div class="skill-category__skills">
-                <div class="skill-item">
-                  <span class="skill-item__name">SQL</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Python</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">R</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Tableau</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Power BI</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 85%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <div class="skill-category__header">
-                <div class="skill-category__icon">
-                  <i class="fas fa-cloud"></i>
-                </div>
-                <h4 class="skill-category__title">Cloud & Data Engineering</h4>
-              </div>
-              <div class="skill-category__skills">
-                <div class="skill-item">
-                  <span class="skill-item__name">AWS</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 75%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Azure</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 70%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Apache Spark</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 65%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">PostgreSQL</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">ETL Pipelines</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 75%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <div class="skill-category__header">
-                <div class="skill-category__icon">
-                  <i class="fas fa-cogs"></i>
-                </div>
-                <h4 class="skill-category__title">Business Operations</h4>
-              </div>
-              <div class="skill-category__skills">
-                <div class="skill-item">
-                  <span class="skill-item__name">Process Optimization</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">KPI Development</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Statistical Modeling</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Data Storytelling</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-item__name">Stakeholder Management</span>
-                  <div class="skill-item__level">
-                    <div class="skill-item__progress" style="--progress: 90%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-header__subtitle">My Journey</span>
-          <h2 class="section-header__title">Experience</h2>
-        </div>
-        
-        <div class="experience__timeline">
-          <div class="timeline-item">
-            <div class="timeline-item__date">2024 - Present</div>
-            <div class="timeline-item__content">
-              <div class="timeline-item__company">Boston University</div>
-              <div class="timeline-item__role">Master's in Applied Business Analytics</div>
-              <div class="timeline-item__description">
-                Advanced coursework in statistical modeling, predictive analytics, and strategic decision-making. Focus on real-world applications and business impact.
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-item__date">Jan - Jul 2024</div>
-            <div class="timeline-item__content">
-              <div class="timeline-item__company">Maharaj Multi-Systems</div>
-              <div class="timeline-item__role">Business Analyst</div>
-              <div class="timeline-item__description">
-                Improved workflow efficiency by 15% through operational data analysis. Streamlined data verification processes, reducing processing errors by 25% while strengthening client retention by 30%.
-              </div>
-              <div class="timeline-item__achievements">
-                <div class="achievement">15% workflow efficiency improvement</div>
-                <div class="achievement">25% reduction in processing errors</div>
-                <div class="achievement">30% increase in client retention</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-item__date">Aug 2022 - Aug 2023</div>
-            <div class="timeline-item__content">
-              <div class="timeline-item__company">Pimpri Chinchwad Media Communication</div>
-              <div class="timeline-item__role">Data Analytics Intern</div>
-              <div class="timeline-item__description">
-                Reduced resolution times by 20% through efficient troubleshooting and system diagnostics. Contributed to deployment cycles and increased client retention by 40% through solution-oriented communication.
-              </div>
-              <div class="timeline-item__achievements">
-                <div class="achievement">20% faster resolution times</div>
-                <div class="achievement">40% improvement in client retention</div>
-                <div class="achievement">End-to-end project management</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact__content">
-          <div class="contact__info">
-            <div class="contact__header">
-              <h2 class="contact__title">Let's work together</h2>
-              <p class="contact__subtitle">
-                Ready to transform your data into actionable insights? Let's discuss how I can help drive your business forward.
-              </p>
-            </div>
-            
-            <div class="contact__details">
-              <div class="contact__item">
-                <div class="contact__item-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact__item-content">
-                  <div class="contact__item-label">Email</div>
-                  <a href="mailto:sharmavidhi3008@gmail.com" class="contact__item-value">
-                    sharmavidhi3008@gmail.com
-                  </a>
-                </div>
-              </div>
-              
-              <div class="contact__item">
-                <div class="contact__item-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact__item-content">
-                  <div class="contact__item-label">Phone</div>
-                  <a href="tel:+18578676963" class="contact__item-value">
-                    +1 (857) 867-6963
-                  </a>
-                </div>
-              </div>
-              
-              <div class="contact__item">
-                <div class="contact__item-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact__item-content">
-                  <div class="contact__item-label">Location</div>
-                  <span class="contact__item-value">Boston, MA</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="contact__social">
-              <a href="https://www.linkedin.com/in/vidhi-a-sharma" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://github.com/VidhiSharma2000" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-            </div>
-          </div>
-          
-          <div class="contact__form">
-            <form class="form" id="contactForm">
-              <div class="form__group">
-                <label for="name" class="form__label">Name</label>
-                <input type="text" id="name" name="name" class="form__input" required>
-              </div>
-              
-              <div class="form__group">
-                <label for="email" class="form__label">Email</label>
-                <input type="email" id="email" name="email" class="form__input" required>
-              </div>
-              
-              <div class="form__group">
-                <label for="subject" class="form__label">Subject</label>
-                <input type="text" id="subject" name="subject" class="form__input" required>
-              </div>
-              
-              <div class="form__group">
-                <label for="message" class="form__label">Message</label>
-                <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
-              </div>
-              
-              <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__brand">
-          <div class="footer__logo">Vidhi</div>
-          <p class="footer__tagline">Data Analyst & Strategic Thinker</p>
-        </div>
-        
-        <div class="footer__links">
-          <a href="#home" class="footer__link">Home</a>
-          <a href="#about" class="footer__link">About</a>
-          <a href="#work" class="footer__link">Work</a>
-          <a href="#skills" class="footer__link">Skills</a>
-          <a href="blog.html" class="footer__link">Blog</a>
-          <a href="#contact" class="footer__link">Contact</a>
-        </div>
-        
-        <div class="footer__social">
-          <a href="https://www.linkedin.com/in/vidhi-a-sharma" target="_blank" class="footer__social-link">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/VidhiSharma2000" target="_blank" class="footer__social-link">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="footer__bottom">
-        <p>&copy; 2025 Vidhi A. Sharma. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="scripts.js"></script>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">linkedin.com/in/17vidhisharma</a></p>
+        <p>GitHub: <a href="https://github.com/VidhiSharma2000" target="_blank">github.com/VidhiSharma2000</a></p>
+        <p>Boston, MA</p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
