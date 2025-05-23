@@ -2,93 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vidhi A. Sharma | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="navbar">
+  <header class="hero fade-in">
+    <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi A. Sharma" class="profile-img" />
     <h1>Vidhi A. Sharma</h1>
-    <p>Business Analytics Student | Problem Solver | Dashboard Whisperer</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Analytics Strategist | Builder of Dashboards & Decisions</p>
+    <a href="Vidhi Arun Sharma resume .pdf" download class="btn">📄 Download Resume</a>
   </header>
 
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About Me</h2>
-    <p>Hello! I'm Vidhi, a Boston-based analytics grad student with a flair for turning raw data into real-world impact. My background spans business intelligence, operations optimization, and storytelling dashboards that actually get used. I believe in asking better questions and designing answers that feel intuitive — not intimidating.</p>
-    <p><a href="Vidhi Arun Sharma resume .pdf" download>📄 Download My Resume</a></p>
+    <p>I’m Vidhi — a Boston-based analytics grad student who’s equally obsessed with process optimization and pretty dashboards. My superpowers? Asking the right questions, slicing through data clutter, and telling business stories with metrics that matter. Confident, curious, and caffeinated — I solve problems, build models, and sprinkle strategy wherever I go.</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="card">
-        <h3>Data & BI Tools</h3>
-        <p>SQL, Python, R, Excel, Tableau, Power BI, SAS, Dataiku — from quick insights to complex predictive models.</p>
-      </div>
-      <div class="card">
-        <h3>Analytics & Strategy</h3>
-        <p>Forecasting, KPI analysis, A/B testing, predictive modeling, trend exploration, and data storytelling for decision-making.</p>
-      </div>
-      <div class="card">
-        <h3>Tech & Platforms</h3>
-        <p>Git, GitHub, AWS, Data Pipelines, HTML, CSS, JavaScript, PostgreSQL, ETL, APIs, automation workflows.</p>
-      </div>
-      <div class="card">
-        <h3>Professional Strengths</h3>
-        <p>Strategic thinking, stakeholder alignment, communication, fast learning, creative problem-solving, and team collaboration.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>New York Real Estate Analysis</h3>
-      <p>A deep dive into NYC housing market trends using regression and time series analysis. Created forecasts and models that helped simulate how key variables — like location, seasonality, and square footage — influence price. Final output: a slick, executive-ready report with visual insights and takeaways.</p>
-    </div>
-    <div class="project">
-      <h3>Stickley Adhesives Operations Report</h3>
-      <p>Mapped the entire manufacturing process, identified bottlenecks, and simulated alternatives. Presented lean strategy recommendations to improve turnaround time and reduce cost overruns. Combined data analysis with storytelling in a professor-facing operations brief.</p>
-    </div>
-    <div class="project">
-      <h3>Skincare Sales Data Analysis</h3>
-      <p>Used R and Power BI to analyze sales patterns across time, price tiers, and customer segments. Dashboard revealed how seasonality and product bundles influenced revenue. (Yes, inspired by my own Sephora addiction.)</p>
-    </div>
-    <div class="project">
-      <h3>AI vs Non-AI Job Growth Dashboard</h3>
-      <p>Built a Spark + AWS-powered pipeline to analyze and visualize 2024 job trends. Created an interactive dashboard comparing AI-heavy vs traditional sectors across geographies, salaries, and demand. Designed for policy and career guidance use.</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="exp-item">
-      <h3>Maharaj Multi-Systems</h3>
-      <p><strong>Business Analyst</strong> | Jan 2024 – Jul 2024</p>
-      <ul>
-        <li>Improved workflow efficiency by 15% through process redesign and analytics dashboards.</li>
-        <li>Reduced data errors by 25% by revamping verification logic and QA protocols.</li>
-        <li>Enabled 30% better client retention through faster reporting and support insights.</li>
-      </ul>
-    </div>
-    <div class="exp-item">
-      <h3>Pimpri Chinchwad Media Comm.</h3>
-      <p><strong>Data Analytics Intern</strong> | Aug 2022 – Aug 2023</p>
-      <ul>
-        <li>Automated troubleshooting diagnostics, reducing resolution time by 20%.</li>
-        <li>Supported deployments and data management for city-wide communication projects.</li>
-        <li>Contributed to customer support strategy based on trend analysis.</li>
-      </ul>
-    </div>
-
+  <section id="education" class="fade-in">
     <h2>Education</h2>
     <div class="exp-item">
       <h3>Boston University</h3>
@@ -100,12 +32,64 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="card">SQL, Python, R, Tableau, Power BI, Excel</div>
+      <div class="card">Forecasting, A/B Testing, Statistical Modeling</div>
+      <div class="card">Git/GitHub, AWS, HTML, CSS, JavaScript</div>
+      <div class="card">Data Storytelling, KPI Dashboards, Agile Delivery</div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>New York Real Estate Analysis</h3>
+      <p>Led regression and time series analysis on NYC housing sales. Built models to predict property value drivers and delivered actionable reports to simulate future sales scenarios.</p>
+    </div>
+    <div class="project">
+      <h3>Stickley Adhesives Operations Optimization</h3>
+      <p>Mapped manufacturing workflows, uncovered bottlenecks, and proposed data-backed solutions to reduce delays. Presented optimization strategies using KPI modeling and stakeholder visual reports.</p>
+    </div>
+    <div class="project">
+      <h3>Skincare Sales Dashboard</h3>
+      <p>Analyzed beauty product trends using R and Power BI. Visualized seasonal purchase spikes, pricing sensitivity, and consumer behavior insights. Designed a dashboard to optimize product positioning.</p>
+    </div>
+    <div class="project">
+      <h3>AI vs Non-AI Job Growth (AWS + Spark)</h3>
+      <p>Tracked employment trends using Spark and AWS. Built interactive dashboards comparing job growth, salary evolution, and geographic spread for AI and traditional roles across industries.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="fade-in">
+    <h2>Experience</h2>
+    <div class="exp-item">
+      <h3>Maharaj Multi-Systems</h3>
+      <p><strong>Business Analyst</strong> | Jan 2024 – Jul 2024</p>
+      <p>This began as an internship and evolved into a full-time role due to urgent project demands. The position concluded as scheduled when I transitioned into my master's program at Boston University.</p>
+      <ul>
+        <li>Boosted workflow efficiency by 15% via redesigned internal processes.</li>
+        <li>Cut data errors by 25% with improved verification pipelines.</li>
+        <li>Enabled 30% stronger client retention through proactive insights.</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <h3>Pimpri Chinchwad Media Comm.</h3>
+      <p><strong>Data Analytics Intern</strong> | Aug 2022 – Aug 2023</p>
+      <ul>
+        <li>Optimized diagnostic workflows to reduce service delays by 20%.</li>
+        <li>Supported tech deployments, data pipelines, and client support analytics.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">linkedin.com/in/17vidhisharma</a></p>
     <p>GitHub: <a href="https://github.com/VidhiSharma2000" target="_blank">github.com/VidhiSharma2000</a></p>
-    <p>Based in Boston, MA</p>
+    <p>Location: Boston, MA</p>
   </section>
 </body>
 </html>
