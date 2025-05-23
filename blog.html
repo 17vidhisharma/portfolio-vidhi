@@ -4,13 +4,248 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Vidhi A. Sharma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <section id="blog">
-    <h1>My Blog</h1>
-    <p>Coming soon: thoughts on dashboards, data drama, and life in analytics.</p>
-  </section>
-</body>
-</html>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav__logo">Vidhi</div>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="index.html#work" class="nav__link">Work</a></li>
+        <li><a href="index.html#skills" class="nav__link">Skills</a></li>
+        <li><a href="blog.html" class="nav__link active">Blog</a></li>
+        <li><a href="index.html#contact" class="nav__link nav__cta">Contact</a></li>
+      </ul>
+      <div class="nav__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero__content">
+          <div class="section-header">
+            <span class="section-header__subtitle">Coming Soon</span>
+            <h1 class="section-header__title">Data Stories & Insights</h1>
+          </div>
+          
+          <p class="blog-hero__description">
+            I'm brewing up some amazing content about data analytics, industry insights, and the occasional analytical adventure. Stay tuned for regular updates that'll make your data journey more interesting!
+          </p>
+          
+          <div class="blog-preview">
+            <div class="blog-preview__grid">
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="preview-item__title">Analytics Deep Dives</h3>
+                <p class="preview-item__description">
+                  Complex analytical techniques made simple, with real-world examples and practical applications
+                </p>
+              </div>
+              
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="preview-item__title">Industry Insights</h3>
+                <p class="preview-item__description">
+                  Real data stories, market trends, and business intelligence that actually matters
+                </p>
+              </div>
+              
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="preview-item__title">Tool Reviews</h3>
+                <p class="preview-item__description">
+                  Honest takes on the latest analytics tools, with pros, cons, and real-world usage tips
+                </p>
+              </div>
+              
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="preview-item__title">Career Chronicles</h3>
+                <p class="preview-item__description">
+                  Navigating the data analytics career path, from internships to senior positions
+                </p>
+              </div>
+              
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <h3 class="preview-item__title">Code & Tutorials</h3>
+                <p class="preview-item__description">
+                  Step-by-step guides, code snippets, and automation scripts that save time
+                </p>
+              </div>
+              
+              <div class="preview-item">
+                <div class="preview-item__icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="preview-item__title">Data Psychology</h3>
+                <p class="preview-item__description">
+                  The human side of data—bias, interpretation, and making numbers tell stories
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="blog-hero__actions">
+            <a href="index.html#contact" class="btn btn--primary">Get Notified When I Launch</a>
+            <a href="index.html" class="btn btn--outline">Back to Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter__content">
+          <div class="newsletter__text">
+            <h2 class="newsletter__title">Don't Miss Out</h2>
+            <p class="newsletter__description">
+              Be the first to know when I publish new content. Get insights, tutorials, and industry updates delivered to your inbox.
+            </p>
+          </div>
+          
+          <form class="newsletter__form" id="newsletterForm">
+            <div class="newsletter__form-group">
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                class="newsletter__input"
+                required
+              >
+              <button type="submit" class="btn btn--primary">Notify Me</button>
+            </div>
+            <p class="newsletter__disclaimer">
+              No spam, ever. Just valuable data insights and updates.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <div class="footer__logo">Vidhi</div>
+          <p class="footer__tagline">Data Analyst & Strategic Thinker</p>
+        </div>
+        
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="index.html#about" class="footer__link">About</a>
+          <a href="index.html#work" class="footer__link">Work</a>
+          <a href="index.html#skills" class="footer__link">Skills</a>
+          <a href="blog.html" class="footer__link">Blog</a>
+          <a href="index.html#contact" class="footer__link">Contact</a>
+        </div>
+        
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/in/vidhi-a-sharma" target="_blank" class="footer__social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/VidhiSharma2000" target="_blank" class="footer__social-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p>&copy; 2025 Vidhi A. Sharma. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    // Newsletter form submission
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('.newsletter__input').value;
+      
+      if (email) {
+        alert('Thanks for subscribing! You\'ll be the first to know when I launch my blog.');
+        this.reset();
+      }
+    });
+
+    // Mobile menu toggle
+    document.querySelector('.nav__toggle').addEventListener('click', function() {
+      document.querySelector('.nav__menu').classList.toggle('active');
+    });
+  </script>
+
+  <style>
+    /* Blog-specific styles */
+    .blog-hero {
+      padding: 140px 0 100px;
+      background-color: var(--background);
+    }
+
+    .blog-hero__content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .blog-hero__description {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .blog-preview {
+      margin-bottom: 60px;
+    }
+
+    .blog-preview__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .preview-item {
+      background-color: white;
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .preview-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-item__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--secondary-color);
