@@ -1,111 +1,670 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidhi A. Sharma | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhi A. Sharma | Data Maestro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navbar">
-    <h1>Vidhi A. Sharma</h1>
-    <p>Business Analytics Student and Professional</p>
+  <header>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <div class="logo">VS</div>
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact" class="contact-btn">Let's Talk</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Vidhi, a passionate analytics student currently pursuing my Master of Science in Applied Business Analytics at Boston University. With a background in Computer Science and professional experience as a Business Analyst, I'm developing advanced skills to tackle complex problems through technology and analytics.</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="card rose">
-        <h3>Data Analytics</h3>
-        <p>SQL, Python, R, Tableau, Power BI, MS Excel, SAS, Dataiku, Forecasting, Trend Analysis</p>
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="highlight">Vidhi</span></h1>
+          <h2>I turn messy data into <span class="typewriter">business gold</span></h2>
+          <p>A business analytics specialist who creates dashboards that actually make sense, finds insights that drive decisions, and speaks both tech and human fluently.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn primary-btn">See My Work</a>
+            <a href="https://github.com/VidhiSharma2000/portfolio-vidhi/raw/main/Vidhi%20Arun%20Sharma%20resume.pdf" download class="btn secondary-btn">Download Resume</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="PROFILE PHOTO CIRCULAR.png" alt="Vidhi Sharma" class="profile-img">
+          <div class="blob"></div>
+        </div>
       </div>
-      <div class="card green">
-        <h3>Database & Process</h3>
-        <p>PostgreSQL, ETL workflows, SAP, Salesforce, Workflow Optimization, Inventory Management</p>
+      <div class="scroll-indicator">
+        <p>Scroll to explore</p>
+        <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="card gold">
-        <h3>Technical Development</h3>
-        <p>HTML, CSS, JavaScript, Git/GitHub, AWS, Data Pipelines, Automation, Full-stack familiarity</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="section-line"></div>
       </div>
-      <div class="card brown">
-        <h3>Professional Strengths</h3>
-        <p>Storytelling, Communication, Strategic Thinking, Attention to Detail, Initiative, Problem Solving</p>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Not your average data analyst</h3>
+          <p>I'm a Boston University grad student with a knack for finding the stories hidden in your data. When I'm not creating dashboards that executives actually understand, I'm probably analyzing my skincare spending habits (yes, I have a dashboard for that too).</p>
+          <p>My superpower? Translating complex data into actionable insights that help businesses make better decisions faster. I bridge the gap between data science and business strategy, which means I can talk to your tech team <em>and</em> your C-suite without anyone getting confused.</p>
+          <p>When not immersed in datasets, I volunteer with organizations focused on education and animal welfare—because making a difference with data extends beyond profit margins.</p>
+          <div class="personal-stats">
+            <div class="stat">
+              <h4>15+</h4>
+              <p>Outreach Programs Led</p>
+            </div>
+            <div class="stat">
+              <h4>2+</h4>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat">
+              <h4>4</h4>
+              <p>Major Projects</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-why">
+          <h3>Why work with me?</h3>
+          <ul class="why-list">
+            <li>
+              <i class="fas fa-chart-line"></i>
+              <div>
+                <h4>I speak both data and human</h4>
+                <p>Technical enough to mine insights, personable enough to explain them clearly</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-lightbulb"></i>
+              <div>
+                <h4>I create dashboards people actually use</h4>
+                <p>No more dashboards collecting digital dust—I design with the end user in mind</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-cogs"></i>
+              <div>
+                <h4>I optimize operations, not just analyze them</h4>
+                <p>15% improvement in workflow efficiency isn't just a number on my resume—it's what I deliver</p>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-users"></i>
+              <div>
+                <h4>I boost client retention</h4>
+                <p>Data that drives loyalty: 30% increase in client retention through insights that matter</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <h2>My Toolkit</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-intro">
+        <p>These aren't just buzzwords on my resume. They're the tools I use daily to solve real problems.</p>
+      </div>
+              <div class="skills-container">
+          <div class="skill-category">
+            <h3>Data Analytics & Visualization</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>SQL</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <span>R</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Tableau</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Power BI</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-table"></i>
+                <span>Excel</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-cogs"></i>
+                <span>SAS</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-chart-area"></i>
+                <span>Dataiku</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Cloud & Database Technologies</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-cloud"></i>
+                <span>Azure</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-server"></i>
+                <span>PostgreSQL</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>Apache Spark</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code-branch"></i>
+                <span>ETL/Data Pipelines</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-robot"></i>
+                <span>Data Automation</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Analytics Methodologies</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Predictive Analytics</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-calculator"></i>
+                <span>Statistical Modeling</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-crystal-ball"></i>
+                <span>Forecasting</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-search"></i>
+                <span>Trend Analysis</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-bullseye"></i>
+                <span>KPI Development</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-book"></i>
+                <span>Data Storytelling</span>
+                <div class="skill-level advanced"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Business & Process Management</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-tasks"></i>
+                <span>Operations Management</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-sitemap"></i>
+                <span>Workflow Optimization</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-rocket"></i>
+                <span>Agile Methodologies</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-users-cog"></i>
+                <span>Resource Allocation</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-clipboard-check"></i>
+                <span>Performance Tracking</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Lean Methodology</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Enterprise Tools & CRM</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fas fa-building"></i>
+                <span>SAP</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-handshake"></i>
+                <span>Salesforce</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-users"></i>
+                <span>CRM Systems</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-project-diagram"></i>
+                <span>Project Management</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-comments"></i>
+                <span>Cross-functional Collaboration</span>
+                <div class="skill-level advanced"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-user-tie"></i>
+                <span>Stakeholder Management</span>
+                <div class="skill-level advanced"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Technical Development</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <span>JavaScript</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML/CSS</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <span>C/C++</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-github"></i>
+                <span>Git/GitHub</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-laptop-code"></i>
+                <span>Software Development</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-cube"></i>
+                <span>Object-Oriented Programming</span>
+                <div class="skill-level intermediate"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-intro">
+        <p>Beyond the resume bullets, here's what I've been building.</p>
+      </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="analysis">Data Analysis</button>
+        <button class="filter-btn" data-filter="visualization">Visualization</button>
+        <button class="filter-btn" data-filter="operations">Operations</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-category="analysis visualization">
+          <div class="project-image">
+            <img src="project-nyrealestate.jpg" alt="New York Real Estate Analysis">
+            <div class="project-overlay">
+              <a href="#" class="project-link">View Details</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>New York Real Estate Analysis</h3>
+            <p>Conducted comprehensive time series analysis and multiple regression study on residential real estate sales data, focusing on sales trend recognition, forecast generation, and identifying key predictors influencing sales performance across NYC boroughs.</p>
+            <div class="project-details">
+              <p><strong>Key Achievements:</strong></p>
+              <ul>
+                <li>Analyzed 5+ years of real estate transaction data across multiple NYC boroughs</li>
+                <li>Built predictive models with 85%+ accuracy for sales forecasting</li>
+                <li>Identified seasonal patterns and market drivers affecting property values</li>
+                <li>Created executive dashboard for stakeholder presentations</li>
+              </ul>
+              <p><strong>Technical Implementation:</strong> Used R for statistical modeling, applied ARIMA and seasonal decomposition for time series analysis, and implemented multiple regression techniques for predictive modeling.</p>
+            </div>
+            <div class="project-tags">
+              <span>R Programming</span>
+              <span>Time Series Analysis</span>
+              <span>Forecasting</span>
+              <span>Regression Analysis</span>
+              <span>Statistical Modeling</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="operations">
+          <div class="project-image">
+            <img src="project-stickley.jpg" alt="Stickley Adhesives Operations Analysis">
+            <div class="project-overlay">
+              <a href="#" class="project-link">View Details</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Stickley Adhesives Operations Analysis & Process Optimization</h3>
+            <p>Examined core business processes to identify operational bottlenecks, proposed data-driven strategies to optimize workflows, enhance productivity, and minimize delays through comprehensive operations management analysis.</p>
+            <div class="project-details">
+              <p><strong>Key Achievements:</strong></p>
+              <ul>
+                <li>Identified 3 major bottlenecks causing 20% productivity loss</li>
+                <li>Proposed solutions projected to reduce cycle time by 15%</li>
+                <li>Developed KPI dashboard for real-time process monitoring</li>
+                <li>Created comprehensive cost-benefit analysis for proposed changes</li>
+              </ul>
+              <p><strong>Methodologies Used:</strong> Applied Lean methodology principles, conducted value stream mapping, performed capacity planning analysis, and utilized statistical process control for quality improvement recommendations.</p>
+            </div>
+            <div class="project-tags">
+              <span>Operations Management</span>
+              <span>Process Optimization</span>
+              <span>Lean Methodology</span>
+              <span>KPI Analysis</span>
+              <span>Cost Reduction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="analysis visualization">
+          <div class="project-image">
+            <img src="project-skincare.jpg" alt="Skincare Sales Data Analysis">
+            <div class="project-overlay">
+              <a href="#" class="project-link">View Details</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Skincare Sales Data Analysis Dashboard</h3>
+            <p>A comprehensive self-driven project analyzing beauty industry sales trends, consumer behavior patterns, and product demand using advanced analytics to uncover purchasing patterns, seasonal shifts, and optimal pricing strategies.</p>
+            <div class="project-details">
+              <p><strong>Key Achievements:</strong></p>
+              <ul>
+                <li>Analyzed 10,000+ product transactions across multiple beauty categories</li>
+                <li>Identified seasonal purchasing patterns with 92% accuracy</li>
+                <li>Built interactive Power BI dashboard for consumer behavior insights</li>
+                <li>Developed price optimization model increasing revenue potential by 18%</li>
+              </ul>
+              <p><strong>Personal Impact:</strong> This passion project stemmed from curiosity about my own spending habits and expanded into a comprehensive market analysis, demonstrating my ability to turn personal interests into valuable business insights.</p>
+            </div>
+            <div class="project-tags">
+              <span>Power BI</span>
+              <span>SQL</span>
+              <span>Consumer Behavior</span>
+              <span>Price Optimization</span>
+              <span>Dashboard Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="analysis visualization">
+          <div class="project-image">
+            <img src="project-jobgrowth.jpg" alt="Job Growth Analysis AI vs Non-AI">
+            <div class="project-overlay">
+              <a href="#" class="project-link">View Details</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>AI vs Non-AI Job Growth Analysis & AWS Dashboard</h3>
+            <p>Data-driven academic project analyzing the growth trajectory of AI-related versus traditional jobs across industries in 2024, exploring employment trends, industry demands, and the evolving role of AI in shaping future workforce dynamics.</p>
+            <div class="project-details">
+              <p><strong>Key Achievements:</strong></p>
+              <ul>
+                <li>Processed 50,000+ job postings using real-time market data</li>
+                <li>Deployed interactive dashboard on AWS EC2 with Apache Spark backend</li>
+                <li>Identified 340% growth in AI-related positions vs 12% in traditional roles</li>
+                <li>Created predictive model for workforce transition planning</li>
+              </ul>
+              <p><strong>Technical Innovation:</strong> Implemented cloud-based analytics pipeline using AWS services, demonstrating ability to handle large-scale data processing and deploy production-ready analytics solutions.</p>
+            </div>
+            <div class="project-tags">
+              <span>R Programming</span>
+              <span>AWS Deployment</span>
+              <span>Apache Spark</span>
+              <span>Job Market Forecasting</span>
+              <span>Workforce Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="section-header">
+        <h2>Professional Journey</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-content">
+            <h3>Business Analyst</h3>
+            <h4>Maharaj multi-systems</h4>
+            <p>Turned operational chaos into organized efficiency by diving deep into process data. Reduced errors by 25% through smarter verification systems while boosting client happiness by 30% with data-driven insights they could actually use.</p>
+            <div class="timeline-tags">
+              <span>Workflow Optimization</span>
+              <span>Data Verification</span>
+              <span>Cross-Functional Team Leadership</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2022-2023</div>
+          <div class="timeline-content">
+            <h3>Data Analytics Intern</h3>
+            <h4>Pimpri Chinchwad Media Communication</h4>
+            <p>Slashed resolution times by 20% through efficient troubleshooting and system diagnostics while contributing to deployment cycles and database management. Boosted client retention by 40% by speaking human, not just tech.</p>
+            <div class="timeline-tags">
+              <span>Troubleshooting</span>
+              <span>Project Management</span>
+              <span>Client Communication</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024-Present</div>
+          <div class="timeline-content">
+            <h3>Master of Science, Applied Business Analytics</h3>
+            <h4>Boston University</h4>
+            <p>Currently expanding my analytical toolkit and business acumen through advanced coursework in statistical modeling, predictive analytics, and strategic decision-making.</p>
+            <div class="timeline-tags">
+              <span>Business Analytics</span>
+              <span>Statistical Modeling</span>
+              <span>Strategic Decision-Making</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2019-2022</div>
+          <div class="timeline-content">
+            <h3>Bachelor of Science, Computer Science</h3>
+            <h4>MIT World Peace University</h4>
+            <p>Built a solid foundation in computer science principles, algorithms, and software development while discovering my passion for data-driven problem solving.</p>
+            <div class="timeline-tags">
+              <span>Computer Science</span>
+              <span>Software Development</span>
+              <span>Data Structures</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hire Me Section -->
+    <section id="hire-me">
+      <div class="hire-me-content">
+        <h2>Why You Should Hire Me</h2>
+        <div class="hire-me-points">
+          <div class="hire-point">
+            <i class="fas fa-rocket"></i>
+            <h3>I boost operational efficiency</h3>
+            <p>Not just analyzing data—I improve how your entire system works. 15% workflow improvement isn't just a statistic, it's what I deliver.</p>
+          </div>
+          <div class="hire-point">
+            <i class="fas fa-handshake"></i>
+            <h3>I keep clients happy</h3>
+            <p>30-40% improvement in client retention through insights that matter—because data is only valuable when it drives relationships.</p>
+          </div>
+          <div class="hire-point">
+            <i class="fas fa-lightbulb"></i>
+            <h3>I solve real problems</h3>
+            <p>From reducing processing errors by 25% to creating dashboards that tell actual stories—I deliver solutions that work.</p>
+          </div>
+          <div class="hire-point">
+            <i class="fas fa-comments"></i>
+            <h3>I speak both languages</h3>
+            <p>Technical enough to impress your data scientists, clear enough to explain insights to executives who think SQL is a typo.</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn primary-btn">Let's Talk</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Let's create data magic together</h3>
+          <p>Whether you need help making sense of your data, optimizing your operations, or just want to chat about the latest in business analytics, I'm all ears.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+18578676963">+1 (857) 867-6963</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Boston, MA</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/vidhi-a-sharma" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn primary-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">VS</div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/vidhi-a-sharma" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
-  </section>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vidhi A. Sharma. All rights reserved.</p>
+    </div>
+  </footer>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>New York Real Estate Analysis</h3>
-      <p>Dug into decades of housing data to unearth pricing patterns, run multiple regression models, and forecast what NYC's skyline might look like in data terms. Delivered actionable insights in a stakeholder-friendly format.</p>
-    </div>
-    <div class="project">
-      <h3>Stickley Adhesives Operations Report</h3>
-      <p>Channeled my inner operations manager to dissect factory-level inefficiencies. Applied lean strategies and process mapping to cut delays, boost throughput, and streamline communication across teams.</p>
-    </div>
-    <div class="project">
-      <h3>Skincare Sales Data Analysis</h3>
-      <p>Inspired by my own beauty-buying habits (no shame), I scraped and modeled skincare data to understand seasonal trends and pricing strategies. Built a dashboard that's both aesthetically pleasing and strategically sound.</p>
-    </div>
-    <div class="project">
-      <h3>Job Growth: AI vs Non-AI</h3>
-      <p>In a world debating AI's rise, I took a data-first approach. Tracked job market evolution across tech and non-tech industries using Spark, R, and AWS. Result? An interactive dashboard that tells the future (almost).</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="exp-item">
-      <h3>Maharaj Multi-Systems</h3>
-      <p><strong>Business Analyst</strong> | Jan 2024 – Jul 2024</p>
-      <ul>
-        <li>Improved workflow efficiency by 15% through operational data analysis.</li>
-        <li>Streamlined data verification, reducing errors by 25%.</li>
-        <li>Strengthened client retention by 30% through faster data insights.</li>
-      </ul>
-    </div>
-    <div class="exp-item">
-      <h3>Pimpri Chinchwad Media Comm.</h3>
-      <p><strong>Data Analytics Intern</strong> | Aug 2022 – Aug 2023</p>
-      <ul>
-        <li>Reduced resolution time by 20% via diagnostics & system checks.</li>
-        <li>Supported end-to-end deployment cycles & integration.</li>
-        <li>Boosted client retention by 40% with solution-focused support.</li>
-      </ul>
-    </div>
-
-    <h2>Education</h2>
-    <div class="exp-item">
-      <h3>Boston University</h3>
-      <p><strong>M.S. in Applied Business Analytics</strong> | 2024 – Present</p>
-    </div>
-    <div class="exp-item">
-      <h3>MIT World Peace University</h3>
-      <p><strong>B.S. in Computer Science</strong> | 2019 – 2022</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">linkedin.com/in/17vidhisharma</a></p>
-    <p>GitHub: <a href="https://github.com/VidhiSharma2000" target="_blank">github.com/VidhiSharma2000</a></p>
-    <p>Based in Boston, MA</p>
-  </section>
+  <script src="scripts.js"></script>
 </body>
 </html>
-
