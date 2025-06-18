@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vidhi A. Sharma | Business Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #6a0dad;
-      --bg-light: #fefefe;
-      --text-dark: #222;
-      --soft-border: #ddd;
+      --accent: #4a7c86;
+      --light: #f9f9f7;
+      --text-dark: #1f1f1f;
+      --text-light: #8a8a8a;
+      --section-padding: 4rem;
     }
 
     * {
@@ -20,13 +20,9 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-light);
+      background-color: var(--light);
       color: var(--text-dark);
       line-height: 1.7;
     }
@@ -37,55 +33,63 @@
       margin: auto;
     }
 
-    header {
-      padding: 5rem 0 2rem;
-      text-align: center;
-      background-color: #ffffff;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      background: linear-gradient(90deg, #6a0dad, #00b4d8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: white;
-      border-bottom: 1px solid var(--soft-border);
+    header.hero {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      z-index: 1000;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--section-padding) 0;
+      background-color: var(--light);
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
+    .hero-text {
+      flex: 1 1 55%;
+      padding-left: 2rem;
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-text p {
+      color: var(--text-light);
       font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .hero-text .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .hero-img {
+      flex: 1 1 35%;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     section {
-      padding: 4rem 0;
+      padding: var(--section-padding) 0;
     }
 
     h2 {
-      font-size: 2rem;
       font-family: 'Playfair Display', serif;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
       color: var(--accent);
     }
 
@@ -95,147 +99,125 @@
       gap: 2rem;
     }
 
-    .card {
-      border: 1px solid var(--soft-border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      background-color: white;
-      transition: box-shadow 0.3s ease;
+    .contact-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      background: #f0f0ec;
     }
 
-    .card:hover {
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    .contact-footer img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
     }
 
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
-      background: #fafafa;
+    .contact-footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
     }
 
-    .contact a {
-      color: var(--accent);
+    .contact-footer p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .contact-footer .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
       text-decoration: none;
       font-weight: 600;
-    }
-
-    ul.job-points {
-      margin-top: 0.8rem;
-      padding-left: 1.2rem;
-    }
-
-    ul.job-points li {
-      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header class="container" data-aos="fade-down">
-    <h1>Vidhi A. Sharma</h1>
-    <p>Business Analyst | Data Storyteller | Boston University</p>
+  <header class="hero container">
+    <div class="hero-img">
+      <img src="profile.jpg" alt="Vidhi A. Sharma">
+    </div>
+    <div class="hero-text">
+      <p>Business Analyst / Data Storyteller</p>
+      <h1>Vidhi A. Sharma</h1>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#volunteering">Volunteer</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <main class="container">
-    <section id="about" data-aos="fade-up">
+    <section id="about">
       <h2>About Me</h2>
       <div class="grid-2">
-        <p>I simplify business problems using data. I bring a mix of technical acumen and real-world empathy to every dashboard, forecast, and strategy I work on. With a background in Computer Science and Analytics, I’m here to ask better questions — and find actionable answers.</p>
-        <p>I’m currently pursuing my Master’s at Boston University, and I love building tools that blend data, behavior, and business goals — whether it’s a skincare sales dashboard or an AI job trend map.</p>
+        <p>I’m a Boston-based Business Analyst passionate about simplifying complexity through data. With a background in Computer Science and hands-on experience in operations, BI tools, and reporting automation, I specialize in translating business challenges into smart, scalable solutions.</p>
+        <p>I'm currently pursuing my Master’s at Boston University and I love building tools that blend data, behavior, and business goals — whether it’s a skincare dashboard or an AI job map.</p>
       </div>
     </section>
 
-    <section id="skills" data-aos="fade-up">
+    <section id="skills">
       <h2>Skills</h2>
       <div class="grid-2">
-        <div>
-          <strong>Analytics & BI:</strong><br>
-          SQL, Python, R, Tableau, Power BI, Excel, SAS, KPI frameworks
-        </div>
-        <div>
-          <strong>Tech & Tools:</strong><br>
-          Dataiku, Git/GitHub, AWS EC2, HTML/CSS/JS, Salesforce, Scrum, Agile
-        </div>
+        <ul>
+          <li>SQL, Python, R, Tableau, Power BI</li>
+          <li>Excel, SAS, Dataiku, Salesforce</li>
+          <li>ETL pipelines, Git, HTML/CSS/JS</li>
+          <li>Forecasting, KPI tracking, Agile</li>
+        </ul>
+        <ul>
+          <li>Data storytelling & dashboards</li>
+          <li>Business process mapping</li>
+          <li>Trend analysis & optimization</li>
+          <li>Cross-functional collaboration</li>
+        </ul>
       </div>
     </section>
 
-    <section id="experience" data-aos="fade-up">
+    <section id="experience">
       <h2>Experience</h2>
-      <div class="card">
-        <strong>Maharaj Multi-Systems — Business Analyst</strong> (Jan–Jul 2024)
-        <ul class="job-points">
-          <li>Improved workflow efficiency by 15% through operational data analysis.</li>
-          <li>Reduced data processing errors by 25% with streamlined validation tools.</li>
-          <li>Helped increase client retention by 30% via fast inquiry resolution and insights.</li>
-          <li>Worked cross-functionally with teams to optimize reporting and handoffs.</li>
-          <li>Promoted from intern to full-time analyst based on performance.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <strong>Pimpri Chinchwad Media — Data Intern</strong> (Aug 2022–Aug 2023)
-        <ul class="job-points">
-          <li>Shortened technical issue resolution by 20% through diagnostics and support.</li>
-          <li>Contributed to deployment cycles and database organization.</li>
-          <li>Increased client retention by 40% through data-backed service optimization.</li>
-        </ul>
-      </div>
+      <p><strong>Maharaj Multi-Systems — Business Analyst</strong> (Jan–Jul 2024)</p>
+      <ul>
+        <li>Boosted workflow efficiency by 15% through operational analysis.</li>
+        <li>Reduced processing errors by 25% with improved verification tools.</li>
+        <li>Helped raise client retention by 30% via quick support and insights.</li>
+        <li>Worked across departments to streamline day-to-day operations.</li>
+        <li>Promoted from intern to full-time before relocating to BU.</li>
+      </ul>
+      <br>
+      <p><strong>Pimpri Chinchwad Media — Data Analytics Intern</strong> (Aug 2022–Aug 2023)</p>
+      <ul>
+        <li>Reduced resolution time by 20% with effective diagnostics.</li>
+        <li>Supported project deployment, database management, and reporting.</li>
+        <li>Increased client satisfaction through prompt, data-based responses.</li>
+      </ul>
     </section>
 
-    <section id="projects" data-aos="fade-up">
+    <section id="projects">
       <h2>Projects</h2>
-      <div class="grid-2">
-        <div class="card">
-          <strong>Skincare Sales Dashboard</strong><br>
-          Visualized product trends using Streamlit, R & Python. Explored pricing + seasonality.
-        </div>
-        <div class="card">
-          <strong>AI vs Non-AI Job Growth</strong><br>
-          Analyzed 2024 labor data using Spark + AWS EC2. Built interactive dashboard.
-        </div>
-        <div class="card">
-          <strong>Stickley Ops Analysis</strong><br>
-          Operations report with Lean-based process redesign & KPI tracking.
-        </div>
-        <div class="card">
-          <strong>IBM Agile Sprint Simulation</strong><br>
-          Simulated full sprint in GitHub Projects — user stories, backlog, Kanban.
-        </div>
-      </div>
+      <ul>
+        <li><strong>Skincare Sales Dashboard:</strong> Streamlit-based analysis of beauty spending patterns, seasonality, and pricing.</li>
+        <li><strong>AI vs Non-AI Job Growth:</strong> Trend analysis on 2024 labor market shifts using R and Spark.</li>
+        <li><strong>Stickley Operations Analysis:</strong> Course project optimizing operations using KPIs and Lean methodology.</li>
+        <li><strong>IBM Agile Simulation:</strong> Scrum sprint planning via GitHub Projects with Kanban task flow.</li>
+      </ul>
     </section>
 
-    <section id="volunteering" data-aos="fade-up">
+    <section id="volunteering">
       <h2>Volunteering</h2>
       <p><strong>Youth Empowerment Foundation, Help Social Welfare Society, Sahaas for Animals</strong><br>
-      Led 15+ outreach programs, exceeded fundraising goals, taught underserved students, supported education + animal rescue initiatives.</p>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p class="contact">
-        <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/VidhiSharma2000" target="_blank">GitHub</a>
-      </p>
+      Led outreach programs, raised funds, taught students, and helped with education + animal welfare campaigns.</p>
     </section>
   </main>
 
-  <footer>
-    &copy; 2025 Vidhi A. Sharma — Built with brains & coffee.
+  <footer class="contact-footer">
+    <div>
+      <img src="profile.jpg" alt="Vidhi">
+    </div>
+    <div>
+      <p>BUSINESS ANALYST</p>
+      <h3>Vidhi A. Sharma</h3>
+    </div>
+    <div>
+      <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Contact Me</a>
+    </div>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
