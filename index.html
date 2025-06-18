@@ -1,36 +1,243 @@
-<!-- trimmed for brevity -->
-<header>
-  <h1>Vidhi A. Sharma</h1>
-  <p>Business Analyst • Insight Strategist • Data Storyteller</p>
-  <div class="icons">
-    <a href="mailto:sharmavidhi3008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/17vidhisharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://17vidhisharma.github.io/portfolio-vidhi" target="_blank"><i class="fas fa-globe"></i></a>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidhi A. Sharma | Business Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #111;
+      --accent: #9b2226;
+      --muted: #555;
+      --bg: #ffffff;
+    }
 
-<div class="intro">
-  <p>Hi! I’m Vidhi — an analytics professional blending business insight with data precision. With a flair for decoding complexity and crafting elegant dashboards, I empower teams to act smarter and faster. My portfolio is where logic meets creativity — scroll on and see how I turn chaos into clarity.</p>
-</div>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- nav, about, experience... -->
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--primary);
+      line-height: 1.7;
+      padding: 2rem;
+    }
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="section-content">
-    <h3>Skincare Sales Dashboard</h3>
-    <p>Built an interactive Streamlit app exploring beauty trends, pricing sensitivity, and seasonal buying behavior.</p>
-    <div class="chart-placeholder">[Insert Skincare Trends Chart Here]</div>
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 2rem auto 4rem;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--accent);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .section-content {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-content p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .skill {
+      background: #f5f5f5;
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      font-weight: 500;
+    }
+
+    .icons {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .icons a {
+      color: var(--primary);
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+
+    .icons a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 5rem;
+    }
+
+    .chart-placeholder {
+      background: #fafafa;
+      padding: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-style: italic;
+      border: 1px dashed #ccc;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vidhi A. Sharma</h1>
+    <p>Business Analyst • Insight Strategist • Data Storyteller</p>
+    <div class="icons">
+      <a href="mailto:sharmavidhi3008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/17vidhisharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://17vidhisharma.github.io/portfolio-vidhi" target="_blank"><i class="fas fa-globe"></i></a>
+    </div>
+  </header>
+
+  <div class="intro">
+    <p>Hi! I’m Vidhi — an analytics professional blending business insight with data precision. With a flair for decoding complexity and crafting elegant dashboards, I empower teams to act smarter and faster. My portfolio is where logic meets creativity — scroll on and see how I turn chaos into clarity.</p>
   </div>
-  <div class="section-content">
-    <h3>AI vs Non-AI Job Growth</h3>
-    <p>Forecasted workforce disruption using job post data, Spark, and R. Dashboard deployment on AWS EC2.</p>
-    <div class="chart-placeholder">[Insert Job Growth Bar Chart Here]</div>
-  </div>
-  <div class="section-content">
-    <h3>Stickley Adhesives Optimization</h3>
-    <p>Mapped bottlenecks and streamlined operations for improved throughput using KPI benchmarking and Lean tools.</p>
-    <div class="chart-placeholder">[Insert Process Flow or KPI Comparison]</div>
-  </div>
-</section>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="section-content">
+      <p>Currently pursuing an MS in Applied Business Analytics at Boston University, I specialize in transforming business ambiguity into actionable insights. I thrive where strategy and statistics intersect — building tools, reports, and dashboards that make impact measurable and success replicable.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="section-content">
+      <h3>Maharaj Multi-Systems – Business Analyst</h3>
+      <p><em>Jan 2024 – Jul 2024</em><br>
+      Boosted efficiency (+15%), reduced processing errors (-25%), and improved retention (+30%) through data-driven operational strategies.</p>
+    </div>
+    <div class="section-content">
+      <h3>PCMC – Data Analytics Intern</h3>
+      <p><em>Aug 2022 – Aug 2023</em><br>
+      Delivered 40% increase in client satisfaction by leading diagnostics, deployments, and customer-focused support systems.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="section-content">
+      <h3>Skincare Sales Dashboard</h3>
+      <p>Built an interactive Streamlit app exploring beauty trends, pricing sensitivity, and seasonal buying behavior.</p>
+      <div class="chart-placeholder">[Insert Skincare Trends Chart Here]</div>
+    </div>
+    <div class="section-content">
+      <h3>AI vs Non-AI Job Growth</h3>
+      <p>Forecasted workforce disruption using job post data, Spark, and R. Dashboard deployment on AWS EC2.</p>
+      <div class="chart-placeholder">[Insert Job Growth Bar Chart Here]</div>
+    </div>
+    <div class="section-content">
+      <h3>Stickley Adhesives Optimization</h3>
+      <p>Mapped bottlenecks and streamlined operations for improved throughput using KPI benchmarking and Lean tools.</p>
+      <div class="chart-placeholder">[Insert Process Flow or KPI Comparison]</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Python, R, SQL</div>
+      <div class="skill">Power BI, Tableau, Excel</div>
+      <div class="skill">SAS, Dataiku, Salesforce</div>
+      <div class="skill">AWS EC2, Apache Spark</div>
+      <div class="skill">Forecasting, KPI Analysis</div>
+      <div class="skill">Agile, Scrum, Lean</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="section-content">
+      <p>Let’s collaborate or just say hi:</p>
+      <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
+    </div>
+    <div class="icons">
+      <a href="mailto:sharmavidhi3008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/17vidhisharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vidhi A. Sharma • Business Analytics Portfolio</p>
+  </footer>
+</body>
+</html>
