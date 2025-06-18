@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vidhi A. Sharma | Business Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #4a7c86;
       --light: #f9f9f7;
       --text-dark: #1f1f1f;
       --text-light: #8a8a8a;
-      --section-padding: 4rem;
     }
 
     * {
@@ -24,199 +23,602 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--light);
       color: var(--text-dark);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    header.hero {
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      padding: var(--section-padding) 0;
-      background-color: var(--light);
+      justify-content: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
     }
 
     .hero-text {
-      flex: 1 1 55%;
-      padding-left: 2rem;
+      text-align: left;
+    }
+
+    .hero-text .subtitle {
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
 
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
     }
 
-    .hero-text p {
+    .hero-text .description {
       color: var(--text-light);
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
     }
 
     .hero-text .btn {
       display: inline-block;
-      margin-top: 1.5rem;
       background: var(--accent);
       color: white;
-      padding: 0.75rem 1.5rem;
+      padding: 1rem 2rem;
       font-weight: 600;
       text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
     }
 
-    .hero-img {
-      flex: 1 1 35%;
+    .hero-text .btn:hover {
+      background: #3a6670;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
       text-align: center;
+      position: relative;
     }
 
-    .hero-img img {
-      width: 250px;
-      height: 250px;
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 280px;
       object-fit: cover;
       border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Main Content */
+    main {
+      padding: 6rem 0;
     }
 
     section {
-      padding: var(--section-padding) 0;
+      margin-bottom: 6rem;
     }
 
-    h2 {
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
       color: var(--accent);
+      margin-bottom: 1rem;
     }
 
-    .grid-2 {
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .about-stats {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .stat-value {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .skill-category h3 {
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      padding: 0.5rem 0;
+      color: var(--text-dark);
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .skill-category li:last-child {
+      border-bottom: none;
+    }
+
+    /* Experience Section */
+    .experience-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .experience-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--accent);
+    }
+
+    .experience-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-left: 2rem;
+    }
+
+    .experience-item::before {
+      content: '';
+      position: absolute;
+      left: -3rem;
+      top: 2rem;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--light);
+    }
+
+    .experience-item h3 {
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-item .date {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-item ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience-item li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .experience-item li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Projects Section */
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
+    .project-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card p {
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Volunteering Section */
+    .volunteering-content {
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .volunteering-content h3 {
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .volunteering-content p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Contact Footer */
     .contact-footer {
+      background: var(--accent);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .contact-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 2rem;
-      background: #f0f0ec;
+      flex-wrap: wrap;
+      gap: 2rem;
     }
 
-    .contact-footer img {
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-info img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
+      border: 3px solid white;
     }
 
-    .contact-footer h3 {
+    .contact-info div h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
     }
 
-    .contact-footer p {
-      font-size: 0.85rem;
-      color: var(--text-light);
+    .contact-info div p {
+      opacity: 0.9;
+      font-size: 0.9rem;
     }
 
     .contact-footer .btn {
-      background: var(--accent);
-      color: white;
-      padding: 0.6rem 1.4rem;
+      background: white;
+      color: var(--accent);
+      padding: 1rem 2rem;
       text-decoration: none;
       font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-footer .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="hero container">
-    <div class="hero-img">
-      <img src="profile.jpg" alt="Vidhi A. Sharma">
-    </div>
-    <div class="hero-text">
-      <p>Business Analyst / Data Storyteller</p>
-      <h1>Vidhi A. Sharma</h1>
-      <a href="#contact" class="btn">Contact Me</a>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="subtitle">Business Analyst / Data Storyteller</p>
+          <h1>Vidhi A. Sharma</h1>
+          <p class="description">Passionate about simplifying complexity through data. Translating business challenges into smart, scalable solutions.</p>
+          <a href="#contact" class="btn">Let's Connect</a>
+        </div>
+        <div class="hero-image">
+          <img src="profile photo circular.png" alt="Vidhi A. Sharma">
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="grid-2">
-        <p>I’m a Boston-based Business Analyst passionate about simplifying complexity through data. With a background in Computer Science and hands-on experience in operations, BI tools, and reporting automation, I specialize in translating business challenges into smart, scalable solutions.</p>
-        <p>I'm currently pursuing my Master’s at Boston University and I love building tools that blend data, behavior, and business goals — whether it’s a skincare dashboard or an AI job map.</p>
-      </div>
-    </section>
+  <main>
+    <div class="container">
+      <section id="about">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <p>Boston-based analyst with a passion for data storytelling and business optimization</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a Boston-based Business Analyst passionate about simplifying complexity through data. With a background in Computer Science and hands-on experience in operations, BI tools, and reporting automation, I specialize in translating business challenges into smart, scalable solutions.</p>
+            <p>I'm currently pursuing my Master's at Boston University and I love building tools that blend data, behavior, and business goals — whether it's a skincare dashboard or an AI job map.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-label">Current Focus</span>
+              <span class="stat-value">Master's at BU</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Specialization</span>
+              <span class="stat-value">Data Analytics</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Location</span>
+              <span class="stat-value">Boston, MA</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Experience</span>
+              <span class="stat-value">3+ Years</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="grid-2">
-        <ul>
-          <li>SQL, Python, R, Tableau, Power BI</li>
-          <li>Excel, SAS, Dataiku, Salesforce</li>
-          <li>ETL pipelines, Git, HTML/CSS/JS</li>
-          <li>Forecasting, KPI tracking, Agile</li>
-        </ul>
-        <ul>
-          <li>Data storytelling & dashboards</li>
-          <li>Business process mapping</li>
-          <li>Trend analysis & optimization</li>
-          <li>Cross-functional collaboration</li>
-        </ul>
-      </div>
-    </section>
+      <section id="skills">
+        <div class="section-header">
+          <h2>Skills & Expertise</h2>
+          <p>Technical proficiency meets business acumen</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Data & Analytics</h3>
+            <ul>
+              <li>SQL, Python, R</li>
+              <li>Tableau, Power BI</li>
+              <li>SAS, Dataiku</li>
+              <li>Forecasting & KPI tracking</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Business Intelligence</h3>
+            <ul>
+              <li>Data storytelling</li>
+              <li>Dashboard development</li>
+              <li>Trend analysis</li>
+              <li>Process optimization</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Technical Tools</h3>
+            <ul>
+              <li>Excel, Salesforce</li>
+              <li>ETL pipelines, Git</li>
+              <li>HTML/CSS/JS</li>
+              <li>Agile methodology</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <ul>
+              <li>Cross-functional collaboration</li>
+              <li>Business process mapping</li>
+              <li>Project management</li>
+              <li>Strategic thinking</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <p><strong>Maharaj Multi-Systems — Business Analyst</strong> (Jan–Jul 2024)</p>
-      <ul>
-        <li>Boosted workflow efficiency by 15% through operational analysis.</li>
-        <li>Reduced processing errors by 25% with improved verification tools.</li>
-        <li>Helped raise client retention by 30% via quick support and insights.</li>
-        <li>Worked across departments to streamline day-to-day operations.</li>
-        <li>Promoted from intern to full-time before relocating to BU.</li>
-      </ul>
-      <br>
-      <p><strong>Pimpri Chinchwad Media — Data Analytics Intern</strong> (Aug 2022–Aug 2023)</p>
-      <ul>
-        <li>Reduced resolution time by 20% with effective diagnostics.</li>
-        <li>Supported project deployment, database management, and reporting.</li>
-        <li>Increased client satisfaction through prompt, data-based responses.</li>
-      </ul>
-    </section>
+      <section id="experience">
+        <div class="section-header">
+          <h2>Professional Experience</h2>
+          <p>Driving business growth through data-driven insights</p>
+        </div>
+        <div class="experience-timeline">
+          <div class="experience-item">
+            <h3>Business Analyst</h3>
+            <p class="date">Maharaj Multi-Systems | Jan–Jul 2024</p>
+            <ul>
+              <li>Boosted workflow efficiency by 15% through operational analysis</li>
+              <li>Reduced processing errors by 25% with improved verification tools</li>
+              <li>Helped raise client retention by 30% via quick support and insights</li>
+              <li>Worked across departments to streamline day-to-day operations</li>
+              <li>Promoted from intern to full-time before relocating to BU</li>
+            </ul>
+          </div>
+          <div class="experience-item">
+            <h3>Data Analytics Intern</h3>
+            <p class="date">Pimpri Chinchwad Media | Aug 2022–Aug 2023</p>
+            <ul>
+              <li>Reduced resolution time by 20% with effective diagnostics</li>
+              <li>Supported project deployment, database management, and reporting</li>
+              <li>Increased client satisfaction through prompt, data-based responses</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>Skincare Sales Dashboard:</strong> Streamlit-based analysis of beauty spending patterns, seasonality, and pricing.</li>
-        <li><strong>AI vs Non-AI Job Growth:</strong> Trend analysis on 2024 labor market shifts using R and Spark.</li>
-        <li><strong>Stickley Operations Analysis:</strong> Course project optimizing operations using KPIs and Lean methodology.</li>
-        <li><strong>IBM Agile Simulation:</strong> Scrum sprint planning via GitHub Projects with Kanban task flow.</li>
-      </ul>
-    </section>
+      <section id="projects">
+        <div class="section-header">
+          <h2>Featured Projects</h2>
+          <p>Turning data into actionable business insights</p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Skincare Sales Dashboard</h3>
+            <p>Streamlit-based analysis of beauty spending patterns, seasonality, and pricing strategies to optimize product positioning and sales forecasting.</p>
+          </div>
+          <div class="project-card">
+            <h3>AI vs Non-AI Job Growth</h3>
+            <p>Comprehensive trend analysis on 2024 labor market shifts using R and Spark, providing insights into emerging job market dynamics.</p>
+          </div>
+          <div class="project-card">
+            <h3>Stickley Operations Analysis</h3>
+            <p>Course project optimizing manufacturing operations using KPIs and Lean methodology to improve efficiency and reduce waste.</p>
+          </div>
+          <div class="project-card">
+            <h3>IBM Agile Simulation</h3>
+            <p>Scrum sprint planning simulation via GitHub Projects with Kanban task flow, demonstrating agile project management capabilities.</p>
+          </div>
+        </div>
+      </section>
 
-    <section id="volunteering">
-      <h2>Volunteering</h2>
-      <p><strong>Youth Empowerment Foundation, Help Social Welfare Society, Sahaas for Animals</strong><br>
-      Led outreach programs, raised funds, taught students, and helped with education + animal welfare campaigns.</p>
-    </section>
+      <section id="volunteering">
+        <div class="section-header">
+          <h2>Community Impact</h2>
+          <p>Giving back through meaningful volunteer work</p>
+        </div>
+        <div class="volunteering-content">
+          <h3>Youth Empowerment Foundation, Help Social Welfare Society, Sahaas for Animals</h3>
+          <p>Led outreach programs, raised funds, taught students, and helped with education and animal welfare campaigns. Passionate about using analytical skills to support community initiatives and drive positive social impact.</p>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer class="contact-footer">
-    <div>
-      <img src="profile.jpg" alt="Vidhi">
-    </div>
-    <div>
-      <p>BUSINESS ANALYST</p>
-      <h3>Vidhi A. Sharma</h3>
-    </div>
-    <div>
-      <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Contact Me</a>
+  <footer id="contact" class="contact-footer">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <img src="profile photo circular.png" alt="Vidhi A. Sharma">
+          <div>
+            <h3>Vidhi A. Sharma</h3>
+            <p>Business Analyst & Data Storyteller</p>
+          </div>
+        </div>
+        <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Get In Touch</a>
+      </div>
     </div>
   </footer>
 </body>
