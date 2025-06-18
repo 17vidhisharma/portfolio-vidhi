@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vidhi A. Sharma | Business Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
-      --primary: #111;
-      --accent: #9b2226;
-      --muted: #555;
+      --primary: #1c1c1c;
       --bg: #ffffff;
+      --muted: #666666;
+      --card: #f9f9f9;
+      --accent: #2a3b4c;
     }
 
     * {
@@ -37,7 +38,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 3.5rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--primary);
     }
 
     header p {
@@ -60,12 +61,14 @@
       gap: 2rem;
       margin-bottom: 3rem;
       font-weight: 600;
+      flex-wrap: wrap;
     }
 
     nav a {
       color: var(--primary);
       text-decoration: none;
       border-bottom: 2px solid transparent;
+      transition: 0.2s ease;
     }
 
     nav a:hover {
@@ -81,7 +84,7 @@
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.3rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       color: var(--accent);
       text-align: center;
     }
@@ -100,14 +103,32 @@
       font-size: 0.98rem;
     }
 
+    .project-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+      transition: transform 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     .skill {
-      background: #f5f5f5;
+      background: var(--card);
       padding: 1rem;
       border-left: 4px solid var(--accent);
       font-weight: 500;
@@ -129,38 +150,42 @@
       color: var(--accent);
     }
 
-    footer {
+    .resume {
       text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 5rem;
+      margin-top: 2rem;
     }
 
-    .chart-placeholder {
-      background: #fafafa;
-      padding: 2rem;
+    .resume a {
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    footer {
       text-align: center;
+      font-size: 0.9rem;
       color: var(--muted);
-      font-style: italic;
-      border: 1px dashed #ccc;
-      margin-top: 1.5rem;
+      margin-top: 5rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Vidhi A. Sharma</h1>
-    <p>Business Analyst • Insight Strategist • Data Storyteller</p>
+    <p>Business Analytics | Strategy | Dashboards | Data Stories</p>
     <div class="icons">
       <a href="mailto:sharmavidhi3008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/17vidhisharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://17vidhisharma.github.io/portfolio-vidhi" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
   </header>
 
   <div class="intro">
-    <p>Hi! I’m Vidhi — an analytics professional blending business insight with data precision. With a flair for decoding complexity and crafting elegant dashboards, I empower teams to act smarter and faster. My portfolio is where logic meets creativity — scroll on and see how I turn chaos into clarity.</p>
+    <p>Hey! I’m Vidhi — a business analyst with a strategist’s brain and a designer’s eye. I believe in beautiful dashboards, actionable insights, and making every dataset feel like a revelation. Let’s build something smarter.</p>
   </div>
 
   <nav>
@@ -172,42 +197,37 @@
   </nav>
 
   <section id="about">
-    <h2>About Me</h2>
-    <div class="section-content">
-      <p>Currently pursuing an MS in Applied Business Analytics at Boston University, I specialize in transforming business ambiguity into actionable insights. I thrive where strategy and statistics intersect — building tools, reports, and dashboards that make impact measurable and success replicable.</p>
-    </div>
+    <h2>About</h2>
+    <p>I’m pursuing my Master’s in Applied Business Analytics at Boston University. Previously, I led operations and analytics efforts across tech and media, using tools like Python, Power BI, and SQL to automate workflows, solve business problems, and optimize decisions.</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
     <div class="section-content">
-      <h3>Maharaj Multi-Systems – Business Analyst</h3>
-      <p><em>Jan 2024 – Jul 2024</em><br>
-      Boosted efficiency (+15%), reduced processing errors (-25%), and improved retention (+30%) through data-driven operational strategies.</p>
+      <h3>Maharaj Multi-Systems (Business Analyst)</h3>
+      <p><em>Jan 2024 – Jul 2024</em></p>
+      <p>Improved workflow efficiency by 15%, reduced processing errors by 25%, and increased client retention by 30%.</p>
     </div>
     <div class="section-content">
-      <h3>PCMC – Data Analytics Intern</h3>
-      <p><em>Aug 2022 – Aug 2023</em><br>
-      Delivered 40% increase in client satisfaction by leading diagnostics, deployments, and customer-focused support systems.</p>
+      <h3>PCMC (Data Analytics Intern)</h3>
+      <p><em>Aug 2022 – Aug 2023</em></p>
+      <p>Enhanced system performance and customer satisfaction through deployment support, diagnostics, and data services.</p>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="section-content">
+    <div class="project-card">
       <h3>Skincare Sales Dashboard</h3>
-      <p>Built an interactive Streamlit app exploring beauty trends, pricing sensitivity, and seasonal buying behavior.</p>
-      <div class="chart-placeholder">[Insert Skincare Trends Chart Here]</div>
+      <p>Streamlit dashboard analyzing skincare trends, consumer patterns, and product pricing insights. Born out of personal obsession, backed by data.</p>
     </div>
-    <div class="section-content">
+    <div class="project-card">
       <h3>AI vs Non-AI Job Growth</h3>
-      <p>Forecasted workforce disruption using job post data, Spark, and R. Dashboard deployment on AWS EC2.</p>
-      <div class="chart-placeholder">[Insert Job Growth Bar Chart Here]</div>
+      <p>Analyzed and forecasted employment patterns across industries using Spark and R. Dashboard deployed on AWS EC2.</p>
     </div>
-    <div class="section-content">
-      <h3>Stickley Adhesives Optimization</h3>
-      <p>Mapped bottlenecks and streamlined operations for improved throughput using KPI benchmarking and Lean tools.</p>
-      <div class="chart-placeholder">[Insert Process Flow or KPI Comparison]</div>
+    <div class="project-card">
+      <h3>Stickley Adhesives Operations Optimization</h3>
+      <p>Identified and solved bottlenecks through KPI analysis and lean process improvement techniques for improved throughput.</p>
     </div>
   </section>
 
@@ -216,28 +236,27 @@
     <div class="skills-grid">
       <div class="skill">Python, R, SQL</div>
       <div class="skill">Power BI, Tableau, Excel</div>
-      <div class="skill">SAS, Dataiku, Salesforce</div>
-      <div class="skill">AWS EC2, Apache Spark</div>
+      <div class="skill">AWS EC2, Spark</div>
       <div class="skill">Forecasting, KPI Analysis</div>
-      <div class="skill">Agile, Scrum, Lean</div>
+      <div class="skill">Agile, Lean, Scrum</div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <div class="section-content">
-      <p>Let’s collaborate or just say hi:</p>
-      <p>Email: <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a></p>
-    </div>
+    <p>Reach out for opportunities, collaborations, or even dashboard critiques.</p>
     <div class="icons">
       <a href="mailto:sharmavidhi3008@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/17vidhisharma/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/VidhiSharma2000" target="_blank"><i class="fab fa-github"></i></a>
     </div>
+    <div class="resume">
+      <a href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download>Download Resume</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Vidhi A. Sharma • Business Analytics Portfolio</p>
+    <p>&copy; 2025 Vidhi A. Sharma — Designed with intention.</p>
   </footer>
 </body>
 </html>
