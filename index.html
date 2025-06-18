@@ -1,164 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vidhi A. Sharma | Business Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --accent: #6a0dad;
+      --bg-light: #fefefe;
+      --text-dark: #222;
+      --soft-border: #ddd;
+    }
+
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-      line-height: 1.6;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.7;
     }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
     header {
-      background: #f9f9f9;
-      border-bottom: 2px solid #eee;
-      padding: 2rem 1rem;
+      padding: 5rem 0 2rem;
       text-align: center;
+      background-color: #ffffff;
     }
+
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin: 0;
-      color: #2d2d2d;
+      font-size: 3rem;
+      background: linear-gradient(90deg, #6a0dad, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     header p {
-      font-size: 1.1rem;
-      color: #666;
-      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #555;
     }
+
     nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid var(--soft-border);
       display: flex;
       justify-content: center;
       gap: 2rem;
-      background: #ffffff;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      padding: 1rem 0;
+      z-index: 1000;
     }
+
     nav a {
-      color: #0077b6;
       text-decoration: none;
+      color: var(--accent);
       font-weight: 600;
     }
+
     nav a:hover {
-      color: #023e8a;
+      text-decoration: underline;
     }
+
     section {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+      padding: 4rem 0;
     }
+
     h2 {
-      font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      color: #023e8a;
-      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
     }
-    ul {
-      padding-left: 1.2rem;
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
+
+    .card {
+      border: 1px solid var(--soft-border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      background-color: white;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    }
+
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
       font-size: 0.9rem;
-      color: #666;
-      background: #f5f5f5;
-      margin-top: 4rem;
+      color: #888;
+      background: #fafafa;
     }
-    .project {
-      margin-bottom: 2rem;
-    }
+
     .contact a {
-      color: #0077b6;
-      font-weight: 600;
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header class="container">
     <h1>Vidhi A. Sharma</h1>
-    <p>Business Analyst | Boston University | Turning Data into Decisions</p>
+    <p>Business Analyst | Data Storyteller | Boston University</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
-    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#volunteering">Volunteer</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a Boston-based Business Analyst passionate about simplifying complexity through data. With a background in Computer Science and hands-on experience in operations, BI tools, and reporting automation, I specialize in translating business challenges into smart, scalable solutions. I'm also a skincare dashboard nerd — but let’s keep that between us.</p>
-  </section>
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="grid-2">
+        <p>I simplify business problems using data. I bring a mix of technical acumen and real-world empathy to every dashboard, forecast, and strategy I work on. With a background in Computer Science and Analytics, I’m here to ask better questions — and find actionable answers.</p>
+        <p>I’m currently pursuing my Master’s at Boston University, and I love building tools that blend data, behavior, and business goals — whether it’s a skincare sales dashboard or an AI job trend map.</p>
+      </div>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Boston University</strong> — M.S. Applied Business Analytics (2024–2026)</li>
-      <li><strong>MIT World Peace University</strong> — B.S. Computer Science (2019–2022)</li>
-    </ul>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid-2">
+        <div>
+          <strong>Analytics & BI:</strong><br>
+          SQL, Python, R, Tableau, Power BI, Excel, SAS, KPI frameworks
+        </div>
+        <div>
+          <strong>Tech & Tools:</strong><br>
+          Dataiku, Git/GitHub, AWS EC2, HTML/CSS/JS, Salesforce, Scrum, Agile
+        </div>
+      </div>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Analytics:</strong> SQL, Python, R, Tableau, Power BI, Excel, SAS</li>
-      <li><strong>Business:</strong> Forecasting, KPI analysis, Agile, Lean, Reporting Automation</li>
-      <li><strong>Tools:</strong> Dataiku, Salesforce, Git, AWS EC2, HTML/CSS/JS</li>
-      <li><strong>Soft Skills:</strong> Communication, Strategic Thinking, Collaboration</li>
-    </ul>
-  </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="card">
+        <strong>Maharaj Multi-Systems — Business Analyst</strong> (Jan–Jul 2024)<br>
+        Boosted workflow by 15%, reduced errors by 25%, and helped grow retention by 30%. Intern turned full-time analyst.
+      </div>
+      <div class="card">
+        <strong>Pimpri Chinchwad Media — Data Intern</strong> (Aug 2022–Aug 2023)<br>
+        Improved resolution time by 20%, contributed to system diagnostics and retention analytics.
+      </div>
+    </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p><strong>Maharaj Multi-Systems – Business Analyst</strong> (Jan–Jul 2024)<br>
-    Boosted operational efficiency by 15%, reduced errors by 25%, and supported client retention through fast, data-driven insights. Started as an intern and promoted to full-time. Ended tenure to pursue Master’s at BU.</p>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Skincare Sales Dashboard</strong><br>
+          Visualized product trends using Streamlit, R & Python. Explored pricing + seasonality.
+        </div>
+        <div class="card">
+          <strong>AI vs Non-AI Job Growth</strong><br>
+          Analyzed 2024 labor data using Spark + AWS EC2. Built interactive dashboard.
+        </div>
+        <div class="card">
+          <strong>Stickley Ops Analysis</strong><br>
+          Operations report with Lean-based process redesign & KPI tracking.
+        </div>
+        <div class="card">
+          <strong>IBM Agile Sprint Simulation</strong><br>
+          Simulated full sprint in GitHub Projects — user stories, backlog, Kanban.
+        </div>
+      </div>
+    </section>
 
-    <p><strong>Pimpri Chinchwad Media – Data Analytics Intern</strong> (Aug 2022–Aug 2023)<br>
-    Reduced resolution times by 20% and improved database efficiency while boosting retention by 40% through solution-focused analysis and support.</p>
-  </section>
+    <section id="volunteering">
+      <h2>Volunteering</h2>
+      <p><strong>Youth Empowerment Foundation, Help Social Welfare Society, Sahaas for Animals</strong><br>
+      Led 15+ outreach programs, exceeded fundraising goals, taught underserved students, supported education + animal rescue initiatives.</p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <strong>Skincare Sales Dashboard</strong><br>
-      Tracked buying trends using Python, R & Streamlit. Explored seasonal shifts, pricing strategies, and beauty behavior.
-    </div>
-    <div class="project">
-      <strong>AI vs Non-AI Job Trends</strong><br>
-      Analyzed workforce trends using R and Spark; hosted dashboard on AWS for market intelligence.
-    </div>
-    <div class="project">
-      <strong>Stickley Operations Report</strong><br>
-      Optimized workflows using Lean and KPI frameworks for process management coursework.
-    </div>
-    <div class="project">
-      <strong>Agile Sprint Simulation (IBM)</strong><br>
-      Simulated a full Agile sprint cycle using GitHub Projects; defined user stories, managed backlogs, and visualized tasks.
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact">
-      <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a><br>
-      <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/VidhiSharma2000" target="_blank">GitHub</a>
-    </p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact">
+        <a href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/17vidhisharma" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/VidhiSharma2000" target="_blank">GitHub</a>
+      </p>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Vidhi A. Sharma. All rights reserved.
+    &copy; 2025 Vidhi A. Sharma — Built with brains & coffee.
   </footer>
 </body>
 </html>
