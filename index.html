@@ -1,625 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidhi A. Sharma | Business Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #4a7c86;
-      --light: #f9f9f7;
-      --text-dark: #1f1f1f;
-      --text-light: #8a8a8a;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--light);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      width: 100%;
-    }
-
-    .hero-text {
-      text-align: left;
-    }
-
-    .hero-text .subtitle {
-      color: var(--accent);
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-
-    .hero-text .description {
-      color: var(--text-light);
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-      max-width: 500px;
-    }
-
-    .hero-text .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 1rem 2rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-    }
-
-    .hero-text .btn:hover {
-      background: #3a6670;
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-image::before {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 280px;
-      height: 280px;
-      background: var(--accent);
-      border-radius: 50%;
-      opacity: 0.1;
-      z-index: 0;
-    }
-
-    .hero-image img {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid white;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Main Content */
-    main {
-      padding: 6rem 0;
-    }
-
-    section {
-      margin-bottom: 6rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .section-header p {
-      color: var(--text-light);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-dark);
-    }
-
-    .about-stats {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    .stat-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .stat-item:last-child {
-      border-bottom: none;
-    }
-
-    .stat-label {
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-
-    .stat-value {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Skills Section */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .skill-category {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .skill-category h3 {
-      color: var(--accent);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .skill-category ul {
-      list-style: none;
-    }
-
-    .skill-category li {
-      padding: 0.5rem 0;
-      color: var(--text-dark);
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .skill-category li:last-child {
-      border-bottom: none;
-    }
-
-    /* Experience Section */
-    .experience-timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-
-    .experience-timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--accent);
-    }
-
-    .experience-item {
-      position: relative;
-      margin-bottom: 2.5rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      margin-left: 2rem;
-    }
-
-    .experience-item::before {
-      content: '';
-      position: absolute;
-      left: -3rem;
-      top: 2rem;
-      width: 12px;
-      height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      border: 3px solid var(--light);
-    }
-
-    .experience-item h3 {
-      color: var(--accent);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .experience-item .date {
-      color: var(--text-light);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .experience-item ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .experience-item li {
-      padding: 0.5rem 0;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .experience-item li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .project-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card h3 {
-      color: var(--accent);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-card p {
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    /* Volunteering Section */
-    .volunteering-content {
-      background: white;
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .volunteering-content h3 {
-      color: var(--accent);
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .volunteering-content p {
-      font-size: 1.1rem;
-      color: var(--text-dark);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Contact Footer */
-    .contact-footer {
-      background: var(--accent);
-      color: white;
-      padding: 3rem 0;
-      text-align: center;
-    }
-
-    .contact-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .contact-info {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .contact-info img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 3px solid white;
-    }
-
-    .contact-info div h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .contact-info div p {
-      opacity: 0.9;
-      font-size: 0.9rem;
-    }
-
-    .contact-footer .btn {
-      background: white;
-      color: var(--accent);
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .contact-footer .btn:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-      }
-
-      .hero-text h1 {
-        font-size: 3rem;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .container {
-        padding: 0 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi A. Sharma</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 10rem 2rem 8rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            font-weight: 300;
+            background: linear-gradient(135deg, #495057 0%, #6366f1 30%, #10b981 60%, #f59e0b 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            position: relative;
+            animation: gradientShift 4s ease-in-out infinite;
+            cursor: default;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero h1:hover {
+            animation-duration: 1s;
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #6c757d;
+            font-weight: 300;
+            margin-bottom: 4rem;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.8s forwards;
+        }
+        
+        .hero-nav {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 1.3s forwards;
+        }
+        
+        .hero-nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            list-style: none;
+        }
+        
+        .hero-nav a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .hero-nav a:hover {
+            color: #495057;
+            transform: translateY(-2px);
+        }
+        
+        .hero-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #495057;
+            transition: width 0.3s ease;
+        }
+        
+        .hero-nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #495057;
+        }
+        
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* About */
+        .about-intro {
+            border-left: 4px solid #6c757d;
+            padding-left: 2rem;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #495057;
+            font-style: italic;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #6366f1;
+        }
+        
+        .skill-category:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #10b981;
+        }
+        
+        .skill-category:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f59e0b;
+        }
+
+        .soft-skill-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #8b5cf6;
+        }
+        
+        .soft-skill-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #06b6d4;
+        }
+        
+        .soft-skill-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f97316;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+        
+        .skill-category:nth-child(1) h3 {
+            color: #6366f1;
+        }
+        
+        .skill-category:nth-child(2) h3 {
+            color: #10b981;
+        }
+        
+        .skill-category:nth-child(3) h3 {
+            color: #f59e0b;
+        }
+
+        .soft-skill-1 h3 {
+            color: #8b5cf6;
+        }
+        
+        .soft-skill-2 h3 {
+            color: #06b6d4;
+        }
+        
+        .soft-skill-3 h3 {
+            color: #f97316;
+        }
+        
+        .skill-list {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            list-style: none;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .skill-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #adb5bd;
+        }
+        
+        /* Experience Stats */
+        .experience-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item:nth-child(1) .stat-number {
+            color: #6366f1;
+        }
+        
+        .stat-item:nth-child(2) .stat-number {
+            color: #10b981;
+        }
+        
+        .stat-item:nth-child(3) .stat-number {
+            color: #f59e0b;
+        }
+        
+        .stat-item:nth-child(4) .stat-number {
+            color: #ef4444;
+        }
+        
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Projects */
+        .projects {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .project {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .project:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ec4899;
+        }
+        
+        .project:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #14b8a6;
+        }
+        
+        .project:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f59e0b;
+        }
+        
+        .project:nth-child(4)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #3b82f6;
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .project h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+        
+        .project:nth-child(1) h3 {
+            color: #ec4899;
+        }
+        
+        .project:nth-child(2) h3 {
+            color: #14b8a6;
+        }
+        
+        .project:nth-child(3) h3 {
+            color: #f59e0b;
+        }
+        
+        .project:nth-child(4) h3 {
+            color: #3b82f6;
+        }
+        
+        .project p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: #495057;
+            color: white;
+            border-radius: 8px;
+            margin: 4rem 2rem;
+        }
+        
+        .contact h2 {
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .contact-email {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-email:hover {
+            border-bottom-color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.8rem 2rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .social-link:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 8rem 2rem 6rem;
+                min-height: 90vh;
+            }
+            
+            .hero-nav ul {
+                gap: 2rem;
+            }
+            
+            .hero-nav a {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 3rem 2rem;
+            }
+            
+            .contact {
+                margin: 4rem 1rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-text">
-          <p class="subtitle">Business Analyst / Data Storyteller</p>
-          <h1>Vidhi A. Sharma</h1>
-          <p class="description">Passionate about simplifying complexity through data. Translating business challenges into smart, scalable solutions.</p>
-          <a href="#contact" class="btn">Let's Connect</a>
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Vidhi A. Sharma</h1>
+        <p class="subtitle">Business Analytics Student and Professional</p>
+        
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    
+    <!-- Skills -->
+    <section id="about" class="section">
+        <h2 class="scroll-reveal">About Me</h2>
+        
+        <div class="about-intro scroll-reveal">
+            I'm a passionate analytics student currently pursuing my Master of Science in Applied Business Analytics at Boston University. With a background in Computer Science and professional experience as a Business Analyst, I'm developing advanced skills to tackle complex problems through technology and analytics.
         </div>
-        <div class="hero-image">
-          <img src="profile photo circular.png" alt="Vidhi A. Sharma">
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <div class="container">
-      <section id="about">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <p>Boston-based analyst with a passion for data storytelling and business optimization</p>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p>I'm a Boston-based Business Analyst passionate about simplifying complexity through data. With a background in Computer Science and hands-on experience in operations, BI tools, and reporting automation, I specialize in translating business challenges into smart, scalable solutions.</p>
-            <p>I'm currently pursuing my Master's at Boston University and I love building tools that blend data, behavior, and business goals — whether it's a skincare dashboard or an AI job map.</p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-item">
-              <span class="stat-label">Current Focus</span>
-              <span class="stat-value">Master's at BU</span>
+        
+        <h2 class="scroll-reveal" style="margin-top: 4rem;">Skills & Expertise</h2>
+        <div class="skills-section">
+            <div class="skill-category scroll-reveal">
+                <h3>Data Analytics</h3>
+                <ul class="skill-list">
+                    <li>Proficient in SQL, Python, R</li>
+                    <li>Tableau, Power BI, SAS</li>
+                    <li>Statistical Analysis & Modeling</li>
+                    <li>Data Visualization</li>
+                    <li>Forecasting & KPI Tracking</li>
+                </ul>
             </div>
-            <div class="stat-item">
-              <span class="stat-label">Specialization</span>
-              <span class="stat-value">Data Analytics</span>
+            
+            <div class="skill-category scroll-reveal">
+                <h3>Database & Process Management</h3>
+                <ul class="skill-list">
+                    <li>Database Design & Management</li>
+                    <li>ETL Processes</li>
+                    <li>Business Process Optimization</li>
+                    <li>Workflow Automation</li>
+                    <li>Data Quality Assurance</li>
+                </ul>
             </div>
-            <div class="stat-item">
-              <span class="stat-label">Location</span>
-              <span class="stat-value">Boston, MA</span>
+            
+            <div class="skill-category scroll-reveal">
+                <h3>Technical Development</h3>
+                <ul class="skill-list">
+                    <li>Knowledge of full-stack development</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Git Version Control</li>
+                    <li>Agile Methodology</li>
+                    <li>Project Management</li>
+                </ul>
             </div>
-            <div class="stat-item">
-              <span class="stat-label">Experience</span>
-              <span class="stat-value">3+ Years</span>
+            
+            <div class="skill-category scroll-reveal soft-skill-1">
+                <h3>Strategic Leadership</h3>
+                <ul class="skill-list">
+                    <li>Cross-functional collaboration</li>
+                    <li>Strategic thinking & planning</li>
+                    <li>Team leadership & mentoring</li>
+                    <li>Stakeholder management</li>
+                </ul>
             </div>
-          </div>
+            
+            <div class="skill-category scroll-reveal soft-skill-2">
+                <h3>Process Excellence</h3>
+                <ul class="skill-list">
+                    <li>Business process mapping</li>
+                    <li>Process optimization</li>
+                    <li>Quality assurance</li>
+                    <li>Change management</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category scroll-reveal soft-skill-3">
+                <h3>Project Management</h3>
+                <ul class="skill-list">
+                    <li>End-to-end project delivery</li>
+                    <li>Resource allocation</li>
+                    <li>Timeline management</li>
+                    <li>Risk assessment & mitigation</li>
+                </ul>
+            </div>
         </div>
-      </section>
+    </section>
+    
+    <!-- Experience Stats -->
+    <section id="experience" class="section">
+        <h2 class="scroll-reveal">Professional Impact</h2>
+        <div class="experience-stats">
+            <div class="stat-item scroll-reveal">
+                <div class="stat-number">15%</div>
+                <div class="stat-label">Workflow Efficiency Improvement</div>
+            </div>
+            <div class="stat-item scroll-reveal">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">Processing Error Reduction</div>
+            </div>
+            <div class="stat-item scroll-reveal">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Client Retention Increase</div>
+            </div>
+            <div class="stat-item scroll-reveal">
+                <div class="stat-number">20%</div>
+                <div class="stat-label">Resolution Time Improvement</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <h2 class="scroll-reveal">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project scroll-reveal">
+                <h3>Skincare Sales Dashboard</h3>
+                <p>Streamlit-based analysis of beauty spending patterns, seasonality, and pricing strategies to optimize product positioning and sales forecasting. Utilized Python and data visualization techniques to provide actionable business insights.</p>
+            </div>
+            
+            <div class="project scroll-reveal">
+                <h3>AI vs Non-AI Job Growth Analysis</h3>
+                <p>Comprehensive trend analysis on 2024 labor market shifts using R and Spark, providing insights into emerging job market dynamics and the impact of artificial intelligence on employment patterns.</p>
+            </div>
+            
+            <div class="project scroll-reveal">
+                <h3>Stickley Operations Analysis</h3>
+                <p>Course project optimizing manufacturing operations using KPIs and Lean methodology to improve efficiency and reduce waste. Implemented data-driven solutions for process improvement.</p>
+            </div>
+            
+            <div class="project scroll-reveal">
+                <h3>IBM Agile Simulation</h3>
+                <p>Scrum sprint planning simulation via GitHub Projects with Kanban task flow, demonstrating agile project management capabilities and collaborative development processes.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="contact scroll-reveal">
+        <h2>Contact</h2>
+        <p>Ready to turn your data challenges into business opportunities? Let's connect and discuss how we can work together to drive meaningful results.</p>
+        <a href="mailto:sharmavidhi3008@gmail.com" class="contact-email">sharmavidhi3008@gmail.com</a>
+        
+        <div class="social-links">
+            <a href="https://linkedin.com/in/vidhisharma" class="social-link" target="_blank">LinkedIn</a>
+            <a href="https://github.com/17vidhisharma" class="social-link" target="_blank">GitHub</a>
+        </div>
+    </section>
 
-      <section id="skills">
-        <div class="section-header">
-          <h2>Skills & Expertise</h2>
-          <p>Technical proficiency meets business acumen</p>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Data & Analytics</h3>
-            <ul>
-              <li>SQL, Python, R</li>
-              <li>Tableau, Power BI</li>
-              <li>SAS, Dataiku</li>
-              <li>Forecasting & KPI tracking</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Business Intelligence</h3>
-            <ul>
-              <li>Data storytelling</li>
-              <li>Dashboard development</li>
-              <li>Trend analysis</li>
-              <li>Process optimization</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Technical Tools</h3>
-            <ul>
-              <li>Excel, Salesforce</li>
-              <li>ETL pipelines, Git</li>
-              <li>HTML/CSS/JS</li>
-              <li>Agile methodology</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Soft Skills</h3>
-            <ul>
-              <li>Cross-functional collaboration</li>
-              <li>Business process mapping</li>
-              <li>Project management</li>
-              <li>Strategic thinking</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <script>
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
 
-      <section id="experience">
-        <div class="section-header">
-          <h2>Professional Experience</h2>
-          <p>Driving business growth through data-driven insights</p>
-        </div>
-        <div class="experience-timeline">
-          <div class="experience-item">
-            <h3>Business Analyst</h3>
-            <p class="date">Maharaj Multi-Systems | Jan–Jul 2024</p>
-            <ul>
-              <li>Boosted workflow efficiency by 15% through operational analysis</li>
-              <li>Reduced processing errors by 25% with improved verification tools</li>
-              <li>Helped raise client retention by 30% via quick support and insights</li>
-              <li>Worked across departments to streamline day-to-day operations</li>
-              <li>Promoted from intern to full-time before relocating to BU</li>
-            </ul>
-          </div>
-          <div class="experience-item">
-            <h3>Data Analytics Intern</h3>
-            <p class="date">Pimpri Chinchwad Media | Aug 2022–Aug 2023</p>
-            <ul>
-              <li>Reduced resolution time by 20% with effective diagnostics</li>
-              <li>Supported project deployment, database management, and reporting</li>
-              <li>Increased client satisfaction through prompt, data-based responses</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
 
-      <section id="projects">
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <p>Turning data into actionable business insights</p>
-        </div>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Skincare Sales Dashboard</h3>
-            <p>Streamlit-based analysis of beauty spending patterns, seasonality, and pricing strategies to optimize product positioning and sales forecasting.</p>
-          </div>
-          <div class="project-card">
-            <h3>AI vs Non-AI Job Growth</h3>
-            <p>Comprehensive trend analysis on 2024 labor market shifts using R and Spark, providing insights into emerging job market dynamics.</p>
-          </div>
-          <div class="project-card">
-            <h3>Stickley Operations Analysis</h3>
-            <p>Course project optimizing manufacturing operations using KPIs and Lean methodology to improve efficiency and reduce waste.</p>
-          </div>
-          <div class="project-card">
-            <h3>IBM Agile Simulation</h3>
-            <p>Scrum sprint planning simulation via GitHub Projects with Kanban task flow, demonstrating agile project management capabilities.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="volunteering">
-        <div class="section-header">
-          <h2>Community Impact</h2>
-          <p>Giving back through meaningful volunteer work</p>
-        </div>
-        <div class="volunteering-content">
-          <h3>Youth Empowerment Foundation, Help Social Welfare Society, Sahaas for Animals</h3>
-          <p>Led outreach programs, raised funds, taught students, and helped with education and animal welfare campaigns. Passionate about using analytical skills to support community initiatives and drive positive social impact.</p>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer id="contact" class="contact-footer">
-    <div class="container">
-      <div class="contact-content">
-        <div class="contact-info">
-          <img src="profile photo circular.png" alt="Vidhi A. Sharma">
-          <div>
-            <h3>Vidhi A. Sharma</h3>
-            <p>Business Analyst & Data Storyteller</p>
-          </div>
-        </div>
-        <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Get In Touch</a>
-      </div>
-    </div>
-  </footer>
+        // Start observing
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToReveal = document.querySelectorAll('.scroll-reveal');
+            elementsToReveal.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
