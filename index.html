@@ -1,511 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidhi A. Sharma — Portfolio</title>
-  <meta name="description" content="Vidhi A. Sharma — Business Analytics, Data Storytelling, and playful, polished problem solving." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    :root{
-      --bg: #0f1115;
-      --surface: #141821;
-      --card: #161b26;
-      --muted: #a7b0c0;
-      --text: #e7ecf3;
-      --brand: #7c9cff;   /* soft indigo */
-      --brand-2: #19d3a2; /* teal */
-      --brand-3: #f5b94c; /* amber */
-      --ring: rgba(124,156,255,.35);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 14px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,156,255,.12), transparent),
-                  radial-gradient(1200px 600px at 110% 10%, rgba(25,211,162,.10), transparent),
-                  var(--bg);
-      color: var(--text);
-      line-height:1.6;
-    }
-    a{color:inherit}
-
-    /* Simple container */
-    .wrap{max-width:1100px; margin:0 auto; padding:0 20px}
-
-    /* Header / Hero */
-    header.hero{position:relative; min-height:100svh; display:grid; place-items:center; text-align:center; padding:90px 0 60px}
-    .glow-bg{position:absolute; inset:0; pointer-events:none; overflow:hidden}
-    .orb{position:absolute; border-radius:999px; filter:blur(40px); opacity:.35; animation:float 16s ease-in-out infinite}
-    .orb.one{width:420px; height:420px; background:linear-gradient(135deg, var(--brand), transparent); top:8%; left:6%}
-    .orb.two{width:520px; height:520px; background:linear-gradient(135deg, var(--brand-2), transparent); bottom:-10%; right:8%; animation-delay: -6s}
-    .orb.three{width:380px; height:380px; background:linear-gradient(135deg, var(--brand-3), transparent); top:30%; right:55%; animation-delay: -3s}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
-
-    .brand-badge{display:inline-grid; place-items:center; width:88px; height:88px; border-radius:18px; background:linear-gradient(180deg, #1b2030, #111520); box-shadow: var(--shadow); border:1px solid rgba(255,255,255,.06); margin-bottom:18px}
-    .brand-spark{width:44px; height:44px; border-radius:12px; background: conic-gradient(from 0deg, var(--brand), var(--brand-2), var(--brand-3), var(--brand)); filter:saturate(1.1);}
-
-    h1.name{font-family:"Playfair Display", serif; font-size: clamp(40px, 6.5vw, 92px); font-weight:600; letter-spacing:-.02em; line-height:1.05; margin:.2rem 0 1rem; background:linear-gradient(135deg, var(--text), #d7def0 40%, var(--brand) 80%); -webkit-background-clip:text; background-clip:text; color:transparent}
-    p.kicker{color:var(--muted); font-size:clamp(16px, 2.1vw, 20px)}
-
-    .typewriter{display:inline-block; border-right:2px solid var(--brand); padding-right:6px; white-space:nowrap; overflow:hidden}
-
-    .hero-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:28px}
-    .btn{appearance:none; border:1px solid rgba(255,255,255,.12); background:#171c27; color:var(--text); padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:500; transition:.2s transform, .2s border-color}
-    .btn:hover{transform:translateY(-2px); border-color:var(--ring)}
-    .btn.primary{background:linear-gradient(135deg, var(--brand), var(--brand-2)); border:none}
-
-    nav.top{position:fixed; top:14px; left:0; right:0; display:flex; justify-content:center; z-index:50}
-    .nav-bar{display:flex; gap:20px; padding:8px 12px; background:rgba(16,20,30,.6); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.08); border-radius:999px}
-    .nav-link{font-size:14px; color:#cfd7e6; text-decoration:none; padding:8px 14px; border-radius:999px; transition: background .2s, transform .2s}
-    .nav-link:hover{background:rgba(255,255,255,.06); transform:translateY(-1px)}
-
-    /* Section shells */
-    section{padding:80px 0}
-    .section-title{font-family:"Playfair Display", serif; font-size: clamp(28px, 3.5vw, 40px); font-weight:600; margin:0 0 18px}
-    .section-sub{color:var(--muted); max-width:760px}
-
-    /* About + Skills */
-    .about{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start}
-    .about-card{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
-    .about p{margin:0}
-
-    .skills{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-top:14px}
-    .skill{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px; position:relative; overflow:hidden}
-    .skill h4{margin:0 0 10px; font-size:15px; letter-spacing:.2px}
-    .meter{height:8px; background:#0f1420; border-radius:999px; overflow:hidden; border:1px solid rgba(255,255,255,.05)}
-    .bar{height:100%; width:0; background:linear-gradient(90deg, var(--brand), var(--brand-2)); box-shadow:0 0 0 1px rgba(0,0,0,.1) inset}
-    .tooltip{position:absolute; top:10px; right:10px; font-size:12px; color:#c8d1e6; opacity:.75}
-
-    /* Impact stats */
-    .stats{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin-top:16px}
-    .stat{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:18px; text-align:center}
-    .stat b{display:block; font-size:28px}
-    .stat small{color:var(--muted)}
-
-    /* Projects */
-    .filters{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 24px}
-    .chip{padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:#171c27; cursor:pointer; font-size:14px}
-    .chip.active{background:linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%); border:none}
-
-    .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px}
-    .card{perspective: 1200px}
-    .flip{
-      position:relative; transform-style:preserve-3d; transition: transform .6s cubic-bezier(.2,.8,.2,1);
-    }
-    .card:hover .flip{transform: rotateY(180deg)}
-    .face{position:relative; background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:190px; display:flex; flex-direction:column; justify-content:space-between; backface-visibility:hidden}
-    .back{position:absolute; inset:0; transform: rotateY(180deg)}
-    .badge{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:#111523}
-    .outcomes{color:var(--muted); font-size:14px}
-
-    /* Credibility / LOR */
-    .cred{display:grid; grid-template-columns: 1fr; gap:14px}
-    .cred-box{background:linear-gradient(180deg, #151a25, #111520); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:20px; display:flex; align-items:center; justify-content:space-between; gap:18px}
-    .seal{display:flex; align-items:center; gap:12px}
-    .seal .emblem{width:48px; height:48px; border-radius:12px; background: conic-gradient(from 0deg, var(--brand), var(--brand-2), var(--brand-3)); box-shadow: var(--shadow)}
-    .open-modal{padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#171c27; cursor:pointer}
-
-    dialog.modal{width:min(900px, 92vw); border:none; padding:0; border-radius:16px; overflow:hidden; background:#0f121a}
-    .modal-head{display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-bottom:1px solid rgba(255,255,255,.06); background:#121625}
-    .modal-head h3{margin:0; font-size:18px}
-    .modal-body{padding:0}
-    .modal-body iframe, .modal-body object{width:100%; height:min(72vh, 820px); display:block; background:#0b0f16}
-    .modal-foot{padding:12px 16px; border-top:1px solid rgba(255,255,255,.06); display:flex; gap:10px; justify-content:flex-end}
-
-    /* Spotify toggle */
-    .playlist{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:16px; overflow:hidden}
-    .playlist-head{display:flex; justify-content:space-between; align-items:center; padding:12px 16px}
-    .toggle{appearance:none; width:46px; height:26px; background:#0f1420; border-radius:999px; position:relative; border:1px solid rgba(255,255,255,.12); cursor:pointer}
-    .toggle:checked{background:linear-gradient(90deg, var(--brand), var(--brand-2))}
-    .toggle:before{content:""; position:absolute; top:3px; left:3px; width:20px; height:20px; background:white; border-radius:999px; transition:.2s left}
-    .toggle:checked:before{left:23px}
-    .playlist-body{display:none}
-    .toggle:checked ~ .playlist-body{display:block}
-
-    /* Mini interactive: Data Cleanup */
-    .mini{display:grid; grid-template-columns: 1fr .8fr; gap:16px}
-    .board{background:var(--surface); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:14px; min-height:180px}
-    .row{display:inline-flex; align-items:center; gap:8px; background:#18202e; border:1px dashed rgba(255,255,255,.18); padding:8px 10px; border-radius:10px; margin:6px 6px 0 0; cursor:grab}
-    .bin{background:#101522; border:2px dashed rgba(124,156,255,.45); border-radius:16px; padding:18px; height:180px; display:grid; place-items:center; text-align:center}
-    .bin.success{border-color:#19d3a2}
-
-    /* Contact */
-    .contact{background:linear-gradient(180deg, #141a27, #111520); border-top:1px solid rgba(255,255,255,.06)}
-    .contact .card{background:transparent; box-shadow:none}
-    .contact .grid{gap:10px}
-    .contact a.btn{background:#1a2130}
-
-    footer{padding:30px 0 60px; text-align:center; color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width: 900px){
-      .about{grid-template-columns:1fr}
-      .mini{grid-template-columns:1fr}
-      .stats{grid-template-columns:repeat(2, 1fr)}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vidhi A. Sharma — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --muted: #555;
+  --text: #222;
+  --brand: #4a6cf7;
+  --brand-2: #1ab79d;
+  --brand-3: #f5b94c;
+  --shadow: 0 4px 14px rgba(0,0,0,0.08);
+  --radius: 14px;
+}
+* {box-sizing:border-box; margin:0; padding:0;}
+body {font-family:Inter,sans-serif; background:var(--bg); color:var(--text); line-height:1.6;}
+a {color:var(--brand); text-decoration:none;}
+a:hover {text-decoration:underline;}
+.wrap {max-width:1100px; margin:0 auto; padding:0 20px;}
+header.hero {padding:100px 0 60px; text-align:center;}
+h1.name {font-family:"Playfair Display",serif; font-size:clamp(40px,6.5vw,92px); color:var(--text); margin-bottom:10px;}
+.typewriter {border-right:2px solid var(--brand); padding-right:4px; white-space:nowrap; overflow:hidden;}
+.section-title {font-family:"Playfair Display",serif; font-size:2.2rem; margin-bottom:1rem;}
+.section-sub {color:var(--muted); margin-bottom:2rem;}
+.about {display:grid; grid-template-columns: 1fr 1fr; gap:28px; margin-bottom:50px;}
+.about-card {background:var(--surface); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow);}
+.skills {display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px;}
+.skill h4 {margin-bottom:6px;}
+.meter {height:8px; background:#eee; border-radius:999px; overflow:hidden;}
+.bar {height:100%; width:0; background:linear-gradient(90deg,var(--brand),var(--brand-2));}
+.stats {display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px;}
+.stat {background:var(--surface); border-radius:var(--radius); padding:12px; text-align:center; box-shadow:var(--shadow);}
+.stat b {display:block; font-size:1.5rem;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;}
+.card {background:var(--surface); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;}
+.card h3 {margin-top:10px;}
+.cred-box {background:var(--surface); padding:20px; border-radius:var(--radius); box-shadow:var(--shadow); display:flex; justify-content:space-between; align-items:center;}
+.playlist, .mini {background:var(--surface); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px;}
+.board {display:flex; flex-wrap:wrap; gap:8px;}
+.row {padding:8px 12px; background:#f2f2f2; border-radius:8px; cursor:grab;}
+.bin {margin-top:12px; padding:20px; border:2px dashed var(--brand); border-radius:var(--radius); text-align:center; min-height:100px;}
+.bin.success {border-color:var(--brand-2);}
+.contact .btn {display:inline-block; padding:10px 16px; margin:5px; background:var(--brand); color:#fff; border-radius:8px;}
+footer {text-align:center; color:var(--muted); padding:30px 0;}
+@media(max-width:900px){.about{grid-template-columns:1fr} .stats{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
 <body>
-  <!-- Floating nav -->
-  <nav class="top" aria-label="Primary">
-    <div class="nav-bar">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#projects">Projects</a>
-      <a class="nav-link" href="#cred">Credibility</a>
-      <a class="nav-link" href="#extras">Extras</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="glow-bg" aria-hidden="true">
-      <span class="orb one"></span>
-      <span class="orb two"></span>
-      <span class="orb three"></span>
-    </div>
-    <div class="wrap">
-      <div class="brand-badge"><div class="brand-spark" aria-hidden="true"></div></div>
-      <h1 class="name">Vidhi A. Sharma</h1>
-      <p class="kicker">Boston University • Applied Business Analytics • <span class="typewriter" id="tw"></span></p>
-      <div class="hero-cta" role="group" aria-label="Primary actions">
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn" href="#cred" title="Not just hype">See recommendations</a>
-        <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Email me</a>
+<header class="hero">
+  <h1 class="name">Vidhi A. Sharma</h1>
+  <p class="typewriter" id="tw"></p>
+</header>
+<main class="wrap">
+<section>
+  <h2 class="section-title">About Me</h2>
+  <p class="section-sub">I turn messy data into clear stories and quieter inboxes.</p>
+  <div class="about">
+    <div class="about-card">
+      <h3>Skills</h3>
+      <div class="skills">
+        <div class="skill"><h4>SQL</h4><div class="meter"><div class="bar" style="--w:95%"></div></div></div>
+        <div class="skill"><h4>Python</h4><div class="meter"><div class="bar" style="--w:88%"></div></div></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>15%</b><small>Efficiency</small></div>
+        <div class="stat"><b>25%</b><small>Error Reduction</small></div>
       </div>
     </div>
-  </header>
-
-  <main>
-    <!-- About & Skills -->
-    <section id="about" class="wrap">
-      <h2 class="section-title">The short version</h2>
-      <p class="section-sub">I turn messy data into clear stories and quieter inboxes. I like clean dashboards, tidy SQL, and KPIs that behave. I’m a Business Analyst by training, a data tinkerer by choice, and I keep the copy light so the analysis can do the talking.</p>
-
-      <div class="about" style="margin-top:20px">
-        <article class="about-card">
-          <h3 style="margin-top:0">What I work with</h3>
-          <div class="skills">
-            <div class="skill"><div class="tooltip">Favourite child</div><h4>SQL</h4><div class="meter"><div class="bar" style="--w:95%"></div></div></div>
-            <div class="skill"><h4>Python</h4><div class="meter"><div class="bar" style="--w:88%"></div></div></div>
-            <div class="skill"><h4>R</h4><div class="meter"><div class="bar" style="--w:82%"></div></div></div>
-            <div class="skill"><h4>Power BI / Tableau</h4><div class="meter"><div class="bar" style="--w:85%"></div></div></div>
-            <div class="skill"><h4>Excel (advanced)</h4><div class="meter"><div class="bar" style="--w:92%"></div></div></div>
-            <div class="skill"><div class="tooltip">Good manners included</div><h4>Stakeholder comms</h4><div class="meter"><div class="bar" style="--w:90%"></div></div></div>
-          </div>
-
-          <div class="stats" aria-label="Impact metrics">
-            <div class="stat"><b>15%</b><small>workflow efficiency</small></div>
-            <div class="stat"><b>25%</b><small>processing errors down</small></div>
-            <div class="stat"><b>30%</b><small>client retention up</small></div>
-            <div class="stat"><b>20%</b><small>faster resolutions</small></div>
-          </div>
-        </article>
-
-        <article class="about-card">
-          <h3 style="margin-top:0">Experience snapshot</h3>
-          <ul style="margin:0 0 10px 18px; color:var(--muted)">
-            <li>BU Information Services & Technology — Student Assistant</li>
-            <li>Maharaj Multi‑Systems — Business Analyst</li>
-            <li>Pimpri Chinchwad Media Communication — Data Intern</li>
-          </ul>
-          <p style="margin-top:12px">Currently finishing my MSc at BU and building case‑study style projects that show how I think and what changes when I’m in the room.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="wrap">
-      <h2 class="section-title">The data adventures</h2>
-      <p class="section-sub">Click any card. The back shows the result, tools, and one lesson I didn’t expect to learn.</p>
-      <div class="filters" role="tablist">
-        <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="chip" data-filter="analytics" role="tab">Analytics</button>
-        <button class="chip" data-filter="dashboards" role="tab">Dashboards</button>
-        <button class="chip" data-filter="ai" role="tab">AI</button>
-      </div>
-      <div class="grid" id="projectGrid">
-        <!-- 1 -->
-        <article class="card" data-tags="analytics dashboards">
-          <div class="flip">
-            <div class="face front">
-              <div>
-                <span class="badge">Skincare Sales Dashboard</span>
-                <h3 style="margin:10px 0 6px">Beauty spend, explained</h3>
-                <p class="outcomes">Seasonality and pricing analysis in Streamlit to guide product positioning and forecasts.</p>
-              </div>
-              <small class="outcomes">Hover to flip</small>
-            </div>
-            <div class="face back">
-              <div>
-                <b>Outcome</b>
-                <p class="outcomes">Clear demand cycles surfaced. Pricing bands adjusted to lift forecast accuracy.</p>
-                <b>Tools</b>
-                <p class="outcomes">Python, Pandas, Plotly, Streamlit</p>
-                <b>One takeaway</b>
-                <p class="outcomes">Moisturisers behave like weather. Predictable if you watch the seasons.</p>
-              </div>
-              <a class="btn" href="#" aria-label="Open case study">Case study</a>
-            </div>
-          </div>
-        </article>
-        <!-- 2 -->
-        <article class="card" data-tags="analytics ai">
-          <div class="flip">
-            <div class="face front">
-              <div>
-                <span class="badge">AI vs non‑AI Jobs</span>
-                <h3 style="margin:10px 0 6px">Who is hiring whom</h3>
-                <p class="outcomes">R + Spark analysis of 2024 job trends with an interactive dashboard on AWS.</p>
-              </div>
-              <small class="outcomes">Hover to flip</small>
-            </div>
-            <div class="face back">
-              <div>
-                <b>Outcome</b>
-                <p class="outcomes">Signals for AI roles clustered in a handful of metros. Non‑AI growth stable.</p>
-                <b>Tools</b>
-                <p class="outcomes">R, Spark, AWS EC2, ggplot</p>
-                <b>One takeaway</b>
-                <p class="outcomes">Hype cycles are loud. Hiring signals are quieter and more honest.</p>
-              </div>
-              <a class="btn" href="#" aria-label="Open case study">Case study</a>
-            </div>
-          </div>
-        </article>
-        <!-- 3 -->
-        <article class="card" data-tags="analytics">
-          <div class="flip">
-            <div class="face front">
-              <div>
-                <span class="badge">Stickley Ops</span>
-                <h3 style="margin:10px 0 6px">Less waste, more flow</h3>
-                <p class="outcomes">Lean KPIs and process redesign to cut bottlenecks in manufacturing.</p>
-              </div>
-              <small class="outcomes">Hover to flip</small>
-            </div>
-            <div class="face back">
-              <div>
-                <b>Outcome</b>
-                <p class="outcomes">Throughput up, rework down. Stakeholders finally looking at the same board.</p>
-                <b>Tools</b>
-                <p class="outcomes">Excel, Power BI, Value‑stream mapping</p>
-                <b>One takeaway</b>
-                <p class="outcomes">The hardest part is agreeing on what “done” means.</p>
-              </div>
-              <a class="btn" href="#" aria-label="Open case study">Case study</a>
-            </div>
-          </div>
-        </article>
-        <!-- 4 -->
-        <article class="card" data-tags="dashboards">
-          <div class="flip">
-            <div class="face front">
-              <div>
-                <span class="badge">IBM Agile Sim</span>
-                <h3 style="margin:10px 0 6px">Boards that behave</h3>
-                <p class="outcomes">Scrum planning with GitHub Projects and a tidy Kanban flow.</p>
-              </div>
-              <small class="outcomes">Hover to flip</small>
-            </div>
-            <div class="face back">
-              <div>
-                <b>Outcome</b>
-                <p class="outcomes">Cycle time visible at a glance. Fewer stand‑up surprises.</p>
-                <b>Tools</b>
-                <p class="outcomes">GitHub Projects, Agile</p>
-                <b>One takeaway</b>
-                <p class="outcomes">Everything is calmer when WIP limits are real.</p>
-              </div>
-              <a class="btn" href="#" aria-label="Open case study">Case study</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Credibility -->
-    <section id="cred" class="wrap">
-      <h2 class="section-title">Proof I’m not just charming copy</h2>
-      <p class="section-sub">A lovely recommendation from Dr Dean Saluti. Click to open. The PDF will appear in a tidy viewer.</p>
-      <div class="cred">
-        <div class="cred-box">
-          <div class="seal">
-            <div class="emblem" aria-hidden="true"></div>
-            <div>
-              <b>Letter of Recommendation</b>
-              <div style="color:var(--muted); font-size:14px">Metropolitan College, Boston University</div>
-            </div>
-          </div>
-          <button class="open-modal" id="openLor">Open</button>
-        </div>
-      </div>
-
-      <dialog class="modal" id="lorModal" aria-labelledby="lorTitle">
-        <div class="modal-head">
-          <h3 id="lorTitle">Letter of Recommendation — Dr Dean Saluti</h3>
-          <button class="open-modal" id="closeLor" aria-label="Close">Close</button>
-        </div>
-        <div class="modal-body">
-          <!-- Place your PDF file alongside this HTML and update the src below if you rename it. -->
-          <object data="dr-dean-saluti-letter-of-recommendation.pdf" type="application/pdf">
-            <iframe src="dr-dean-saluti-letter-of-recommendation.pdf"></iframe>
-          </object>
-        </div>
-        <div class="modal-foot">
-          <a class="btn" href="dr-dean-saluti-letter-of-recommendation.pdf" download>Download PDF</a>
-        </div>
-      </dialog>
-    </section>
-
-    <!-- Extras: playlist + mini interactive -->
-    <section id="extras" class="wrap">
-      <h2 class="section-title">Extras</h2>
-      <div class="about" style="margin-top:10px">
-        <article class="playlist">
-          <div class="playlist-head">
-            <div>
-              <b>Music I analyse data to</b>
-              <div style="color:var(--muted); font-size:14px">Optional and polite. It never auto plays.</div>
-            </div>
-            <label style="display:flex; align-items:center; gap:10px">
-              <span style="font-size:14px; color:var(--muted)">Show</span>
-              <input class="toggle" type="checkbox" aria-label="Toggle playlist" />
-            </label>
-          </div>
-          <div class="playlist-body">
-            <!-- Replace the src with your own playlist if you like. -->
-            <iframe style="border-radius:0; width:100%; height:352px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXc8kgYqQLMfH" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div>
-        </article>
-
-        <article class="about-card">
-          <h3 style="margin-top:0">Ten‑second data cleanup</h3>
-          <p class="section-sub" style="margin:0 0 10px">Drag the messy rows into the clean bin. Hire yourself for getting it right.</p>
-          <div class="mini">
-            <div class="board" id="board">
-              <div class="row" draggable="true">cust_id, John,, USA</div>
-              <div class="row" draggable="true">, 2024‑07‑01, 99.5, paid</div>
-              <div class="row" draggable="true">  0042 , "Boston" , MA</div>
-              <div class="row" draggable="true">email@@domain..com</div>
-              <div class="row" draggable="true">   </div>
-            </div>
-            <div class="bin" id="bin">Drop rows that look wrong</div>
-          </div>
-          <div id="win" style="display:none; margin-top:10px; background:#152030; border:1px solid rgba(25,211,162,.35); padding:12px; border-radius:12px">Nice. Pattern recognition is a skill. Coffee is optional.</div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <h2 class="section-title">Let’s make your data behave</h2>
-        <div class="grid">
-          <article class="card face" style="min-height:auto">
-            <p class="outcomes">The formal bits are below. Or email me and tell me what needs fixing.</p>
-            <p>
-              <a class="btn primary" href="mailto:sharmavidhi3008@gmail.com">sharmavidhi3008@gmail.com</a>
-              <a class="btn" href="https://linkedin.com/in/17vidhisharma" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn" href="https://github.com/17vidhisharma" target="_blank" rel="noopener">GitHub</a>
-              <a class="btn" href="resume-vidhi-a-sharma.pdf" target="_blank" rel="noopener">Résumé</a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="y"></span> Vidhi A. Sharma — Built with vanilla HTML, CSS, and a pinch of JavaScript. No frameworks were harmed.
-  </footer>
-
-  <script>
-    // Typewriter titles
-    const titles = [
-      "Business Analyst",
-      "Data Whisperer",
-      "Workflow Optimiser",
-      "Spreadsheet Therapist"
-    ];
-    const tw = document.getElementById('tw');
-    let ti = 0, ci = 0, del = false;
-    function type(){
-      const word = titles[ti];
-      if(!del){
-        ci++; tw.textContent = word.slice(0,ci);
-        if(ci === word.length){del = true; setTimeout(type, 1200); return;}
-      } else {
-        ci--; tw.textContent = word.slice(0,ci);
-        if(ci === 0){del = false; ti = (ti+1) % titles.length}
-      }
-      setTimeout(type, del ? 38 : 70);
-    }
-    type();
-
-    // Animate skill meters on view
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.querySelectorAll('.bar').forEach(b=>{
-            const w = b.style.getPropertyValue('--w') || '80%';
-            b.animate([{width:'0%'},{width:w}],{duration:900, fill:'forwards', easing:'ease-out'});
-          });
-          io.unobserve(e.target);
-        }
-      })
-    },{threshold:.3});
-    document.querySelectorAll('.about-card').forEach(el=>io.observe(el));
-
-    // Project filters
-    const chips = document.querySelectorAll('.chip');
-    const grid = document.getElementById('projectGrid');
-    chips.forEach(c=>c.addEventListener('click',()=>{
-      chips.forEach(cc=>cc.classList.remove('active')); c.classList.add('active');
-      const tag = c.dataset.filter;
-      grid.querySelectorAll('.card').forEach(card=>{
-        const show = tag==='all' || card.dataset.tags.includes(tag);
-        card.style.display = show ? 'block' : 'none';
-      })
-    }))
-
-    // LOR modal
-    const openLor = document.getElementById('openLor');
-    const closeLor = document.getElementById('closeLor');
-    const lor = document.getElementById('lorModal');
-    openLor.addEventListener('click',()=>lor.showModal());
-    closeLor.addEventListener('click',()=>lor.close());
-
-    // Mini interactive: drag to bin
-    const board = document.getElementById('board');
-    const bin = document.getElementById('bin');
-    const win = document.getElementById('win');
-    let removed = 0;
-    board.addEventListener('dragstart', e=>{
-      if(e.target.classList.contains('row')){
-        e.dataTransfer.setData('text/plain', e.target.textContent);
-        e.dataTransfer.effectAllowed = 'move';
-        e.target.style.opacity = .6;
-      }
-    });
-    board.addEventListener('dragend', e=>{ if(e.target.classList.contains('row')) e.target.style.opacity = 1; });
-    ;['dragover','dragenter'].forEach(ev=>bin.addEventListener(ev, e=>{ e.preventDefault(); bin.classList.add('success'); }));
-    ;['dragleave','drop'].forEach(ev=>bin.addEventListener(ev, e=>{ if(ev==='dragleave') bin.classList.remove('success'); }));
-    bin.addEventListener('drop', e=>{
-      e.preventDefault(); bin.classList.remove('success');
-      const dragging = document.querySelector('.row[style*="opacity: 0.6"]');
-      if(dragging){ dragging.remove(); removed++; }
-      if(removed >= 3){ win.style.display = 'block'; }
-    });
-
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+    <div class="about-card">
+      <h3>Experience</h3>
+      <p>Boston University IS&T — Student Assistant</p>
+      <p>Maharaj Multi‑Systems — Business Analyst</p>
+      <p>Pimpri Chinchwad Media — Data Intern</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="section-title">Projects</h2>
+  <div class="grid">
+    <div class="card"><h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3></div>
+    <div class="card"><h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs non‑AI Jobs</a></h3></div>
+    <div class="card"><h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3></div>
+    <div class="card"><h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3></div>
+  </div>
+</section>
+<section>
+  <h2 class="section-title">Mini Data Cleanup Game</h2>
+  <div class="mini">
+    <div class="board" id="board">
+      <div class="row" draggable="true">cust_id, John,, USA</div>
+      <div class="row" draggable="true">, 2024‑07‑01, 99.5, paid</div>
+      <div class="row" draggable="true">0042, Boston, MA</div>
+    </div>
+    <div class="bin" id="bin">Drop wrong rows here</div>
+  </div>
+  <div id="win" style="display:none; margin-top:10px; color:var(--brand-2)">Nice! You cleaned the data.</div>
+</section>
+<section class="contact">
+  <h2 class="section-title">Contact</h2>
+  <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Email</a>
+  <a class="btn" href="https://github.com/17vidhisharma">GitHub</a>
+  <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/">LinkedIn</a>
+</section>
+</main>
+<footer>© <span id="y"></span> Vidhi A. Sharma</footer>
+<script>
+const titles=["Business Analyst","Data Whisperer","Workflow Optimiser"];
+const tw=document.getElementById('tw');let ti=0,ci=0,del=false;
+function type(){const w=titles[ti];if(!del){ci++;tw.textContent=w.slice(0,ci);if(ci===w.length){del=true;setTimeout(type,1200);return;}}else{ci--;tw.textContent=w.slice(0,ci);if(ci===0){del=false;ti=(ti+1)%titles.length}}setTimeout(type,del?38:70);}type();
+const io=new IntersectionObserver(e=>{e.forEach(ent=>{if(ent.isIntersecting){ent.target.querySelectorAll('.bar').forEach(b=>{const w=b.style.getPropertyValue('--w')||'80%';b.animate([{width:'0%'},{width:w}],{duration:900,fill:'forwards'});});io.unobserve(ent.target);}})},{threshold:.3});
+document.querySelectorAll('.about-card').forEach(el=>io.observe(el));
+const bin=document.getElementById('bin');const board=document.getElementById('board');let removed=0;
+board.addEventListener('dragstart',e=>{if(e.target.classList.contains('row')){e.dataTransfer.setData('text/plain','');e.target.classList.add('dragging');}});
+board.addEventListener('dragend',e=>{e.target.classList.remove('dragging');});
+bin.addEventListener('dragover',e=>{e.preventDefault();});
+bin.addEventListener('drop',e=>{e.preventDefault();const dragging=document.querySelector('.row.dragging');if(dragging){dragging.remove();removed++;if(removed>=2){document.getElementById('win').style.display='block';}}});
+document.getElementById('y').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
