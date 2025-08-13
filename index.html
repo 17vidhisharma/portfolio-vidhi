@@ -6,73 +6,268 @@
 <title>Vidhi A. Sharma — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* CSS styles for light theme, expanded sections, spacing */
-/* ...full CSS from updated design... */
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --muted: #596073;
+  --text: #1c2230;
+  --brand: #4a6cf7;   /* indigo */
+  --brand-2: #1ab79d; /* teal */
+  --brand-3: #f5b94c; /* amber */
+  --line: #e9edf3;
+  --shadow: 0 6px 24px rgba(16,24,40,.08);
+  --radius: 16px;
+}
+*{box-sizing:border-box} body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text); background:var(--bg); line-height:1.6}
+a{color:var(--brand); text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1100px; margin:0 auto; padding:0 20px}
+
+/* spacing rhythm */
+section{padding:72px 0} .section-title{font-family:"Playfair Display",serif; font-size:clamp(28px,3.5vw,40px); margin:0 0 10px}
+.section-sub{color:var(--muted); margin:0 0 28px} .spacer{height:28px}
+
+/* hero */
+header.hero{padding:96px 0 36px; text-align:center}
+h1.name{font-family:"Playfair Display",serif; font-size:clamp(40px,6.2vw,86px); letter-spacing:-.02em; margin:0 0 10px}
+.typewriter{border-right:2px solid var(--brand); padding-right:4px; white-space:nowrap; overflow:hidden; color:var(--muted)}
+
+/* cards */
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+
+/* about + skills */
+.about{display:grid; grid-template-columns:1fr 1fr; gap:28px}
+.about-card h3{margin:6px 0 12px}
+.skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px}
+.skill h4{margin:0 0 6px}
+.meter{height:8px; background:#eef2f8; border-radius:999px; overflow:hidden; border:1px solid #e3e8f0}
+.bar{height:100%; width:0; background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:14px}
+.stat{text-align:center; padding:14px}
+.stat b{display:block; font-size:22px}
+.stat small{color:var(--muted)}
+
+/* grid (Featured/Projects) */
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px}
+.grid .card h3{margin:6px 0 6px}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:#f7f9fc; color:var(--text); text-decoration:none}
+.btn:hover{background:#eef3ff; border-color:#d7e0ff}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; border:none}
+.btn.primary:hover{filter:brightness(1.05)}
+
+/* LOR modal */
+dialog.modal{width:min(920px,92vw); border:none; padding:0; border-radius:18px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.25); background:var(--surface)}
+.modal-head{display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid var(--line)}
+.modal-head h3{margin:0; font-size:18px}
+.modal-body{padding:0}
+.modal-body object,.modal-body iframe{display:block; width:100%; height:min(76vh,880px); background:#fff}
+.modal-foot{display:flex; justify-content:flex-end; gap:10px; padding:12px 14px; border-top:1px solid var(--line)}
+.backdrop::backdrop{background:rgba(16,24,40,.4)}
+
+/* mini-game */
+.mini{display:grid; grid-template-columns:1fr .9fr; gap:16px}
+.board{display:flex; flex-wrap:wrap; gap:8px; padding:12px; border:1px dashed var(--line); border-radius:12px; background:#fff}
+.row{padding:8px 12px; background:#f2f5fb; border:1px solid #e3e9f5; border-radius:10px; cursor:grab; user-select:none}
+.row.dragging{opacity:.6}
+.bin{padding:18px; border:2px dashed var(--brand); border-radius:14px; min-height:120px; display:grid; place-items:center; text-align:center; background:#fbfdff; transition:border-color .2s, background .2s}
+.bin.success{border-color:var(--brand-2); background:#f2fffb}
+.win{display:none; margin-top:12px; color:var(--brand-2); font-weight:700}
+
+/* contact */
+.contact .btn{background:var(--brand); color:#fff; border:none}
+.contact .btn:hover{background:var(--brand-2)}
+
+footer{padding:36px 0 56px; text-align:center; color:var(--muted); border-top:1px solid var(--line); margin-top:40px}
+
+/* responsive */
+@media(max-width:900px){.about{grid-template-columns:1fr} .stats{grid-template-columns:repeat(2,1fr)} .mini{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <header class="hero">
-  <h1 class="name">Vidhi A. Sharma</h1>
-  <p class="typewriter" id="tw"></p>
+  <div class="wrap">
+    <h1 class="name">Vidhi A. Sharma</h1>
+    <p class="typewriter" id="tw"></p>
+  </div>
 </header>
+
 <main class="wrap">
-<section id="about">
-  <h2 class="section-title">About Me</h2>
-  <p class="section-sub">I turn messy data into clear stories and quieter inboxes.</p>
-  <div class="about">
-    <div class="about-card">
-      <h3>Skills</h3>
-      <ul>
-        <li>Technical: SQL, Python, R, Tableau, Power BI, MS Excel, SAS, Dataiku, Azure, PostgreSQL, Git, AWS, HTML, CSS, JavaScript, Spark</li>
-        <li>Analytics: Predictive analytics, statistical modelling, KPI tracking, forecasting, ETL, dashboard development</li>
-        <li>Business: Process optimisation, workflow automation, stakeholder management, Agile, project management</li>
-        <li>Soft: Communication, leadership, problem-solving, adaptability, customer-centric approach</li>
-      </ul>
+
+  <section id="about">
+    <h2 class="section-title">About me</h2>
+    <p class="section-sub">I turn messy data into clear stories and quieter inboxes. Clean dashboards, tidy SQL, and KPIs that behave.</p>
+
+    <div class="about">
+      <article class="about-card card">
+        <h3>Skills</h3>
+        <div class="skills">
+          <div class="skill"><h4>SQL</h4><div class="meter"><div class="bar" style="--w:95%"></div></div></div>
+          <div class="skill"><h4>Python</h4><div class="meter"><div class="bar" style="--w:88%"></div></div></div>
+          <div class="skill"><h4>R</h4><div class="meter"><div class="bar" style="--w:82%"></div></div></div>
+          <div class="skill"><h4>Power BI / Tableau</h4><div class="meter"><div class="bar" style="--w:85%"></div></div></div>
+          <div class="skill"><h4>Excel (advanced)</h4><div class="meter"><div class="bar" style="--w:92%"></div></div></div>
+          <div class="skill"><h4>Dataiku • SAS • Spark • Azure • AWS • Git</h4><div class="meter"><div class="bar" style="--w:80%"></div></div></div>
+          <div class="skill"><h4>ETL • Forecasting • KPI Tracking • Statistical Modelling</h4><div class="meter"><div class="bar" style="--w:84%"></div></div></div>
+          <div class="skill"><h4>Stakeholder Comms • Agile • Project Management</h4><div class="meter"><div class="bar" style="--w:90%"></div></div></div>
+        </div>
+
+        <div class="stats" aria-label="Impact metrics">
+          <div class="stat card"><b>15%</b><small>workflow efficiency</small></div>
+          <div class="stat card"><b>25%</b><small>errors reduced</small></div>
+          <div class="stat card"><b>30%</b><small>client retention</small></div>
+          <div class="stat card"><b>20%</b><small>faster resolutions</small></div>
+        </div>
+      </article>
+
+      <article class="about-card card">
+        <h3>Experience</h3>
+        <p><strong>Boston University Information Services & Technology — Student Assistant (Jul 2025 – Present)</strong><br>
+          Tracked inventory in Excel, maintained departmental sheets and weekly reports, streamlined document organisation and database updates, and kept office ops moving (supplies, comms, calendars).</p>
+        <p><strong>Maharaj Multi‑Systems — Business Analyst (Jan 2024 – Jul 2024)</strong><br>
+          Improved workflow efficiency by 15% through ops analysis; reduced processing errors by 25% via verification tweaks; lifted client retention 30% with quicker inquiry resolution and clearer insights.</p>
+        <p><strong>Pimpri Chinchwad Media Communication — Data Intern (Aug 2022 – Aug 2023)</strong><br>
+          Cut resolution time 20% with better diagnostics; helped with deployments and DB management; boosted client retention 40% through dependable, solution‑oriented support.</p>
+        <p><strong>Volunteer</strong><br>
+          Ran tech‑literacy workshops (Excel, Google Workspace, viz basics). Built a donation‑trends tracker for a non‑profit to target campaigns better.</p>
+      </article>
     </div>
-    <div class="about-card">
-      <h3>Experience</h3>
-      <p><strong>Boston University IS&T — Student Assistant (Jul 2025 – Present)</strong><br>
-      Utilised Excel to track inventory, streamlined document organisation, updated databases, and managed office operations.</p>
-      <p><strong>Maharaj Multi-Systems — Business Analyst (Jan 2024 – Jul 2024)</strong><br>
-      Improved workflow efficiency by 15%, reduced errors by 25%, and increased client retention by 30% through operational data analysis and collaboration.</p>
-      <p><strong>Pimpri Chinchwad Media — Data Intern (Aug 2022 – Aug 2023)</strong><br>
-      Reduced resolution times by 20%, supported deployments, and improved client retention by 40% with solution-oriented service.</p>
-      <p><strong>Volunteer Work</strong><br>
-      Conducted community tech literacy workshops and provided analytics support to a non-profit to optimise fundraising campaigns.</p>
+  </section>
+
+  <section id="featured">
+    <h2 class="section-title">Featured</h2>
+    <p class="section-sub">Case‑study style highlights plus something a professor said that made my day.</p>
+
+    <div class="grid">
+      <article class="card">
+        <span class="badge"></span>
+        <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
+        <p>Built a Streamlit app (Python, Pandas, Plotly) to analyse spend trends, seasonality, and pricing strategies. Clear actions for product positioning.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs non‑AI Jobs</a></h3>
+        <p>R + Spark analysis of 2024 job signals. Deployed an AWS dashboard to compare AI vs non‑AI demand across metros and industries.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
+        <p>Lean KPIs and process redesign to cut bottlenecks, increase throughput, and reduce rework. Everyone finally looked at the same board.</p>
+      </article>
+
+      <article class="card">
+        <h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
+        <p>Scrum sprint planning with GitHub Projects. WIP limits = calmer stand‑ups and fewer surprises.</p>
+      </article>
+
+      <!-- Letter of Recommendation featured card -->
+      <article class="card">
+        <h3>Letter of Recommendation</h3>
+        <p>Endorsement from Dr. Dean Saluti, Boston University (Metropolitan College). Highest grade, leadership, and strong quantitative skills.</p>
+        <div class="spacer"></div>
+        <button class="btn primary" id="openLor">View letter</button>
+      </article>
     </div>
-  </div>
-</section>
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
-      <p>Built a Streamlit dashboard with Python to analyse beauty spending patterns, seasonality, and pricing strategies, generating actionable insights.</p>
+
+    <!-- Modal for LOR -->
+    <dialog class="modal backdrop" id="lorModal" aria-labelledby="lorTitle">
+      <div class="modal-head">
+        <h3 id="lorTitle">Letter of Recommendation — Dr. Dean Saluti</h3>
+        <button class="btn" id="closeLor" aria-label="Close">Close</button>
+      </div>
+      <div class="modal-body">
+        <!-- Use URL-encoded spaces to match your repo filename exactly -->
+        <object data="dr%20dean%20saluti%20letter%20of%20recommendation.pdf" type="application/pdf">
+          <iframe src="dr%20dean%20saluti%20letter%20of%20recommendation.pdf"></iframe>
+        </object>
+      </div>
+      <div class="modal-foot">
+        <a class="btn" href="dr%20dean%20saluti%20letter%20of%20recommendation.pdf" download>Download PDF</a>
+      </div>
+    </dialog>
+  </section>
+
+  <section id="game">
+    <h2 class="section-title">Ten‑second data cleanup</h2>
+    <p class="section-sub">Drag the dodgy rows into the bin. If you spot the patterns, you’re basically on the team.</p>
+
+    <div class="mini">
+      <div class="board card" id="board">
+        <div class="row" draggable="true">cust_id, John,, USA</div>
+        <div class="row" draggable="true">, 2024-07-01, 99.5, paid</div>
+        <div class="row" draggable="true">0042 , "Boston" , MA</div>
+        <div class="row" draggable="true">email@@domain..com</div>
+        <div class="row" draggable="true">   </div>
+      </div>
+      <div class="bin" id="bin">Drop rows that look wrong</div>
     </div>
-    <div class="card">
-      <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs non-AI Jobs</a></h3>
-      <p>Analysed 2024 labour market data using R and Spark, and deployed an AWS dashboard to compare AI-related vs non-AI job growth trends.</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
-      <p>Applied Lean KPIs to identify manufacturing bottlenecks, redesigned processes to improve throughput and reduce rework.</p>
-    </div>
-    <div class="card">
-      <h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
-      <p>Simulated Scrum sprint planning using GitHub Projects, applying WIP limits for more efficient task flow.</p>
-    </div>
-  </div>
-</section>
-<section class="contact">
-  <h2 class="section-title">Contact</h2>
-  <a href="mailto:sharmavidhi3008@gmail.com">Email</a> |
-  <a href="https://github.com/17vidhisharma">GitHub</a> |
-  <a href="https://www.linkedin.com/in/17vidhisharma/">LinkedIn</a>
-</section>
+    <div class="win" id="win">Great! Data cleaned — you’re hired.</div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Let’s make your data behave</h2>
+    <p class="section-sub">Formalities below. Or email me what needs fixing.</p>
+    <p>
+      <a class="btn" href="mailto:sharmavidhi3008@gmail.com">Email</a>
+      <a class="btn" href="https://github.com/17vidhisharma" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </section>
+
 </main>
+
 <footer>© <span id="y"></span> Vidhi A. Sharma</footer>
+
 <script>
-// JS for typewriter, skill animations, year update
+// Typewriter
+const titles=["Business Analyst","Data Whisperer","Workflow Optimiser"];
+const tw=document.getElementById('tw'); let ti=0,ci=0,del=false;
+(function type(){const w=titles[ti]; if(!del){ci++; tw.textContent=w.slice(0,ci); if(ci===w.length){del=true; return setTimeout(type,1100);} } else {ci--; tw.textContent=w.slice(0,ci); if(ci===0){del=false; ti=(ti+1)%titles.length;} } setTimeout(type, del?38:70);})();
+
+// Animate skill meters on view
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(ent=>{
+    if(ent.isIntersecting){
+      ent.target.querySelectorAll('.bar').forEach(b=>{
+        const w=b.style.getPropertyValue('--w')||'80%';
+        b.animate([{width:'0%'},{width:w}],{duration:900,fill:'forwards',easing:'ease-out'});
+      });
+      io.unobserve(ent.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.about-card').forEach(el=>io.observe(el));
+
+// LOR modal
+const lor=document.getElementById('lorModal');
+document.getElementById('openLor').addEventListener('click',()=>lor.showModal());
+document.getElementById('closeLor').addEventListener('click',()=>lor.close());
+
+// Mini-game
+const board=document.getElementById('board');
+const bin=document.getElementById('bin');
+const win=document.getElementById('win');
+let removed=0;
+board.addEventListener('dragstart',e=>{
+  if(e.target.classList.contains('row')){
+    e.dataTransfer.setData('text/plain','');
+    e.target.classList.add('dragging');
+  }
+});
+board.addEventListener('dragend',e=>{ if(e.target.classList.contains('row')) e.target.classList.remove('dragging'); });
+['dragover','dragenter'].forEach(ev=>bin.addEventListener(ev,e=>{e.preventDefault(); bin.classList.add('success');}));
+['dragleave','drop'].forEach(ev=>bin.addEventListener(ev,()=>bin.classList.remove('success')));
+bin.addEventListener('drop',e=>{
+  e.preventDefault();
+  const dragging=document.querySelector('.row.dragging');
+  if(dragging){ dragging.remove(); removed++; }
+  if(removed>=3){ win.style.display='block'; }
+});
+
+// footer year
+document.getElementById('y').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
