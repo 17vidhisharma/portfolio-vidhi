@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Vidhi A. Sharma — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fafafa; --surface:#fff; --text:#1c2230; --muted:#596073; --line:#e9edf3;
-  --brand:#4a6cf7; --brand2:#1ab79d; --brand3:#f5b94c;
-  --shadow:0 10px 30px rgba(16,24,40,.08); --radius:16px;
+  /* Light, businessy palette (no purple) */
+  --bg:#fafafa; --surface:#ffffff; --text:#1f2a37; --muted:#6b7280; --line:#e5e7eb;
+  --brand:#3b82f6; --brand2:#10b981; --brand3:#f59e0b;
+  --shadow:0 10px 28px rgba(17,24,39,.08); --radius:16px;
+
+  /* soft category tints inspired by your screenshot */
+  --cardA:#eef2ff; /* indigo tint */
+  --cardB:#e8fbf6; /* mint/teal */
+  --cardC:#fff6e5; /* warm amber */
 }
-*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 .section{padding:72px 0}
 .h1{font-family:"Playfair Display",serif;letter-spacing:-.02em}
 .h2{font-family:"Playfair Display",serif;font-size:clamp(28px,3.6vw,40px);margin:0 0 10px}
 .sub{color:var(--muted);margin:0 0 28px}
+
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:#f7f9fc;color:var(--text)}
-.btn:hover{background:#eef3ff;border-color:#d7e0ff}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:#f8fafc;color:var(--text)}
+.btn:hover{background:#eef2ff;border-color:#dbeafe}
 .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));border:none;color:#fff}
 .btn.primary:hover{filter:brightness(1.05)}
+.badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#f3f4f6;color:#374151}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
 
-.badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#f7f9fc}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-
-/* HERO (first screen only name + about) */
+/* HERO (first screen) */
 .hero{min-height:100vh;display:flex;align-items:center}
-.hero-inner{width:100%;text-align:center}
+.hero-inner{text-align:center;width:100%}
 .hero .name{font-size:clamp(48px,7vw,104px);margin:0 0 6px}
-.hero .about{max-width:820px;margin:10px auto 22px;color:var(--muted)}
+.hero .about{max-width:840px;margin:10px auto 22px;color:var(--muted)}
 .hero .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.kicker{color:var(--brand);font-weight:600;letter-spacing:.02em}
 
 /* FEATURED */
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
 .feature-card{padding:20px}
 .feature-card h3{margin:6px 0 8px}
 
-/* SKILLS — small individual cards grouped under categories */
-.skill-group{margin:14px 0 8px;font-weight:600;color:#2a2f3a}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.skill-card{padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff}
-.skill-card b{display:block}
+/* SKILLS — category cards (like your screenshot) */
+.skill-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.skill-card{border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);padding:18px}
+.skill-card h3{margin:0 0 8px}
+.skill-card p{margin:0 0 8px;color:#374151;font-weight:600}
+.skill-card ul{margin:0;padding-left:18px}
+.skill-card li{margin:6px 0}
+.skill-a{background:var(--cardA)}
+.skill-b{background:var(--cardB)}
+.skill-c{background:var(--cardC)}
 
-/* EXPERIENCE — vertical stack of cards */
+/* EXPERIENCE — stacked cards */
 .exp-stack{display:grid;grid-template-columns:1fr;gap:14px}
 .exp-card h4{margin:0 0 6px}
 .exp-card small{color:var(--muted)}
 
+/* VOLUNTEERING */
+.vol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+
 /* CERTS */
 details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:14px}
-summary{cursor:pointer;font-weight:600;color:#2a2f3a;list-style:none}
+summary{cursor:pointer;font-weight:600;color:#111827;list-style:none}
 summary::-webkit-details-marker{display:none}
 
 /* LOR modal */
@@ -61,19 +75,19 @@ dialog.modal{width:min(920px,92vw);border:none;padding:0;border-radius:18px;over
 .modal-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line)}
 .modal-body object,.modal-body iframe{display:block;width:100%;height:min(76vh,880px)}
 .modal-foot{display:flex;justify-content:flex-end;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}
-.backdrop::backdrop{background:rgba(16,24,40,.4)}
+.backdrop::backdrop{background:rgba(17,24,39,.45)}
 
-/* FLOATING MINI-GAME WIDGET (small, corner) */
-.game-fab{position:fixed;right:18px;bottom:18px;z-index:50}
-.game-toggle{border:none;border-radius:999px;padding:10px 14px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:var(--shadow);cursor:pointer}
-.game-panel{position:fixed;right:18px;bottom:70px;width:300px;max-width:92vw;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);display:none}
-.game-panel.open{display:block}
-.board{display:flex;flex-wrap:wrap;gap:6px;padding:10px}
-.row{padding:6px 10px;background:#f2f5fb;border:1px solid #e3e9f5;border-radius:10px;cursor:grab;font-size:13px}
+/* MINI-GAME — tiny aside (bottom-right), soft teal/blue */
+aside.game{position:fixed;right:18px;bottom:18px;z-index:50;width:220px;max-width:92vw}
+.game header{display:flex;justify-content:space-between;align-items:center}
+.game .panel{margin-top:8px;border:1px solid var(--line);border-radius:14px;background:#ffffff;box-shadow:var(--shadow);padding:10px;display:none}
+.game .panel.open{display:block}
+.game .toggle{border:none;border-radius:999px;padding:8px 12px;background:linear-gradient(135deg,#38bdf8,#10b981);color:#fff;box-shadow:var(--shadow);cursor:pointer;font-size:13px}
+.board{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.row{padding:5px 8px;background:#f0f9ff;border:1px solid #dbeafe;border-radius:10px;cursor:grab;font-size:12px}
 .row.dragging{opacity:.6}
-.bin{padding:12px;border:2px dashed var(--brand);border-radius:12px;margin:10px;min-height:70px;display:grid;place-items:center;text-align:center;font-size:13px;background:#fbfdff}
-.bin.success{border-color:var(--brand2);background:#f2fffb}
-.win{display:none;color:var(--brand2);font-weight:700;font-size:14px;padding:0 12px 12px}
+.bin{padding:10px;border:2px dashed #10b981;border-radius:10px;margin-top:8px;min-height:56px;display:grid;place-items:center;text-align:center;font-size:12px;background:#f0fdf4;color:#065f46}
+.win{display:none;color:#047857;font-weight:700;font-size:12px;margin-top:6px}
 
 /* Footer */
 footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:32px}
@@ -82,67 +96,64 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
 </head>
 <body>
 
-<!-- HERO: name + about only -->
+<!-- HERO -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <p class="kicker">Business Analytics • Process Optimisation • Data Storytelling</p>
     <h1 class="h1 name">Vidhi A. Sharma</h1>
     <p class="about">
-      Master’s student in Applied Business Analytics at BU with a background in Computer Science, bridging the gap between data and decision‑making.
+      Master’s student in Applied Business Analytics at Boston University with a background in Computer Science —
       I turn complex datasets into clear insights, optimise workflows, and make data work smarter so businesses don’t have to work harder.
     </p>
     <div class="cta">
-      <!-- résumé at repo root -->
+      <!-- Make sure this filename matches your repo exactly -->
       <a class="btn primary" href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download>Download résumé</a>
-      <a class="btn" href="#featured">See featured work</a>
       <a class="btn" href="https://github.com/17vidhisharma" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="#featured">See featured</a>
     </div>
   </div>
 </section>
 
 <main class="wrap">
 
-  <!-- FEATURED -->
+  <!-- FEATURED (subtitle removed per request) -->
   <section id="featured" class="section">
     <h2 class="h2">Featured</h2>
-    <p class="sub">Case‑study highlights plus an endorsement I’m proud of.</p>
 
     <div class="feature-grid">
       <article class="card feature-card">
         <span class="badge">Case study</span>
         <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
-        <p>Built a Streamlit app (Python, Pandas, Plotly) to analyse spend trends, seasonality, and pricing strategies — clear actions for product positioning.</p>
+        <p>Streamlit app (Python/Pandas/Plotly) for spend trends, seasonality, and pricing strategies → clearer product positioning.</p>
       </article>
 
       <article class="card feature-card">
         <span class="badge">Market insight</span>
         <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non‑AI Jobs</a></h3>
-        <p>R + Spark analysis of 2024 job signals. AWS dashboard to explore AI vs non‑AI demand across metros and industries.</p>
+        <p>R + Spark analysis of 2024 job signals. AWS dashboard to explore demand across metros and industries.</p>
       </article>
 
       <article class="card feature-card">
         <span class="badge">Ops redesign</span>
         <h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
-        <p>Lean KPIs and process changes to reduce bottlenecks, improve throughput, and cut rework. Shared source of truth for ops decisions.</p>
+        <p>Lean KPIs and process changes to reduce bottlenecks, lift throughput, and cut rework.</p>
       </article>
 
       <article class="card feature-card">
         <span class="badge">Agile</span>
         <h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
-        <p>Scrum sprint planning in GitHub Projects. WIP limits → calmer stand‑ups and fewer surprises.</p>
+        <p>Scrum sprint planning with GitHub Projects. WIP limits → calmer stand‑ups and fewer surprises.</p>
       </article>
 
-      <!-- LOR card styled exactly like others -->
-      <article class="card feature-card" id="lorCard">
+      <article class="card feature-card">
         <span class="badge">Recommendation</span>
         <h3>Letter of Recommendation</h3>
-        <p>Dr. Dean Saluti, Boston University (Metropolitan College). Highest grade, leadership, quantitative strength.</p>
+        <p>Dr. Dean Saluti, Boston University (Metropolitan College). Highest grade, leadership, strong quantitative skills.</p>
         <button class="btn primary" id="openLor">View letter</button>
       </article>
     </div>
 
-    <!-- Modal -->
+    <!-- LOR modal -->
     <dialog class="modal backdrop" id="lorModal" aria-labelledby="lorTitle">
       <div class="modal-head">
         <h3 id="lorTitle">Letter of Recommendation — Dr. Dean Saluti</h3>
@@ -159,73 +170,51 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
     </dialog>
   </section>
 
-  <!-- SKILLS (stacked, cards for each skill under resume categories) -->
+  <!-- SKILLS (cards grouped like résumé) -->
   <section id="skills" class="section">
     <h2 class="h2">Skills</h2>
-    <p class="sub">Organised like your résumé — each skill is a quick‑read card.</p>
+    <p class="sub">Organised like my résumé.</p>
 
-    <div class="skill-group">Data Analytics & Technical</div>
-    <div class="skills-grid">
-      <!-- analytics/tools -->
-      <div class="skill-card"><b>SQL</b></div>
-      <div class="skill-card"><b>Python</b></div>
-      <div class="skill-card"><b>R</b></div>
-      <div class="skill-card"><b>Tableau</b></div>
-      <div class="skill-card"><b>Power BI</b></div>
-      <div class="skill-card"><b>Excel (advanced)</b></div>
-      <div class="skill-card"><b>SAS</b></div>
-      <div class="skill-card"><b>Dataiku</b></div>
-      <div class="skill-card"><b>Azure</b></div>
-      <div class="skill-card"><b>PostgreSQL</b></div>
-      <div class="skill-card"><b>Forecasting</b></div>
-      <div class="skill-card"><b>Statistical modelling</b></div>
-      <div class="skill-card"><b>KPI evaluation</b></div>
-      <div class="skill-card"><b>Predictive analytics</b></div>
-      <div class="skill-card"><b>ETL workflows</b></div>
-      <div class="skill-card"><b>Data pipelines</b></div>
-      <div class="skill-card"><b>Automation</b></div>
-      <div class="skill-card"><b>Data storytelling</b></div>
-      <div class="skill-card"><b>Dashboards</b></div>
-      <div class="skill-card"><b>CRM systems</b></div>
-      <div class="skill-card"><b>SAP</b></div>
-      <div class="skill-card"><b>Salesforce</b></div>
-      <div class="skill-card"><b>Git / GitHub</b></div>
-      <div class="skill-card"><b>AWS</b></div>
-      <div class="skill-card"><b>Spark</b></div>
-      <div class="skill-card"><b>HTML</b></div>
-      <div class="skill-card"><b>CSS</b></div>
-      <div class="skill-card"><b>JavaScript</b></div>
-      <div class="skill-card"><b>OOP (C, C++, Python)</b></div>
-      <div class="skill-card"><b>Agile</b></div>
-    </div>
+    <div class="skill-cards">
+      <article class="skill-card skill-a">
+        <h3>Data Analytics & Technical Expertise</h3>
+        <p>Tooling & methods</p>
+        <ul>
+          <li>SQL • Python • R</li>
+          <li>Tableau • Power BI • Excel (advanced) • SAS • Dataiku</li>
+          <li>Azure • AWS • PostgreSQL • Spark</li>
+          <li>Predictive analytics • Trend analysis • KPI evaluation</li>
+          <li>Forecasting • Statistical modelling</li>
+          <li>ETL workflows • Data pipelines • Automation</li>
+          <li>Data storytelling • Dashboards • CRM systems</li>
+          <li>HTML/CSS/JS • OOP (C, C++, Python) • Git/GitHub</li>
+          <li>SAP • Salesforce</li>
+        </ul>
+      </article>
 
-    <div class="skill-group">Business Process Management</div>
-    <div class="skills-grid">
-      <div class="skill-card"><b>Operations management</b></div>
-      <div class="skill-card"><b>Workflow optimisation</b></div>
-      <div class="skill-card"><b>Cross‑functional coordination</b></div>
-      <div class="skill-card"><b>Performance tracking</b></div>
-      <div class="skill-card"><b>Capacity planning</b></div>
-      <div class="skill-card"><b>Resource allocation</b></div>
-      <div class="skill-card"><b>Inventory management</b></div>
-      <div class="skill-card"><b>Change management</b></div>
-      <div class="skill-card"><b>Business process improvement</b></div>
-      <div class="skill-card"><b>Project management</b></div>
-    </div>
+      <article class="skill-card skill-b">
+        <h3>Business Process Management</h3>
+        <p>Operational strengths</p>
+        <ul>
+          <li>Operations management • Workflow optimisation</li>
+          <li>Cross‑functional coordination • Performance tracking</li>
+          <li>Capacity planning • Resource allocation</li>
+          <li>Inventory management • Change management</li>
+          <li>Business process improvement • Project management</li>
+        </ul>
+      </article>
 
-    <div class="skill-group">Soft Skills</div>
-    <div class="skills-grid">
-      <div class="skill-card"><b>Strategic communication</b></div>
-      <div class="skill-card"><b>Leadership</b></div>
-      <div class="skill-card"><b>Adaptability</b></div>
-      <div class="skill-card"><b>Stakeholder management</b></div>
-      <div class="skill-card"><b>Time management</b></div>
-      <div class="skill-card"><b>Collaboration</b></div>
-      <div class="skill-card"><b>Attention to detail</b></div>
-      <div class="skill-card"><b>Creative problem‑solving</b></div>
-      <div class="skill-card"><b>Customer‑centric mindset</b></div>
-      <div class="skill-card"><b>Initiative</b></div>
-      <div class="skill-card"><b>High‑pressure environments</b></div>
+      <article class="skill-card skill-c">
+        <h3>Soft Skills</h3>
+        <p>People & leadership</p>
+        <ul>
+          <li>Strategic communication • Stakeholder management</li>
+          <li>Leadership • Collaboration • Time management</li>
+          <li>Creative problem‑solving • Attention to detail</li>
+          <li>Customer‑centric mindset • Initiative</li>
+          <li>Calm under pressure</li>
+        </ul>
+      </article>
     </div>
   </section>
 
@@ -236,53 +225,76 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
       <article class="card exp-card">
         <h4>Boston University Information Services & Technology — Student Assistant</h4>
         <small>Jul 2025 – Present</small>
-        <p>Tracked inventory in Excel, maintained departmental sheets and weekly reports, streamlined document organisation and database updates, and kept office ops moving (supplies, comms, calendars).</p>
+        <p>Tracked inventory in Excel, maintained departmental sheets and weekly reports, streamlined document/database updates, and kept office ops moving (supplies, comms, calendars).</p>
       </article>
 
       <article class="card exp-card">
         <h4>Maharaj Multi‑Systems — Business Analyst</h4>
         <small>Jan 2024 – Jul 2024</small>
-        <p>Improved workflow efficiency by <b>15%</b> through operational data analysis; reduced processing errors by <b>25%</b> via verification; increased client retention by <b>30%</b> by resolving inquiries faster and surfacing insights.</p>
+        <p><b>+15%</b> efficiency via ops analysis, <b>−25%</b> processing errors via verification, <b>+30%</b> client retention through faster inquiry resolution & insights.</p>
       </article>
 
       <article class="card exp-card">
         <h4>Pimpri Chinchwad Media Communication — Data Intern</h4>
         <small>Aug 2022 – Aug 2023</small>
-        <p>Cut resolution time by <b>20%</b> through better diagnostics; supported deployments and database management; improved client retention by <b>40%</b> through solution‑oriented service.</p>
+        <p><b>−20%</b> resolution time with better diagnostics; supported deployments & database management; improved client retention by <b>40%</b> through reliable support.</p>
       </article>
+    </div>
+  </section>
 
-      <!-- Volunteering as experience cards -->
-      <article class="card exp-card">
+  <!-- VOLUNTEERING (separate section; YEF set as Volunteer) -->
+  <section id="volunteering" class="section">
+    <h2 class="h2">Volunteering</h2>
+    <div class="vol-grid">
+      <article class="card">
         <h4>Help Social Welfare Society — Volunteer</h4>
-        <small>Community</small>
-        <p>Created educational materials for children, led fundraising efforts, and organised campaigns on women’s health awareness; grew communication & outreach skills while creating community impact.</p>
+        <p>Created children’s learning materials, led fundraising drives, and organised women’s health awareness campaigns.</p>
       </article>
-
-      <article class="card exp-card">
-        <h4>Youth Empowerment Foundation — Intern</h4>
-        <small>Jul 2021 (1 month)</small>
-        <p>Exceeded fundraising targets by <b>30%</b> via data‑driven social media; launched outreach programmes; managed campaigns; leveraged design & telecoms to amplify women’s health and education initiatives.</p>
+      <article class="card">
+        <h4>Youth Empowerment Foundation — Volunteer</h4>
+        <p>Exceeded fundraising targets by <b>30%</b> via data‑driven social content; ran outreach programs and managed campaigns.</p>
       </article>
-
-      <article class="card exp-card">
-        <h4>Sahas for Animals — Ongoing Supporter</h4>
-        <small>Volunteer</small>
+      <article class="card">
+        <h4>Sahas for Animals — Supporter</h4>
         <p>Regular donations and hands‑on help for animal welfare.</p>
       </article>
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
+  <!-- PROJECTS (kept concise) -->
+  <section id="projects" class="section">
+    <h2 class="h2">Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>NY Real Estate Analysis</h3>
+        <p>Time‑series + regression (R) → forecasts for sales cycles and drivers for leadership decks.</p>
+      </article>
+      <article class="card">
+        <h3>Skincare Sales Data Analysis</h3>
+        <p>Patterns in demand, seasonality and price bands; Streamlit dashboard for decisions.</p>
+      </article>
+      <article class="card">
+        <h3>AI vs Non‑AI Job Growth</h3>
+        <p>Where AI demand concentrates by metro/industry; AWS dashboard for exploration.</p>
+      </article>
+      <article class="card">
+        <h3>Stickley Ops Optimization</h3>
+        <p>Value‑stream mapping + KPIs → throughput up, rework down, clearer operational view.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS (collapsible) -->
   <section id="certs" class="section">
     <h2 class="h2">Certifications</h2>
     <details>
       <summary>Show certifications</summary>
       <div style="margin-top:10px">
         <p><b>Leadership & Communication:</b> Data Decision‑Making & Communication for Leaders (LinkedIn — Nancy Duarte).</p>
-        <p><b>AI & Agile:</b> IBM Generative AI (ID: MNG4J8Y5HUOZ); IBM Introduction to Agile Development and Scrum (ID: 1M2UDN2DD4F7).</p>
-        <p><b>Cloud:</b> AWS Academy Graduate — Cloud Foundations.</p>
-        <p><b>CS & Web:</b> CS50 (HarvardX, Verified); HTML, CSS, and JavaScript for Web Developers (Johns Hopkins, ID: QN88ZZJ48NVA).</p>
-        <p><b>Other:</b> Data Privacy Fundamentals (Northeastern, ID: OYXL4WIAXS23); Introduction to Psychology (Yale, ID: RJQ49WWSHS7Y).</p>
+        <p><b>AI & Agile:</b> IBM Generative AI (ID: MNG4J8Y5HUOZ); IBM Intro to Agile Dev & Scrum (ID: 1M2UDN2DD4F7).</p>
+        <p><b>Cloud:</b> AWS Academy Cloud Foundations.</p>
+        <p><b>CS & Web:</b> CS50 (HarvardX, Verified); HTML/CSS/JS for Web Dev (Johns Hopkins, ID: QN88ZZJ48NVA).</p>
+        <p><b>Other:</b> Data Privacy Fundamentals (Northeastern, ID: OYXL4WIAXS23); Intro to Psychology (Yale, ID: RJQ49WWSHS7Y).</p>
       </div>
     </details>
   </section>
@@ -291,10 +303,12 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
 
 <footer>© <span id="y"></span> Vidhi A. Sharma</footer>
 
-<!-- Floating mini‑game widget -->
-<div class="game-fab">
-  <button class="game-toggle" id="gameBtn">Mini data clean</button>
-  <div class="game-panel" id="gamePanel" aria-live="polite">
+<!-- Mini data‑clean game (tiny aside) -->
+<aside class="game" aria-live="polite">
+  <header>
+    <button class="toggle" id="gameToggle">Data clean</button>
+  </header>
+  <div class="panel" id="gamePanel">
     <div class="board" id="board">
       <div class="row" draggable="true">cust_id, John,, USA</div>
       <div class="row" draggable="true">, 2024-07-01, 99.5, paid</div>
@@ -302,30 +316,27 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
       <div class="row" draggable="true">email@@domain..com</div>
       <div class="row" draggable="true">   </div>
     </div>
-    <div class="bin" id="bin">Drop wrong rows here</div>
+    <div class="bin" id="bin">Drop wrong rows</div>
     <div class="win" id="win">Great! Data cleaned — you’re hired.</div>
   </div>
-</div>
+</aside>
 
 <script>
-// Modal (LOR)
-const lor=document.getElementById('lorModal');
+// Footer year
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// LOR modal
+const lor = document.getElementById('lorModal');
 document.getElementById('openLor')?.addEventListener('click',()=>lor.showModal());
 document.getElementById('closeLor')?.addEventListener('click',()=>lor.close());
 
-// Footer year
-document.getElementById('y').textContent=new Date().getFullYear();
+// Mini-game toggle
+const tgl=document.getElementById('gameToggle'), pnl=document.getElementById('gamePanel');
+tgl.addEventListener('click',()=>pnl.classList.toggle('open'));
 
-// Mini‑game widget
-const gameBtn=document.getElementById('gameBtn');
-const panel=document.getElementById('gamePanel');
-gameBtn.addEventListener('click',()=>panel.classList.toggle('open'));
-
-const board=document.getElementById('board');
-const bin=document.getElementById('bin');
-const win=document.getElementById('win');
+// Mini-game logic
+const board=document.getElementById('board'), bin=document.getElementById('bin'), win=document.getElementById('win');
 let removed=0;
-
 board.addEventListener('dragstart',e=>{
   if(e.target.classList.contains('row')){
     e.dataTransfer.setData('text/plain','');
@@ -336,10 +347,7 @@ board.addEventListener('dragend',e=>{
   if(e.target.classList.contains('row')) e.target.classList.remove('dragging');
 });
 ['dragover','dragenter'].forEach(ev=>bin.addEventListener(ev,e=>{
-  e.preventDefault(); bin.classList.add('success');
-}));
-['dragleave','drop'].forEach(ev=>bin.addEventListener(ev,()=>{
-  bin.classList.remove('success');
+  e.preventDefault();
 }));
 bin.addEventListener('drop',e=>{
   e.preventDefault();
