@@ -4,16 +4,20 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Vidhi A. Sharma — Portfolio</title>
-  <!-- Link to your chic design system -->
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Your custom chic overrides -->
   <link href="styles.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-background text-foreground font-sans">
 
 <!-- NAV -->
-<nav class="nav section-padding">
-  <div class="wrap bar flex justify-between items-center">
-    <div class="brand font-bold">Vidhi A. Sharma</div>
-    <ul class="flex gap-6">
+<nav class="section-padding border-b border-border bg-background sticky top-0 z-50">
+  <div class="wrap flex justify-between items-center">
+    <div class="font-bold font-serif text-xl">Vidhi A. Sharma</div>
+    <ul class="flex gap-6 text-sm">
       <li><a class="animated-underline" href="#home">Home</a></li>
       <li><a class="animated-underline" href="#education">Education</a></li>
       <li><a class="animated-underline" href="#skills">Skills</a></li>
@@ -68,7 +72,6 @@
           <li>SQL, Python, R</li>
           <li>Tableau, Power BI, Excel, SAS, Dataiku</li>
           <li>Azure, AWS, PostgreSQL, Spark</li>
-          <li>ETL, pipelines, automation</li>
         </ul>
       </article>
       <article class="card-elegant p-6">
@@ -77,7 +80,6 @@
           <li>Workflow optimisation</li>
           <li>Capacity planning</li>
           <li>Change management</li>
-          <li>Project management</li>
         </ul>
       </article>
       <article class="card-elegant p-6">
@@ -118,20 +120,12 @@
     <h2 class="h2 mb-6">Projects</h2>
     <div class="grid gap-6 md:grid-cols-2">
       <article class="card-elegant p-6">
-        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Dashboard</a></h3>
+        <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Dashboard</a></h3>
         <p>Streamlit app with Python, Pandas, Plotly for sales insights.</p>
       </article>
       <article class="card-elegant p-6">
-        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non-AI Jobs</a></h3>
+        <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non-AI Jobs</a></h3>
         <p>R + Spark analysis of 2024 job signals, AWS dashboard for demand.</p>
-      </article>
-      <article class="card-elegant p-6">
-        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
-        <p>Process redesign to cut bottlenecks and lift throughput.</p>
-      </article>
-      <article class="card-elegant p-6">
-        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
-        <p>Scrum sprint planning with GitHub Projects.</p>
       </article>
     </div>
   </section>
@@ -141,12 +135,8 @@
     <h2 class="h2 mb-6">Certifications</h2>
     <div class="grid gap-4 md:grid-cols-2">
       <article class="card-elegant p-6"><h4>IBM Generative AI</h4></article>
-      <article class="card-elegant p-6"><h4>IBM Agile Dev & Scrum</h4></article>
       <article class="card-elegant p-6"><h4>AWS Academy Cloud Foundations</h4></article>
       <article class="card-elegant p-6"><h4>CS50 (HarvardX)</h4></article>
-      <article class="card-elegant p-6"><h4>HTML/CSS/JS (JHU)</h4></article>
-      <article class="card-elegant p-6"><h4>Data Privacy Fundamentals (NEU)</h4></article>
-      <article class="card-elegant p-6"><h4>Intro to Psychology (Yale)</h4></article>
       <article class="card-elegant p-6"><h4>Decision-Making & Communication for Leaders</h4></article>
     </div>
   </section>
@@ -167,11 +157,9 @@
   © <span id="y"></span> Vidhi A. Sharma
 </footer>
 
-<!-- Mini-game can stay unchanged if you want -->
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
-
