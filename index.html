@@ -4,123 +4,39 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Vidhi A. Sharma — Portfolio</title>
+  <!-- Link to your chic design system -->
   <link href="styles.css" rel="stylesheet">
-</head>
-  <body>
-/* NAVBAR */
-.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.7);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
-.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 0}
-.nav .brand{font-weight:700;color:var(--brand-ink)}
-.nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
-.nav a.btn-link{padding:8px 10px;border-radius:10px;border:1px solid transparent}
-.nav a.btn-link:hover{border-color:var(--line);background:#fff}
-
-/* DNA components */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;transition:transform .18s ease, box-shadow .18s ease}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(2,6,23,.12)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:#f8fafc;color:var(--text);transition:filter .15s, transform .05s}
-.btn:hover{background:#f1f5f9}
-.btn:active{transform:translateY(1px)}
-.btn.primary{background:var(--brand);border:none;color:#fff}
-.btn.primary:hover{filter:brightness(1.05)}
-.badge{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#f8fafc;color:#0b1220}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-
-/* HERO */
-.hero{min-height:90vh;display:flex;align-items:center}
-.hero-inner{text-align:center;width:100%}
-.hero .name{font-size:clamp(48px,7vw,104px);margin:0 0 10px}
-.hero .about{max-width:860px;margin:10px auto 26px;color:var(--muted)}
-.hero .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-
-/* Education */
-.edu-list{display:grid;grid-template-columns:1fr;gap:14px}
-.edu-card h4{margin:0 0 4px}
-.edu-card small{color:var(--muted)}
-
-/* Skills */
-.skill-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
-.skill-card{border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);padding:18px}
-.skill-card h3{margin:0 0 8px}
-.skill-card p{margin:0 0 8px;color:#374151;font-weight:600}
-.skill-card ul{margin:0;padding-left:18px}
-.skill-card li{margin:6px 0}
-.skill-a{background:var(--cardA)}
-.skill-b{background:var(--cardB)}
-.skill-c{background:var(--cardC)}
-
-/* Experience */
-.exp-stack{display:grid;grid-template-columns:1fr;gap:14px}
-.exp-card h4{margin:0 0 6px}
-.exp-card small{color:var(--muted)}
-
-/* Featured / Projects with thumbnails */
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.feature-card{padding:0;overflow:hidden}
-.thumb{height:140px;background:#ecfdf5;border-bottom:1px solid var(--line);display:grid;place-items:center;color:var(--brand-ink);font-weight:600}
-.feature-card .inner{padding:16px}
-.feature-card h3{margin:6px 0 8px}
-
-/* Certifications as cards */
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.cert{display:flex;gap:12px;align-items:flex-start}
-.cert .icon{width:36px;height:36px;border-radius:10px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:700}
-.cert h4{margin:0 0 4px;font-size:16px}
-.cert small{color:var(--muted)}
-
-/* Volunteering */
-.vol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
-
-/* Mini-game */
-aside.game{position:fixed;right:18px;bottom:18px;z-index:50;width:220px;max-width:92vw}
-.game header{display:flex;justify-content:space-between;align-items:center}
-.game .panel{margin-top:8px;border:1px solid var(--line);border-radius:14px;background:#ffffff;box-shadow:var(--shadow);padding:10px;display:none}
-.game .panel.open{display:block}
-.game .toggle{border:none;border-radius:999px;padding:8px 12px;background:var(--brand);color:#fff;box-shadow:var(--shadow);cursor:pointer;font-size:13px}
-.board{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.row{padding:5px 8px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;cursor:grab;font-size:12px}
-.row.dragging{opacity:.6}
-.bin{padding:10px;border:2px dashed #10b981;border-radius:10px;margin-top:8px;min-height:56px;display:grid;place-items:center;text-align:center;font-size:12px;background:#ecfdf5;color:#065f46}
-.win{display:none;color:#047857;font-weight:700;font-size:12px;margin-top:6px}
-
-/* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
-.reveal.in{opacity:1;transform:none}
-
-/* Footer */
-footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:32px}
-</style>
 </head>
 <body>
 
-<!-- STICKY NAV -->
-<nav class="nav">
-  <div class="wrap bar">
-    <div class="brand">Vidhi A. Sharma</div>
-    <ul>
-      <li><a class="btn-link" href="#home">Home</a></li>
-      <li><a class="btn-link" href="#education">Education</a></li>
-      <li><a class="btn-link" href="#skills">Skills</a></li>
-      <li><a class="btn-link" href="#experience">Experience</a></li>
-      <li><a class="btn-link" href="#projects">Projects</a></li>
-      <li><a class="btn-link" href="#certs">Certifications</a></li>
-      <li><a class="btn-link" href="#volunteering">Volunteering</a></li>
+<!-- NAV -->
+<nav class="nav section-padding">
+  <div class="wrap bar flex justify-between items-center">
+    <div class="brand font-bold">Vidhi A. Sharma</div>
+    <ul class="flex gap-6">
+      <li><a class="animated-underline" href="#home">Home</a></li>
+      <li><a class="animated-underline" href="#education">Education</a></li>
+      <li><a class="animated-underline" href="#skills">Skills</a></li>
+      <li><a class="animated-underline" href="#experience">Experience</a></li>
+      <li><a class="animated-underline" href="#projects">Projects</a></li>
+      <li><a class="animated-underline" href="#certs">Certifications</a></li>
+      <li><a class="animated-underline" href="#volunteering">Volunteering</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="wrap hero-inner reveal in">
-    <h1 class="h1 name">Vidhi A. Sharma</h1>
-    <p class="about">
-      Master’s student in Applied Business Analytics at Boston University with a background in Computer Science. I turn complex data into clear actions, improve workflows, and help teams make better decisions.
+<section id="home" class="section-padding text-center">
+  <div class="wrap">
+    <h1 class="text-5xl font-serif mb-4">Vidhi A. Sharma</h1>
+    <p class="max-w-2xl mx-auto text-muted mb-8">
+      Master’s student in Applied Business Analytics at Boston University with a background in Computer Science. 
+      I turn complex data into clear actions, improve workflows, and help teams make better decisions.
     </p>
-    <div class="cta">
+    <div class="flex gap-4 justify-center flex-wrap">
       <a class="btn primary" href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download>Download résumé</a>
       <a class="btn" href="https://github.com/17vidhisharma" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="#education">See more</a>
     </div>
   </div>
 </section>
@@ -128,314 +44,134 @@ footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px s
 <main class="wrap">
 
   <!-- EDUCATION -->
-  <section id="education" class="section reveal">
-    <h2 class="h2">Education</h2>
-    <div class="edu-list">
-      <article class="card edu-card">
-        <h4>Boston University — Metropolitan College</h4>
+  <section id="education" class="section-padding">
+    <h2 class="h2 mb-6">Education</h2>
+    <div class="grid gap-4">
+      <article class="card-elegant p-6">
+        <h4 class="font-semibold">Boston University — Metropolitan College</h4>
         <small>Master of Science, Applied Business Analytics • Sep 2024 — Ongoing • Boston, MA</small>
       </article>
-      <article class="card edu-card">
-        <h4>MIT World Peace University</h4>
+      <article class="card-elegant p-6">
+        <h4 class="font-semibold">MIT World Peace University</h4>
         <small>Bachelor of Science, Computer Science • Aug 2019 — Oct 2022 • Pune, India</small>
       </article>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section reveal">
-    <h2 class="h2">Skills</h2>
-    <p class="sub">Grouped like the résumé.</p>
-    <div class="skill-cards">
-      <article class="skill-card skill-a">
-        <h3>Data analytics and technical</h3>
-        <p>Tools and methods</p>
-        <ul>
+  <section id="skills" class="section-padding">
+    <h2 class="h2 mb-6">Skills</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="card-elegant p-6">
+        <h3 class="mb-2 font-semibold">Data Analytics & Tech</h3>
+        <ul class="space-y-1 text-sm">
           <li>SQL, Python, R</li>
-          <li>Tableau, Power BI, Excel (advanced), SAS, Dataiku</li>
+          <li>Tableau, Power BI, Excel, SAS, Dataiku</li>
           <li>Azure, AWS, PostgreSQL, Spark</li>
-          <li>Predictive analytics, trend analysis, KPI evaluation</li>
-          <li>Forecasting, statistical modelling</li>
-          <li>ETL workflows, pipelines, automation</li>
-          <li>Data storytelling, dashboards, CRM systems</li>
-          <li>HTML/CSS/JS, OOP (C, C++, Python), Git/GitHub</li>
-          <li>SAP, Salesforce</li>
+          <li>ETL, pipelines, automation</li>
         </ul>
       </article>
-
-      <article class="skill-card skill-b">
-        <h3>Business process management</h3>
-        <p>Operational strengths</p>
-        <ul>
-          <li>Operations management, workflow optimisation</li>
-          <li>Cross functional coordination, performance tracking</li>
-          <li>Capacity planning, resource allocation</li>
-          <li>Inventory management, change management</li>
-          <li>Process improvement, project management</li>
+      <article class="card-elegant p-6">
+        <h3 class="mb-2 font-semibold">Business & Ops</h3>
+        <ul class="space-y-1 text-sm">
+          <li>Workflow optimisation</li>
+          <li>Capacity planning</li>
+          <li>Change management</li>
+          <li>Project management</li>
         </ul>
       </article>
-
-      <article class="skill-card skill-c">
-        <h3>Soft skills</h3>
-        <p>People and leadership</p>
-        <ul>
-          <li>Strategic communication, stakeholder management</li>
-          <li>Leadership, collaboration, time management</li>
-          <li>Creative problem solving, attention to detail</li>
-          <li>Customer focused mindset, initiative</li>
-          <li>Calm under pressure</li>
+      <article class="card-elegant p-6">
+        <h3 class="mb-2 font-semibold">Soft Skills</h3>
+        <ul class="space-y-1 text-sm">
+          <li>Communication & leadership</li>
+          <li>Problem solving</li>
+          <li>Customer-first mindset</li>
         </ul>
       </article>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="section reveal">
-    <h2 class="h2">Experience</h2>
-    <div class="exp-stack">
-      <article class="card exp-card">
-        <h4>Boston University Information Services and Technology — Student Assistant</h4>
+  <section id="experience" class="section-padding">
+    <h2 class="h2 mb-6">Experience</h2>
+    <div class="grid gap-4">
+      <article class="card-elegant p-6">
+        <h4 class="font-semibold">Boston University IS&T — Student Assistant</h4>
         <small>Jul 2025 — Present</small>
-        <p>Tracked inventory in Excel, kept departmental sheets and weekly reports updated, streamlined document and database updates, and supported office operations.</p>
+        <p>Tracked inventory in Excel, streamlined departmental sheets and reports, and supported office ops.</p>
       </article>
-
-      <article class="card exp-card">
-        <h4>Maharaj Multi-Systems — Business Analyst</h4>
+      <article class="card-elegant p-6">
+        <h4 class="font-semibold">Maharaj Multi-Systems — Business Analyst</h4>
         <small>Jan 2024 — Jul 2024</small>
-        <p><b>+15%</b> efficiency via operations analysis, <b>-25%</b> processing errors through verification, and <b>+30%</b> client retention with faster resolution and insights.</p>
+        <p>+15% efficiency, -25% errors, +30% retention through analysis and verification.</p>
       </article>
-
-      <article class="card exp-card">
-        <h4>Pimpri Chinchwad Media Communication — Data Intern</h4>
+      <article class="card-elegant p-6">
+        <h4 class="font-semibold">Pimpri Chinchwad Media Communication — Data Intern</h4>
         <small>Aug 2022 — Aug 2023</small>
-        <p><b>-20%</b> resolution time with better diagnostics. Supported deployments and database management. Improved client retention by <b>40%</b> with reliable support.</p>
+        <p>-20% resolution time, improved deployments, +40% client retention.</p>
       </article>
     </div>
   </section>
 
-  <!-- PROJECTS / FEATURED -->
-  <section id="projects" class="section reveal">
-    <h2 class="h2">Projects and Featured</h2>
-    <div class="feature-grid">
-      <article class="card feature-card">
-        <div class="thumb">Skincare Dashboard</div>
-        <div class="inner">
-          <span class="badge">Case study</span>
-          <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
-          <p>Streamlit app with Python, Pandas, and Plotly for spend trends, seasonality, and pricing choices.</p>
-        </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="section-padding">
+    <h2 class="h2 mb-6">Projects</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="card-elegant p-6">
+        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Dashboard</a></h3>
+        <p>Streamlit app with Python, Pandas, Plotly for sales insights.</p>
       </article>
-
-      <article class="card feature-card">
-        <div class="thumb" style="background:#f0f9ff;color:#0c4a6e">AI vs Non‑AI</div>
-        <div class="inner">
-          <span class="badge">Market insight</span>
-          <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non‑AI Jobs</a></h3>
-          <p>R and Spark analysis of 2024 job signals. AWS dashboard to explore demand by metro and industry.</p>
-        </div>
+      <article class="card-elegant p-6">
+        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non-AI Jobs</a></h3>
+        <p>R + Spark analysis of 2024 job signals, AWS dashboard for demand.</p>
       </article>
-
-      <article class="card feature-card">
-        <div class="thumb" style="background:#fff7ed;color:#7c2d12">Ops redesign</div>
-        <div class="inner">
-          <span class="badge">Ops redesign</span>
-          <h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
-          <p>Lean KPIs and process changes to cut bottlenecks, lift throughput, and reduce rework.</p>
-        </div>
+      <article class="card-elegant p-6">
+        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
+        <p>Process redesign to cut bottlenecks and lift throughput.</p>
       </article>
-
-      <article class="card feature-card">
-        <div class="thumb" style="background:#f8fafc;color:#111827">IBM Agile</div>
-        <div class="inner">
-          <span class="badge">Agile</span>
-          <h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
-          <p>Scrum sprint planning with GitHub Projects. WIP limits for calmer stand ups and fewer surprises.</p>
-        </div>
-      </article>
-
-      <article class="card feature-card">
-        <div class="thumb" style="background:#ecfeff;color:#155e75">Recommendation</div>
-        <div class="inner">
-          <span class="badge">Recommendation</span>
-          <h3>Letter of Recommendation</h3>
-          <p>Dr. Dean Saluti, Boston University (Metropolitan College). Highest grade, leadership, strong quantitative skills.</p>
-          <button class="btn primary" id="openLor">View letter</button>
-        </div>
-      </article>
-    </div>
-
-    <!-- LOR modal -->
-    <dialog class="modal backdrop" id="lorModal" aria-labelledby="lorTitle">
-      <div class="modal-head">
-        <h3 id="lorTitle">Letter of Recommendation — Dr. Dean Saluti</h3>
-        <button class="btn" id="closeLor">Close</button>
-      </div>
-      <div class="modal-body">
-        <object data="dr%20dean%20saluti%20letter%20of%20recommendation.pdf" type="application/pdf">
-          <iframe src="dr%20dean%20saluti%20letter%20of%20recommendation.pdf"></iframe>
-        </object>
-      </div>
-      <div class="modal-foot">
-        <a class="btn" href="dr%20dean%20saluti%20letter%20of%20recommendation.pdf" download>Download PDF</a>
-      </div>
-    </dialog>
-  </section>
-
-  <!-- CERTIFICATIONS (CARDS, NOT DROPDOWN) -->
-  <section id="certs" class="section reveal">
-    <h2 class="h2">Certifications</h2>
-    <div class="cert-grid">
-      <article class="card cert">
-        <div class="icon">AI</div>
-        <div>
-          <h4>IBM Generative AI</h4>
-          <small>Credential ID: MNG4J8Y5HUOZ</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">Ag</div>
-        <div>
-          <h4>IBM Intro to Agile Dev and Scrum</h4>
-          <small>Credential ID: 1M2UDN2DD4F7</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">AWS</div>
-        <div>
-          <h4>AWS Academy Cloud Foundations</h4>
-          <small>Foundational</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">CS</div>
-        <div>
-          <h4>CS50 — HarvardX (Verified)</h4>
-          <small>Computer Science</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">JS</div>
-        <div>
-          <h4>HTML/CSS/JS for Web Dev — JHU</h4>
-          <small>Credential ID: QN88ZZJ48NVA</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">DP</div>
-        <div>
-          <h4>Data Privacy Fundamentals — Northeastern</h4>
-          <small>Credential ID: OYXL4WIAXS23</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">Psy</div>
-        <div>
-          <h4>Intro to Psychology — Yale</h4>
-          <small>Credential ID: RJQ49WWSHS7Y</small>
-        </div>
-      </article>
-      <article class="card cert">
-        <div class="icon">Lead</div>
-        <div>
-          <h4>Data Decision‑Making & Communication for Leaders</h4>
-          <small>LinkedIn Learning — Nancy Duarte</small>
-        </div>
+      <article class="card-elegant p-6">
+        <h3 class="font-semibold"><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
+        <p>Scrum sprint planning with GitHub Projects.</p>
       </article>
     </div>
   </section>
 
-  <!-- GAME anchor section -->
-  <section id="game" class="section reveal">
-    <h2 class="h2">Mini game</h2>
-    <p class="sub">Clean the messy rows. Drop three wrong ones in the bin to win.</p>
-    <p><button class="btn" id="jumpToGame">Open game</button></p>
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="section-padding">
+    <h2 class="h2 mb-6">Certifications</h2>
+    <div class="grid gap-4 md:grid-cols-2">
+      <article class="card-elegant p-6"><h4>IBM Generative AI</h4></article>
+      <article class="card-elegant p-6"><h4>IBM Agile Dev & Scrum</h4></article>
+      <article class="card-elegant p-6"><h4>AWS Academy Cloud Foundations</h4></article>
+      <article class="card-elegant p-6"><h4>CS50 (HarvardX)</h4></article>
+      <article class="card-elegant p-6"><h4>HTML/CSS/JS (JHU)</h4></article>
+      <article class="card-elegant p-6"><h4>Data Privacy Fundamentals (NEU)</h4></article>
+      <article class="card-elegant p-6"><h4>Intro to Psychology (Yale)</h4></article>
+      <article class="card-elegant p-6"><h4>Decision-Making & Communication for Leaders</h4></article>
+    </div>
   </section>
 
   <!-- VOLUNTEERING -->
-  <section id="volunteering" class="section reveal">
-    <h2 class="h2">Volunteering</h2>
-    <div class="vol-grid">
-      <article class="card">
-        <h4>Help Social Welfare Society — Volunteer</h4>
-        <p>Created learning materials for children, ran fundraising drives, and led women’s health awareness.</p>
-      </article>
-      <article class="card">
-        <h4>Youth Empowerment Foundation — Volunteer</h4>
-        <p>Beat fundraising targets by <b>30%</b> with data led social content. Managed outreach and campaigns.</p>
-      </article>
-      <article class="card">
-        <h4>Sahas for Animals — Supporter</h4>
-        <p>Regular donations and hands on help for animal welfare.</p>
-      </article>
+  <section id="volunteering" class="section-padding">
+    <h2 class="h2 mb-6">Volunteering</h2>
+    <div class="grid gap-4 md:grid-cols-3">
+      <article class="card-elegant p-6"><h4>Help Social Welfare Society</h4><p>Created learning materials, fundraising drives, health campaigns.</p></article>
+      <article class="card-elegant p-6"><h4>Youth Empowerment Foundation</h4><p>+30% fundraising with data-led campaigns.</p></article>
+      <article class="card-elegant p-6"><h4>Sahas for Animals</h4><p>Regular donations and hands-on support.</p></article>
     </div>
   </section>
 
 </main>
 
-<footer>© <span id="y"></span> Vidhi A. Sharma</footer>
+<footer class="section-padding text-center text-muted">
+  © <span id="y"></span> Vidhi A. Sharma
+</footer>
 
-<!-- Floating mini-game -->
-<aside class="game" aria-live="polite">
-  <header>
-    <button class="toggle" id="gameToggle">Data clean</button>
-  </header>
-  <div class="panel" id="gamePanel">
-    <div class="board" id="board">
-      <div class="row" draggable="true">cust_id, John,, USA</div>
-      <div class="row" draggable="true">, 2024-07-01, 99.5, paid</div>
-      <div class="row" draggable="true">0042 , "Boston" , MA</div>
-      <div class="row" draggable="true">email@@domain..com</div>
-      <div class="row" draggable="true">   </div>
-    </div>
-    <div class="bin" id="bin">Drop wrong rows</div>
-    <div class="win" id="win">Great! Data cleaned. You are hired.</div>
-  </div>
-</aside>
-
+<!-- Mini-game can stay unchanged if you want -->
 <script>
-// Footer year
-document.getElementById('y').textContent = new Date().getFullYear();
-
-// LOR modal
-const lor = document.getElementById('lorModal');
-document.getElementById('openLor')?.addEventListener('click',()=>lor.showModal());
-document.getElementById('closeLor')?.addEventListener('click',()=>lor.close());
-
-// Mini-game toggle and jump
-const tgl=document.getElementById('gameToggle'), pnl=document.getElementById('gamePanel');
-tgl.addEventListener('click',()=>pnl.classList.toggle('open'));
-document.getElementById('jumpToGame')?.addEventListener('click',()=>{
-  pnl.classList.add('open');
-  const old = tgl.style.boxShadow; tgl.style.boxShadow='0 0 0 8px rgba(16,185,129,.25)';
-  setTimeout(()=>tgl.style.boxShadow=old,600);
-});
-
-// Mini-game logic
-const board=document.getElementById('board'), bin=document.getElementById('bin'), win=document.getElementById('win');
-let removed=0;
-board.addEventListener('dragstart',e=>{
-  if(e.target.classList.contains('row')){
-    e.dataTransfer.setData('text/plain','');
-    e.target.classList.add('dragging');
-  }
-});
-board.addEventListener('dragend',e=>{ if(e.target.classList.contains('row')) e.target.classList.remove('dragging'); });
-['dragover','dragenter'].forEach(ev=>bin.addEventListener(ev,e=>{ e.preventDefault(); }));
-bin.addEventListener('drop',e=>{
-  e.preventDefault();
-  const dragging=document.querySelector('.row.dragging');
-  if(dragging){ dragging.remove(); removed++; }
-  if(removed>=3){ win.style.display='block'; }
-});
-
-// Scroll reveal
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(el=>{
-    if(el.isIntersecting){ el.target.classList.add('in'); obs.unobserve(el.target); }
-  })
-},{threshold:.12});
-
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
+
