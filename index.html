@@ -1,43 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Vidhi A. Sharma — Portfolio</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Vidhi A. Sharma — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ====== Elegant, minimal design (no build step) ====== */
+:root{
+  --bg:#ffffff; --bg-soft:#fafafa;
+  --ink:#111318; --muted:#6b7280; --line:#e6e6e9;
+  --accent:#b36b2f;          /* warm, chic amber */
+  --accent-ink:#ffffff;
+  --radius:16px; --shadow:0 12px 28px rgba(17,19,24,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behaviour:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+/* Type */
+.serif{font-family:"Playfair Display",serif;letter-spacing:-.015em}
+.display{font-family:"Playfair Display",serif;font-size:clamp(42px,7vw,84px);line-height:1.05;margin:0 0 8px}
+.h2{font-family:"Playfair Display",serif;font-size:clamp(26px,3.2vw,38px);margin:0 0 14px}
+.lead{max-width:840px;margin:12px auto 28px;color:var(--muted)}
 
-  <!-- Your custom chic overrides -->
-  <link href="styles.css" rel="stylesheet">
+/* Layout */
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+.section{padding:84px 0 64px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.78);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{font-weight:700}
+.nav a{color:var(--ink);text-decoration:none;padding:8px 6px;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--line)}
+
+/* Hero */
+.hero{min-height:84vh;display:flex;align-items:center;background:
+ radial-gradient(1200px 600px at 50% -10%, #f8f8f8 0, transparent 60%);}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* UI atoms */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(17,19,24,.12)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:#f7f7f9;color:var(--ink);text-decoration:none}
+.btn:hover{background:#f0f1f4}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border:none}
+.btn.primary:hover{filter:brightness(1.05)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#f6f6f7;color:#333;font-size:12px}
+
+/* Lists */
+ul.clean{margin:0;padding-left:18px}
+ul.clean li{margin:6px 0}
+
+/* Project thumbs (auto placeholders) */
+.thumb{height:140px;border-bottom:1px solid var(--line);background:
+ linear-gradient(180deg,#f7f7f9, #ececf2);
+display:grid;place-items:center;color:#454a57;font-weight:600}
+
+/* Certifications */
+.cert{display:flex;gap:12px;align-items:flex-start}
+.cert .icon{width:36px;height:36px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700}
+
+/* Volunteering */
+.card h4{margin:.1rem 0 .35rem}
+
+/* Mini‑game widget */
+.game{position:fixed;right:16px;bottom:16px;width:220px;max-width:92vw;z-index:50}
+.game .panel{display:none;margin-top:8px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:10px}
+.game .panel.open{display:block}
+.game .toggle{border:none;border-radius:999px;padding:8px 12px;background:var(--accent);color:#fff;box-shadow:var(--shadow);cursor:pointer}
+.board{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.row{padding:5px 8px;background:#f6efe8;border:1px solid #eadfce;border-radius:10px;cursor:grab;font-size:12px}
+.row.dragging{opacity:.6}
+.bin{padding:10px;border:2px dashed var(--accent);border-radius:10px;margin-top:8px;min-height:56px;display:grid;place-items:center;text-align:center;font-size:12px;background:#fff7ef;color:#5b371b}
+.win{display:none;color:#2b6b3f;font-weight:700;font-size:12px;margin-top:6px}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Footer */
+footer{padding:40px 0 64px;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:32px}
+</style>
 </head>
-<body class="bg-background text-foreground font-sans">
+<body>
 
-<!-- NAV -->
-<nav class="section-padding border-b border-border bg-background sticky top-0 z-50">
-  <div class="wrap flex justify-between items-center">
-    <div class="font-bold font-serif text-xl">Vidhi A. Sharma</div>
-    <ul class="flex gap-6 text-sm">
-      <li><a class="animated-underline" href="#home">Home</a></li>
-      <li><a class="animated-underline" href="#education">Education</a></li>
-      <li><a class="animated-underline" href="#skills">Skills</a></li>
-      <li><a class="animated-underline" href="#experience">Experience</a></li>
-      <li><a class="animated-underline" href="#projects">Projects</a></li>
-      <li><a class="animated-underline" href="#certs">Certifications</a></li>
-      <li><a class="animated-underline" href="#volunteering">Volunteering</a></li>
-    </ul>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">Vidhi A. Sharma</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#volunteering">Volunteering</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <!-- HERO -->
-<section id="home" class="section-padding text-center">
-  <div class="wrap">
-    <h1 class="text-5xl font-serif mb-4">Vidhi A. Sharma</h1>
-    <p class="max-w-2xl mx-auto text-muted mb-8">
-      Master’s student in Applied Business Analytics at Boston University with a background in Computer Science. 
+<section id="home" class="hero">
+  <div class="wrap" style="text-align:center">
+    <h1 class="display">Vidhi A. Sharma</h1>
+    <p class="lead">
+      Master’s student in Applied Business Analytics at Boston University with a background in Computer Science.
       I turn complex data into clear actions, improve workflows, and help teams make better decisions.
     </p>
-    <div class="flex gap-4 justify-center flex-wrap">
+    <div class="cta">
       <a class="btn primary" href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download>Download résumé</a>
       <a class="btn" href="https://github.com/17vidhisharma" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank" rel="noopener">LinkedIn</a>
@@ -48,118 +122,197 @@
 <main class="wrap">
 
   <!-- EDUCATION -->
-  <section id="education" class="section-padding">
-    <h2 class="h2 mb-6">Education</h2>
-    <div class="grid gap-4">
-      <article class="card-elegant p-6">
-        <h4 class="font-semibold">Boston University — Metropolitan College</h4>
+  <section id="education" class="section reveal">
+    <h2 class="h2">Education</h2>
+    <div class="grid-2">
+      <article class="card">
+        <h3 class="serif">Boston University — Metropolitan College</h3>
         <small>Master of Science, Applied Business Analytics • Sep 2024 — Ongoing • Boston, MA</small>
       </article>
-      <article class="card-elegant p-6">
-        <h4 class="font-semibold">MIT World Peace University</h4>
+      <article class="card">
+        <h3 class="serif">MIT World Peace University</h3>
         <small>Bachelor of Science, Computer Science • Aug 2019 — Oct 2022 • Pune, India</small>
       </article>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section-padding">
-    <h2 class="h2 mb-6">Skills</h2>
-    <div class="grid gap-6 md:grid-cols-3">
-      <article class="card-elegant p-6">
-        <h3 class="mb-2 font-semibold">Data Analytics & Tech</h3>
-        <ul class="space-y-1 text-sm">
+  <section id="skills" class="section reveal">
+    <h2 class="h2">Skills</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h3 class="serif">Data analytics and tech</h3>
+        <ul class="clean">
           <li>SQL, Python, R</li>
           <li>Tableau, Power BI, Excel, SAS, Dataiku</li>
           <li>Azure, AWS, PostgreSQL, Spark</li>
+          <li>ETL, pipelines, automation</li>
         </ul>
       </article>
-      <article class="card-elegant p-6">
-        <h3 class="mb-2 font-semibold">Business & Ops</h3>
-        <ul class="space-y-1 text-sm">
-          <li>Workflow optimisation</li>
-          <li>Capacity planning</li>
-          <li>Change management</li>
+      <article class="card">
+        <h3 class="serif">Business and operations</h3>
+        <ul class="clean">
+          <li>Workflow optimisation, performance tracking</li>
+          <li>Capacity planning, inventory</li>
+          <li>Change management, project management</li>
         </ul>
       </article>
-      <article class="card-elegant p-6">
-        <h3 class="mb-2 font-semibold">Soft Skills</h3>
-        <ul class="space-y-1 text-sm">
-          <li>Communication & leadership</li>
-          <li>Problem solving</li>
-          <li>Customer-first mindset</li>
+      <article class="card">
+        <h3 class="serif">People</h3>
+        <ul class="clean">
+          <li>Stakeholder management, leadership</li>
+          <li>Communication, problem solving</li>
+          <li>Customer focus, time management</li>
         </ul>
       </article>
     </div>
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="section-padding">
-    <h2 class="h2 mb-6">Experience</h2>
-    <div class="grid gap-4">
-      <article class="card-elegant p-6">
-        <h4 class="font-semibold">Boston University IS&T — Student Assistant</h4>
+  <section id="experience" class="section reveal">
+    <h2 class="h2">Experience</h2>
+    <div class="grid-2">
+      <article class="card">
+        <h3 class="serif">Boston University IS&T — Student Assistant</h3>
         <small>Jul 2025 — Present</small>
-        <p>Tracked inventory in Excel, streamlined departmental sheets and reports, and supported office ops.</p>
+        <p>Tracked inventory in Excel, kept departmental sheets and weekly reports updated, streamlined document and database updates, and supported office operations.</p>
       </article>
-      <article class="card-elegant p-6">
-        <h4 class="font-semibold">Maharaj Multi-Systems — Business Analyst</h4>
+      <article class="card">
+        <h3 class="serif">Maharaj Multi‑Systems — Business Analyst</h3>
         <small>Jan 2024 — Jul 2024</small>
-        <p>+15% efficiency, -25% errors, +30% retention through analysis and verification.</p>
+        <p>15% efficiency gain from operations analysis, 25% fewer processing errors through verification, and 30% client retention uplift via faster resolution and insights.</p>
       </article>
-      <article class="card-elegant p-6">
-        <h4 class="font-semibold">Pimpri Chinchwad Media Communication — Data Intern</h4>
+      <article class="card">
+        <h3 class="serif">Pimpri Chinchwad Media Communication — Data Intern</h3>
         <small>Aug 2022 — Aug 2023</small>
-        <p>-20% resolution time, improved deployments, +40% client retention.</p>
+        <p>20% faster resolution time with improved diagnostics. Supported deployments and database management. Helped improve client retention by 40% with reliable support.</p>
       </article>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section-padding">
-    <h2 class="h2 mb-6">Projects</h2>
-    <div class="grid gap-6 md:grid-cols-2">
-      <article class="card-elegant p-6">
-        <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Dashboard</a></h3>
-        <p>Streamlit app with Python, Pandas, Plotly for sales insights.</p>
+  <!-- PROJECTS / FEATURED -->
+  <section id="projects" class="section reveal">
+    <h2 class="h2">Projects and featured</h2>
+    <div class="grid-2">
+      <article class="card" style="padding:0;overflow:hidden">
+        <div class="thumb">Skincare Dashboard</div>
+        <div style="padding:16px">
+          <span class="badge">Case study</span>
+          <h3 class="serif"><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
+          <p>Streamlit app with Python, Pandas, and Plotly for spend trends, seasonality, and pricing choices.</p>
+        </div>
       </article>
-      <article class="card-elegant p-6">
-        <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non-AI Jobs</a></h3>
-        <p>R + Spark analysis of 2024 job signals, AWS dashboard for demand.</p>
+
+      <article class="card" style="padding:0;overflow:hidden">
+        <div class="thumb">AI vs Non‑AI</div>
+        <div style="padding:16px">
+          <span class="badge">Market insight</span>
+          <h3 class="serif"><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non‑AI Jobs</a></h3>
+          <p>R and Spark analysis of 2024 job signals with an AWS dashboard to explore demand by metro and industry.</p>
+        </div>
+      </article>
+
+      <article class="card" style="padding:0;overflow:hidden">
+        <div class="thumb">Ops redesign</div>
+        <div style="padding:16px">
+          <span class="badge">Operations</span>
+          <h3 class="serif"><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
+          <p>Lean KPIs and process changes to cut bottlenecks, lift throughput, and reduce rework.</p>
+        </div>
+      </article>
+
+      <article class="card" style="padding:0;overflow:hidden">
+        <div class="thumb">Agile simulation</div>
+        <div style="padding:16px">
+          <span class="badge">Agile</span>
+          <h3 class="serif"><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
+          <p>Scrum sprint planning with GitHub Projects. WIP limits for calmer stand ups and fewer surprises.</p>
+        </div>
+      </article>
+
+      <article class="card" style="padding:0;overflow:hidden">
+        <div class="thumb">Recommendation</div>
+        <div style="padding:16px">
+          <span class="badge">Recommendation</span>
+          <h3 class="serif">Letter of recommendation</h3>
+          <p>Dr Dean Saluti, Boston University (Metropolitan College). Highest grade, leadership, strong quantitative skills.</p>
+          <a class="btn" href="dr%20dean%20saluti%20letter%20of%20recommendation.pdf" target="_blank" rel="noopener">Open letter</a>
+        </div>
       </article>
     </div>
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section id="certs" class="section-padding">
-    <h2 class="h2 mb-6">Certifications</h2>
-    <div class="grid gap-4 md:grid-cols-2">
-      <article class="card-elegant p-6"><h4>IBM Generative AI</h4></article>
-      <article class="card-elegant p-6"><h4>AWS Academy Cloud Foundations</h4></article>
-      <article class="card-elegant p-6"><h4>CS50 (HarvardX)</h4></article>
-      <article class="card-elegant p-6"><h4>Decision-Making & Communication for Leaders</h4></article>
+  <section id="certs" class="section reveal">
+    <h2 class="h2">Certifications</h2>
+    <div class="grid-3">
+      <article class="card cert"><div class="icon">AI</div><div><h4>IBM Generative AI</h4><small>ID: MNG4J8Y5HUOZ</small></div></article>
+      <article class="card cert"><div class="icon">Ag</div><div><h4>IBM Intro to Agile & Scrum</h4><small>ID: 1M2UDN2DD4F7</small></div></article>
+      <article class="card cert"><div class="icon">AWS</div><div><h4>AWS Academy Cloud Foundations</h4><small>Foundational</small></div></article>
+      <article class="card cert"><div class="icon">CS</div><div><h4>CS50 — HarvardX (Verified)</h4></div></article>
+      <article class="card cert"><div class="icon">JS</div><div><h4>HTML/CSS/JS — Johns Hopkins</h4><small>ID: QN88ZZJ48NVA</small></div></article>
+      <article class="card cert"><div class="icon">DP</div><div><h4>Data Privacy Fundamentals — Northeastern</h4><small>ID: OYXL4WIAXS23</small></div></article>
+      <article class="card cert"><div class="icon">Psy</div><div><h4>Intro to Psychology — Yale</h4><small>ID: RJQ49WWSHS7Y</small></div></article>
+      <article class="card cert"><div class="icon">Lead</div><div><h4>Decision Making & Communication for Leaders</h4><small>LinkedIn Learning — Nancy Duarte</small></div></article>
     </div>
   </section>
 
   <!-- VOLUNTEERING -->
-  <section id="volunteering" class="section-padding">
-    <h2 class="h2 mb-6">Volunteering</h2>
-    <div class="grid gap-4 md:grid-cols-3">
-      <article class="card-elegant p-6"><h4>Help Social Welfare Society</h4><p>Created learning materials, fundraising drives, health campaigns.</p></article>
-      <article class="card-elegant p-6"><h4>Youth Empowerment Foundation</h4><p>+30% fundraising with data-led campaigns.</p></article>
-      <article class="card-elegant p-6"><h4>Sahas for Animals</h4><p>Regular donations and hands-on support.</p></article>
+  <section id="volunteering" class="section reveal">
+    <h2 class="h2">Volunteering</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h4>Help Social Welfare Society</h4>
+        <p>Created learning materials for children, ran fundraising drives, and led women’s health awareness.</p>
+      </article>
+      <article class="card">
+        <h4>Youth Empowerment Foundation</h4>
+        <p>Beat fundraising targets by 30% with data led social content. Managed outreach and campaigns.</p>
+      </article>
+      <article class="card">
+        <h4>Sahas for Animals</h4>
+        <p>Regular donations and hands on help for animal welfare.</p>
+      </article>
     </div>
   </section>
 
 </main>
 
-<footer class="section-padding text-center text-muted">
-  © <span id="y"></span> Vidhi A. Sharma
-</footer>
+<footer>© <span id="y"></span> Vidhi A. Sharma</footer>
+
+<!-- Mini‑game (fun detail) -->
+<aside class="game" aria-live="polite">
+  <button class="toggle" id="gameToggle">Data clean</button>
+  <div class="panel" id="gamePanel">
+    <div class="board" id="board">
+      <div class="row" draggable="true">cust_id, John,, USA</div>
+      <div class="row" draggable="true">, 2024-07-01, 99.5, paid</div>
+      <div class="row" draggable="true">0042 , "Boston" , MA</div>
+      <div class="row" draggable="true">email@@domain..com</div>
+      <div class="row" draggable="true">   </div>
+    </div>
+    <div class="bin" id="bin">Drop wrong rows</div>
+    <div class="win" id="win">Great. Data cleaned.</div>
+  </div>
+</aside>
 
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+document.getElementById('y').textContent = new Date().getFullYear();
 
+/* Scroll reveal */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Mini‑game */
+const t=document.getElementById('gameToggle'), p=document.getElementById('gamePanel');
+t.addEventListener('click',()=>p.classList.toggle('open'));
+const board=document.getElementById('board'), bin=document.getElementById('bin'), win=document.getElementById('win');
+let removed=0;
+board.addEventListener('dragstart',e=>{if(e.target.classList.contains('row')){e.dataTransfer.setData('text/plain','');e.target.classList.add('dragging')}})
+board.addEventListener('dragend',e=>{if(e.target.classList.contains('row')) e.target.classList.remove('dragging')})
+;['dragover','dragenter'].forEach(ev=>bin.addEventListener(ev,e=>e.preventDefault()))
+bin.addEventListener('drop',e=>{e.preventDefault();const d=document.querySelector('.row.dragging');if(d){d.remove();removed++}if(removed>=3){win.style.display='block'}})
+</script>
 </body>
 </html>
+
