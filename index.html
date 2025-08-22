@@ -4,175 +4,809 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Vidhi A. Sharma — Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f23;
+      --bg-card: #1a1a2e;
+      --bg-elevated: #16213e;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border: #334155;
+      --accent: #06b6d4;
+      --accent-warm: #f59e0b;
+      --accent-purple: #8b5cf6;
+      --success: #10b981;
+      --radius: 8px;
+      --mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 15, 35, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .brand {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 100px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: -0.025em;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+
+    .cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.8s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Section */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 48px;
+      letter-spacing: -0.025em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple));
+      border-radius: 2px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-purple), var(--accent-warm));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      background: var(--bg-elevated);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .card small {
+      color: var(--text-dim);
+      font-size: 13px;
+      font-family: var(--mono);
+    }
+
+    /* Skills */
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-list li {
+      padding: 8px 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .skill-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    /* Experience */
+    .experience-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .experience-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      position: relative;
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--border);
+    }
+
+    .experience-card:hover {
+      border-left-color: var(--accent);
+      transform: translateX(8px);
+      background: var(--bg-elevated);
+    }
+
+    /* Projects */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1);
+    }
+
+    .project-thumb {
+      height: 140px;
+      background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--border) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--text-muted);
+      position: relative;
+      font-family: var(--mono);
+      font-size: 14px;
+    }
+
+    .project-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    }
+
+    .project-content {
+      padding: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--accent);
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .project-content h3 {
+      margin-bottom: 12px;
+    }
+
+    .project-content h3 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .project-content h3 a:hover {
+      color: var(--accent);
+    }
+
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .cert-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      background: var(--bg-elevated);
+    }
+
+    .cert-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--mono);
+      flex-shrink: 0;
+    }
+
+    .cert-info h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .cert-info small {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: var(--mono);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 60px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 14px;
+      background: var(--bg-card);
+      font-family: var(--mono);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 0 16px;
+        flex-direction: column;
+        height: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        gap: 16px;
+      }
+
+      .nav-links {
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 80px 16px 60px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Focus states */
+    .btn:focus,
+    .nav a:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <div class="brand">Vidhi A. Sharma</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certifications</a>
-      <a href="#volunteering">Volunteering</a>
-    </nav>
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">vidhi.sh</div>
+    <div class="nav-links">
+      <a href="#home">home</a>
+      <a href="#education">education</a>
+      <a href="#skills">skills</a>
+      <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
+      <a href="#certs">certs</a>
+      <a href="#volunteering">volunteering</a>
+    </div>
   </div>
-</header>
+</nav>
 
 <section id="home" class="hero">
-  <div class="wrap hero-content">
-    <h1 class="display">Vidhi A. Sharma</h1>
-    <p class="lead">Master’s student in Applied Business Analytics at Boston University with a background in Computer Science. I turn complex data into clear actions, improve workflows, and help teams make better decisions.</p>
-    <div class="cta">
-      <a class="btn primary" href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download>Download résumé</a>
-      <a class="btn" href="https://github.com/17vidhisharma" target="_blank">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank">LinkedIn</a>
-    </div>
+  <div class="hero-label">Portfolio</div>
+  <h1>Vidhi A. Sharma</h1>
+  <p>Master's student in Applied Business Analytics at Boston University. I turn complex data into clear actions, improve workflows, and help teams make better decisions. Currently building things that matter.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="#" download>Download résumé</a>
+    <a class="btn btn-secondary" href="https://github.com/17vidhisharma" target="_blank">GitHub</a>
+    <a class="btn btn-secondary" href="https://www.linkedin.com/in/17vidhisharma/" target="_blank">LinkedIn</a>
   </div>
 </section>
 
-<main class="wrap">
+<main class="container">
   <section id="education" class="section reveal">
-    <h2 class="h2">Education</h2>
-    <div class="grid-2">
-      <article class="card">
-        <h3 class="serif">Boston University — Metropolitan College</h3>
-        <small>Master of Science, Applied Business Analytics • Sep 2024 — Ongoing • Boston, MA</small>
-      </article>
-      <article class="card">
-        <h3 class="serif">MIT World Peace University</h3>
-        <small>BSc Computer Science • Aug 2019 — Oct 2022 • Pune, India</small>
-      </article>
+    <h2>Education</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Boston University — Metropolitan College</h3>
+        <p>Master of Science, Applied Business Analytics</p>
+        <small>Sep 2024 — Present • Boston, MA</small>
+      </div>
+      <div class="card">
+        <h3>MIT World Peace University</h3>
+        <p>Bachelor of Science, Computer Science</p>
+        <small>Aug 2019 — Oct 2022 • Pune, India</small>
+      </div>
     </div>
   </section>
 
   <section id="skills" class="section reveal">
-    <h2 class="h2">Skills</h2>
-    <div class="grid-3">
-      <article class="card">
-        <h3 class="serif">Data analytics & tech</h3>
-        <ul class="clean">
+    <h2>Skills</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Data & Analytics</h3>
+        <ul class="skill-list">
           <li>SQL, Python, R</li>
-          <li>Tableau, Power BI, Excel, SAS, Dataiku</li>
-          <li>Azure, AWS, PostgreSQL, Spark</li>
-          <li>ETL, pipelines, automation</li>
+          <li>Tableau, Power BI, Excel</li>
+          <li>SAS, Dataiku, Spark</li>
+          <li>Azure, AWS, PostgreSQL</li>
+          <li>ETL pipelines, automation</li>
         </ul>
-      </article>
-      <article class="card">
-        <h3 class="serif">Business & ops</h3>
-        <ul class="clean">
-          <li>Workflow optimisation, performance tracking</li>
-          <li>Capacity planning, inventory</li>
-          <li>Change & project management</li>
+      </div>
+      <div class="card">
+        <h3>Business & Strategy</h3>
+        <ul class="skill-list">
+          <li>Workflow optimization</li>
+          <li>Performance tracking</li>
+          <li>Capacity planning</li>
+          <li>Project management</li>
+          <li>Process improvement</li>
         </ul>
-      </article>
-      <article class="card">
-        <h3 class="serif">People</h3>
-        <ul class="clean">
-          <li>Stakeholder management, leadership</li>
-          <li>Communication, problem solving</li>
-          <li>Customer focus, time management</li>
+      </div>
+      <div class="card">
+        <h3>Leadership & Communication</h3>
+        <ul class="skill-list">
+          <li>Stakeholder management</li>
+          <li>Team leadership</li>
+          <li>Technical communication</li>
+          <li>Problem solving</li>
+          <li>Change management</li>
         </ul>
-      </article>
+      </div>
     </div>
   </section>
 
   <section id="experience" class="section reveal">
-    <h2 class="h2">Experience</h2>
-    <div class="grid-2">
-      <article class="card">
-        <h3 class="serif">Boston University IS&T — Student Assistant</h3>
-        <small>Jul 2025 — Present</small>
-        <p>Tracked inventory, maintained reports, streamlined document/database updates, and supported office ops.</p>
-      </article>
-      <article class="card">
-        <h3 class="serif">Maharaj Multi‑Systems — Business Analyst</h3>
-        <small>Jan 2024 — Jul 2024</small>
-        <p>+15% efficiency, −25% errors, +30% retention via faster resolution and insights.</p>
-      </article>
-      <article class="card">
-        <h3 class="serif">Pimpri Chinchwad Media Communication — Data Intern</h3>
-        <small>Aug 2022 — Aug 2023</small>
-        <p>−20% resolution time, improved deployments & database management, +40% client retention.</p>
-      </article>
+    <h2>Experience</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <h3>Student Assistant</h3>
+        <p><strong>Boston University IS&T</strong> • Jul 2025 — Present</p>
+        <p>Track inventory, maintain reports, streamline document/database updates, and support office operations.</p>
+      </div>
+      <div class="experience-card">
+        <h3>Business Analyst</h3>
+        <p><strong>Maharaj Multi-Systems</strong> • Jan 2024 — Jul 2024</p>
+        <p>Achieved +15% efficiency, −25% errors, +30% retention through faster resolution and actionable insights.</p>
+      </div>
+      <div class="experience-card">
+        <h3>Data Intern</h3>
+        <p><strong>Pimpri Chinchwad Media Communication</strong> • Aug 2022 — Aug 2023</p>
+        <p>Reduced resolution time by 20%, improved deployments & database management, achieved +40% client retention.</p>
+      </div>
     </div>
   </section>
 
   <section id="projects" class="section reveal">
-    <h2 class="h2">Projects</h2>
-    <div class="grid-2">
-      <article class="card tight">
-        <div class="thumb">Skincare Dashboard</div>
-        <div class="pad">
-          <span class="badge">Case study</span>
-          <h3 class="serif"><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS">Skincare Sales Dashboard</a></h3>
-          <p>Streamlit app with Python, Pandas, Plotly for trends, seasonality, pricing choices.</p>
+    <h2>Projects</h2>
+    <div class="grid grid-2">
+      <div class="project-card">
+        <div class="project-thumb">skincare_dashboard.py</div>
+        <div class="project-content">
+          <span class="badge">Case Study</span>
+          <h3><a href="https://github.com/17vidhisharma/SKINCARE-ANALYSIS" target="_blank">Skincare Sales Dashboard</a></h3>
+          <p>Interactive Streamlit application using Python, Pandas, and Plotly to analyze trends, seasonality, and pricing strategies.</p>
         </div>
-      </article>
-      <article class="card tight">
-        <div class="thumb">AI vs Non‑AI</div>
-        <div class="pad">
-          <span class="badge">Market insight</span>
-          <h3 class="serif"><a href="https://github.com/17vidhisharma/AI-VS-NON-AI">AI vs Non‑AI Jobs</a></h3>
-          <p>R & Spark analysis of 2024 job signals. AWS dashboard by metro & industry.</p>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">ai_jobs_analysis.r</div>
+        <div class="project-content">
+          <span class="badge">Market Research</span>
+          <h3><a href="https://github.com/17vidhisharma/AI-VS-NON-AI" target="_blank">AI vs Non-AI Jobs Analysis</a></h3>
+          <p>R and Spark analysis of 2024 job market signals with AWS dashboard visualization by metro area and industry.</p>
         </div>
-      </article>
-      <article class="card tight">
-        <div class="thumb">Ops redesign</div>
-        <div class="pad">
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">stickley_optimization</div>
+        <div class="project-content">
           <span class="badge">Operations</span>
-          <h3 class="serif"><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study">Stickley Ops</a></h3>
-          <p>Lean KPIs & process changes to cut bottlenecks and lift throughput.</p>
+          <h3><a href="https://github.com/17vidhisharma/Stickley-Adhesives-case-study" target="_blank">Stickley Operations Redesign</a></h3>
+          <p>Lean methodology implementation with KPIs and process changes to eliminate bottlenecks and increase throughput.</p>
         </div>
-      </article>
-      <article class="card tight">
-        <div class="thumb">Agile simulation</div>
-        <div class="pad">
-          <span class="badge">Agile</span>
-          <h3 class="serif"><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm">IBM Agile Sim</a></h3>
-          <p>Scrum sprint planning with GitHub Projects. WIP limits = calmer standups.</p>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">agile_simulation</div>
+        <div class="project-content">
+          <span class="badge">Process</span>
+          <h3><a href="https://github.com/17vidhisharma/agile-sprint-planning-ibm" target="_blank">IBM Agile Sprint Simulation</a></h3>
+          <p>Scrum sprint planning implementation using GitHub Projects with WIP limits for improved team workflow.</p>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <section id="certs" class="section reveal">
-    <h2 class="h2">Certifications</h2>
-    <div class="grid-3">
-      <article class="card cert"><div class="icon">AI</div><div><h4>IBM Generative AI</h4><small>ID: MNG4J8Y5HUOZ</small></div></article>
-      <article class="card cert"><div class="icon">Ag</div><div><h4>IBM Agile & Scrum</h4><small>ID: 1M2UDN2DD4F7</small></div></article>
-      <article class="card cert"><div class="icon">AWS</div><div><h4>AWS Academy Cloud Foundations</h4><small>Foundational</small></div></article>
-      <article class="card cert"><div class="icon">CS</div><div><h4>CS50 — HarvardX (Verified)</h4></div></article>
-      <article class="card cert"><div class="icon">JS</div><div><h4>HTML/CSS/JS — JHU</h4><small>ID: QN88ZZJ48NVA</small></div></article>
-      <article class="card cert"><div class="icon">DP</div><div><h4>Data Privacy Fundamentals — NEU</h4><small>ID: OYXL4WIAXS23</small></div></article>
-      <article class="card cert"><div class="icon">Psy</div><div><h4>Intro to Psychology — Yale</h4><small>ID: RJQ49WWSHS7Y</small></div></article>
-      <article class="card cert"><div class="icon">Lead</div><div><h4>Decision‑Making & Communication for Leaders</h4><small>LinkedIn — Nancy Duarte</small></div></article>
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">AI</div>
+        <div class="cert-info">
+          <h4>IBM Generative AI Fundamentals</h4>
+          <small>MNG4J8Y5HUOZ</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">AG</div>
+        <div class="cert-info">
+          <h4>IBM Agile & Scrum Fundamentals</h4>
+          <small>1M2UDN2DD4F7</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">AWS</div>
+        <div class="cert-info">
+          <h4>AWS Academy Cloud Foundations</h4>
+          <small>Cloud Computing</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">CS</div>
+        <div class="cert-info">
+          <h4>CS50 — Harvard (Verified)</h4>
+          <small>Computer Science</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">WEB</div>
+        <div class="cert-info">
+          <h4>HTML/CSS/JavaScript — JHU</h4>
+          <small>QN88ZZJ48NVA</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">PRI</div>
+        <div class="cert-info">
+          <h4>Data Privacy Fundamentals — NEU</h4>
+          <small>OYXL4WIAXS23</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">PSY</div>
+        <div class="cert-info">
+          <h4>Introduction to Psychology — Yale</h4>
+          <small>RJQ49WWSHS7Y</small>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">LDR</div>
+        <div class="cert-info">
+          <h4>Decision-Making & Communication</h4>
+          <small>LinkedIn Learning</small>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="volunteering" class="section reveal">
-    <h2 class="h2">Volunteering</h2>
-    <div class="grid-3">
-      <article class="card"><h4>Help Social Welfare Society</h4><p>Created learning materials, fundraising drives, health campaigns.</p></article>
-      <article class="card"><h4>Youth Empowerment Foundation</h4><p>+30% fundraising with data‑led campaigns.</p></article>
-      <article class="card"><h4>Sahas for Animals</h4><p>Regular donations and hands‑on support.</p></article>
+    <h2>Volunteering</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Help Social Welfare Society</h3>
+        <p>Created educational materials, organized fundraising drives, and developed health awareness campaigns.</p>
+      </div>
+      <div class="card">
+        <h3>Youth Empowerment Foundation</h3>
+        <p>Increased fundraising efficiency by 30% through data-driven campaign strategies and community outreach.</p>
+      </div>
+      <div class="card">
+        <h3>Sahas for Animals</h3>
+        <p>Ongoing support through regular donations and hands-on volunteer work for animal welfare initiatives.</p>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>© <span id="y"></span> Vidhi A. Sharma</footer>
+<footer>© <span id="year"></span> • built with care</footer>
 
 <script>
-document.getElementById('y').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// reveal on scroll
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
 </script>
+
 </body>
 </html>
