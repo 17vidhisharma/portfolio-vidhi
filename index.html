@@ -531,7 +531,7 @@
             align-items: center;
             justify-content: center;
             z-index: 10000;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.3s ease;
         }
 
         .loader-text {
@@ -1152,12 +1152,14 @@ I’m especially interested in how analytics shows up outside traditional techni
             card.style.transitionDelay = `${index * 0.05}s`;
         });
 
-        // Loading animation
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loader').classList.add('hidden');
-            }, 1000);
-        });
+        // Loading animation — dismiss quickly and reliably
+        function hideLoader() {
+            const loader = document.querySelector('.loader');
+            if (loader) loader.classList.add('hidden');
+        }
+        setTimeout(hideLoader, 800);
+        document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 400));
+        window.addEventListener('load', hideLoader);
 
         // Form submission
         document.querySelector('form').addEventListener('submit', (e) => {
