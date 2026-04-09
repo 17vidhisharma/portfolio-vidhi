@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidhi Sharma - Data Analyst & Business Analytics</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Arial', sans-serif;
@@ -19,518 +15,186 @@
             cursor: none;
         }
 
-        /* Dotted Grid Background - EXACT MATCH */
         .dotted-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            background-image: 
-                radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            opacity: 0.8;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1; pointer-events: none;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 20px 20px; opacity: 0.8;
         }
 
-        /* Code Editor Style Dotted Lines */
         .code-lines {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-            background-image: 
-                repeating-linear-gradient(
-                    0deg,
-                    transparent,
-                    transparent 19px,
-                    rgba(255, 255, 255, 0.08) 20px
-                ),
-                repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 19px,
-                    rgba(255, 255, 255, 0.08) 20px
-                );
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2; pointer-events: none;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.08) 20px),
+                repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.08) 20px);
             background-size: 20px 20px;
         }
 
         .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
+            position: fixed; width: 20px; height: 20px;
+            background: rgba(255,255,255,0.8); border-radius: 50%;
+            pointer-events: none; z-index: 9999;
             transition: transform 0.1s ease;
+            transform: translate(-50%, -50%);
         }
+        .cursor-hover { transform: translate(-50%,-50%) scale(1.5); background: #fff; }
 
-        .cursor-hover {
-            transform: scale(1.5);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 30px;
-            right: 50px;
-            z-index: 1000;
-            background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        nav a:hover {
-            color: #ffffff;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #ffffff;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section - EXACT MATCH */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0 100px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .hero-subtitle {
-            font-size: 14px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            opacity: 0.7;
-            text-transform: uppercase;
-            animation: fadeInUp 1s ease 0.5s forwards;
-            opacity: 0;
-        }
-
-        .hero-title {
-            font-size: clamp(8rem, 20vw, 18rem);
-            font-weight: 300;
-            letter-spacing: -10px;
-            line-height: 0.8;
-            margin: 0;
-            animation: fadeInUp 1s ease 1s forwards;
-            opacity: 0;
-        }
-
-        .hero-name {
-            display: block;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .hero-description {
-            font-size: 16px;
-            letter-spacing: 1px;
-            margin-top: 40px;
-            max-width: 500px;
-            opacity: 0.8;
-            line-height: 1.6;
-            animation: fadeInUp 1s ease 1.5s forwards;
-            opacity: 0;
-        }
-
-        /* Content Sections */
-        .section {
-            min-height: 100vh;
-            padding: 100px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .section-header {
-            margin-bottom: 80px;
-        }
-
-        .section-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 300;
-            letter-spacing: -5px;
-            color: #ffffff;
-            margin: 0;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .section-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Modal/Popup Style Cards */
-        .modal-card {
-            background: rgba(26, 26, 26, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 60px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(20px);
-            position: relative;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .modal-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .modal-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 15px 15px;
-            border-radius: 15px;
-            pointer-events: none;
-        }
-
-        .modal-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(26, 26, 26, 0.98);
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 18px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .about-text p {
-            margin-bottom: 25px;
-        }
-
-        .skills-list {
-            list-style: none;
-        }
-
-        .skills-list li {
-            font-size: 14px;
-            letter-spacing: 1px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-            transition: color 0.3s ease;
-        }
-
-        .skills-list li:hover {
-            color: #ffffff;
-        }
-
-        /* Experience Cards */
-        .experience-card {
-            margin-bottom: 30px;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .experience-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #ffffff;
-            letter-spacing: -1px;
-        }
-
-        .experience-company {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .experience-date {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
-            text-align: right;
-        }
-
-        .experience-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
-        }
-
-        .experience-description ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .experience-description li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-        }
-
-        .experience-description li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Projects Grid */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-        }
-
-        .project-card {
-            position: relative;
-        }
-
-        .project-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #ffffff;
-            letter-spacing: -1px;
-        }
-
-        .project-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .project-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-        }
-
-        .contact-info h3 {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .contact-info a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: rgba(255, 255, 255, 0.8);
-            transform: translateX(5px);
-        }
-
-        /* Form */
-        .contact-form {
-            position: relative;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 0;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-bottom-color: #ffffff;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 12px;
-        }
-
-        .submit-btn {
-            background: transparent;
-            color: #ffffff;
-            padding: 15px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 0;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: #ffffff;
-            color: #1a1a1a;
-        }
-
-        /* 404 Page Style Element */
-        .page-indicator {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            font-size: 120px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.03);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 0 40px;
-            }
-
-            .hero-title {
-                font-size: clamp(4rem, 15vw, 10rem);
-            }
-
-            .section {
-                padding: 60px 40px;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                top: 20px;
-                right: 20px;
-                padding: 15px;
-            }
-
-            .page-indicator {
-                bottom: 20px;
-                right: 20px;
-                font-size: 60px;
-            }
-        }
-
-
-
-        /* Scroll indicator */
         .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0%;
-            background: #ffffff;
-            z-index: 9999;
-            transition: height 0.1s ease;
+            position: fixed; top: 0; left: 0; width: 3px; height: 0%;
+            background: #ffffff; z-index: 9999; transition: height 0.1s ease;
+        }
+
+        .page-indicator {
+            position: fixed; bottom: 50px; right: 50px;
+            font-size: 120px; font-weight: 300;
+            color: rgba(255,255,255,0.03); z-index: 1; pointer-events: none;
+        }
+
+        nav {
+            position: fixed; top: 30px; right: 50px; z-index: 1000;
+            background: rgba(26,26,26,0.9); backdrop-filter: blur(10px);
+            padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        nav ul { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+        nav a {
+            color: rgba(255,255,255,0.7); text-decoration: none;
+            font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+            transition: all 0.3s ease; position: relative; padding: 5px 0;
+        }
+        nav a:hover, nav a.active { color: #ffffff; }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 1px; background: #ffffff; transition: width 0.3s ease;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
+
+        .hero {
+            height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: flex-start;
+            padding: 0 100px; position: relative; z-index: 10;
+        }
+        .hero-subtitle {
+            font-size: 14px; letter-spacing: 3px; margin-bottom: 20px;
+            text-transform: uppercase; animation: fadeInUp 0.8s ease 0.3s both;
+        }
+        .hero-title {
+            font-size: clamp(8rem, 20vw, 18rem); font-weight: 300;
+            letter-spacing: -10px; line-height: 0.8; margin: 0;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        .hero-name { display: block; font-weight: 700; color: #ffffff; }
+        .hero-description {
+            font-size: 16px; letter-spacing: 1px; margin-top: 40px;
+            max-width: 500px; opacity: 0.8; line-height: 1.6;
+            animation: fadeInUp 0.8s ease 0.9s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section { min-height: 100vh; padding: 100px; position: relative; z-index: 10; }
+        .section-header { margin-bottom: 80px; }
+        .section-title {
+            font-size: clamp(3rem, 8vw, 6rem); font-weight: 300;
+            letter-spacing: -5px; color: #ffffff; margin: 0;
+        }
+
+        .modal-card {
+            background: rgba(26,26,26,0.95); border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px; padding: 60px; margin-bottom: 40px;
+            backdrop-filter: blur(20px); position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .modal-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 15px 15px; border-radius: 15px; pointer-events: none;
+        }
+        .modal-card:hover {
+            transform: translateY(-5px); border-color: rgba(255,255,255,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start; }
+        .about-text { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.9); }
+        .about-text p { margin-bottom: 25px; }
+        .skills-list { list-style: none; }
+        .skills-list li {
+            font-size: 14px; letter-spacing: 1px; padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8); transition: all 0.3s ease;
+        }
+        .skills-list li:hover { color: #ffffff; transform: translateX(10px); border-color: rgba(255,255,255,0.5); }
+
+        .experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+        .experience-title { font-size: 24px; font-weight: 600; color: #ffffff; letter-spacing: -1px; }
+        .experience-company { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .experience-date { font-size: 14px; color: rgba(255,255,255,0.5); text-align: right; white-space: nowrap; margin-left: 20px; flex-shrink: 0; }
+        .experience-description { color: rgba(255,255,255,0.8); line-height: 1.7; }
+        .experience-description ul { list-style: none; padding-left: 0; }
+        .experience-description li { position: relative; padding-left: 20px; margin-bottom: 12px; }
+        .experience-description li::before { content: '->'; position: absolute; left: 0; color: rgba(255,255,255,0.5); }
+
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .project-title { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #ffffff; letter-spacing: -1px; }
+        .project-description { color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 25px; }
+        .project-skills { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-tag {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            padding: 4px 12px; border-radius: 20px; font-size: 11px;
+            letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.9);
+        }
+
+        .certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .cert-list { list-style: none; padding: 0; margin-top: 10px; }
+        .cert-list li { color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative; font-size: 14px; line-height: 1.5; }
+        .cert-list li::before { content: 'o'; position: absolute; left: 0; color: rgba(255,255,255,0.5); }
+
+        .rec-card { border-left: 4px solid rgba(255,255,255,0.5); padding-left: 30px; }
+        .rec-name { color: #ffffff; font-size: 20px; margin-bottom: 5px; }
+        .rec-role { color: rgba(255,255,255,0.7); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
+        .rec-quote { font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 20px; }
+        .rec-context { font-size: 14px; color: rgba(255,255,255,0.6); }
+        .rec-context p { margin-bottom: 3px; }
+
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact-info h3 { font-size: 16px; color: rgba(255,255,255,0.7); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 2px; }
+        .contact-info a { color: #ffffff; text-decoration: none; font-size: 18px; display: block; margin-bottom: 25px; transition: all 0.3s ease; }
+        .contact-info a:hover { color: rgba(255,255,255,0.8); transform: translateX(5px); }
+        .contact-info .val { color: #ffffff; font-size: 18px; display: block; margin-bottom: 25px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 15px 0; background: transparent;
+            border: none; border-bottom: 1px solid rgba(255,255,255,0.3);
+            color: #ffffff; font-size: 16px; transition: border-color 0.3s ease; font-family: Arial, sans-serif;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-bottom-color: #ffffff; }
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; font-size: 12px;
+        }
+        .submit-btn {
+            background: transparent; color: #ffffff; padding: 15px 30px;
+            border: 1px solid rgba(255,255,255,0.5); font-size: 12px;
+            letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease;
+        }
+        .submit-btn:hover { background: #ffffff; color: #1a1a1a; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 0 40px; }
+            .hero-title { font-size: clamp(4rem, 15vw, 10rem); letter-spacing: -5px; }
+            .section { padding: 60px 30px; }
+            .about-content, .contact-content { grid-template-columns: 1fr; gap: 40px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            nav { top: 15px; right: 15px; padding: 12px; }
+            nav ul { gap: 10px; }
+            nav a { font-size: 10px; }
+            .page-indicator { display: none; }
+            .experience-header { flex-direction: column; gap: 6px; }
+            .experience-date { text-align: left; margin-left: 0; }
+            .modal-card { padding: 35px; }
         }
     </style>
 </head>
@@ -540,8 +204,6 @@
     <div class="scroll-indicator"></div>
     <div class="custom-cursor"></div>
     <div class="page-indicator">001</div>
-    
-
 
     <nav>
         <ul>
@@ -555,48 +217,38 @@
         </ul>
     </nav>
 
+    <!-- HOME -->
     <section id="home" class="hero">
-        <div class="hero-subtitle">Data, Business & Operations Analyst</div>
+        <div class="hero-subtitle">Data, Business &amp; Operations Analyst</div>
         <h1 class="hero-title">
             <span class="hero-name">Vidhi A.</span>
             Sharma
         </h1>
         <p class="hero-description">
-            Transforming complex data into strategic insights through advanced analytics 
+            Transforming complex data into strategic insights through advanced analytics
             and innovative business intelligence solutions.
         </p>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="section">
-        <div class="section-header">
-            <h2 class="section-title">About</h2>
-        </div>
+        <div class="section-header"><h2 class="section-title">About</h2></div>
         <div class="modal-card">
             <div class="about-content">
                 <div class="about-text">
-                  <p>
-I’m Vidhi Sharma, a Business, Data, and Operations Analytics professional completing my Master’s at Boston University. I work at the intersection of analysis and execution, helping teams turn fragmented, real-world data into decisions that actually move work forward.
-</p>
-
-<p>
-Across roles, I’ve focused on building systems that last. At The Youth Complex, I led the development of a long-term outcomes dashboard by consolidating data spread across multiple sources into a single, sustainable reporting framework. At Boston University IS&T, I support daily operations through data tracking, process improvement, and workflow reliability.
-</p>
-
-<p>
-I’m especially interested in how analytics shows up outside traditional technical roles. I enjoy working with non-technical stakeholders and making data usable in everyday decisions, a perspective reflected in both my project work and my published writing on analytics accessibility.
-</p>
-
-
+                    <p>I'm Vidhi Sharma, a Business, Data, and Operations Analytics professional completing my Master's at Boston University. I work at the intersection of analysis and execution, helping teams turn fragmented, real-world data into decisions that actually move work forward.</p>
+                    <p>Across roles, I've focused on building systems that last. At The Youth Complex, I led the development of a long-term outcomes dashboard by consolidating data spread across multiple sources into a single, sustainable reporting framework. At Boston University IS&amp;T, I support daily operations through data tracking, process improvement, and workflow reliability.</p>
+                    <p>I'm especially interested in how analytics shows up outside traditional technical roles. I enjoy working with non-technical stakeholders and making data usable in everyday decisions — a perspective reflected in both my project work and my published writing on analytics accessibility.</p>
                 </div>
-                <div class="skills-section">
-                    <h3 style="margin-bottom: 20px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; font-size: 14px;">Core Skills</h3>
+                <div>
+                    <h3 style="margin-bottom:20px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:2px;font-size:14px;">Core Skills</h3>
                     <ul class="skills-list">
-                        <li>SQL & Database Management</li>
-                        <li>Python & R Programming</li>
-                        <li>Tableau & Power BI</li>
+                        <li>SQL &amp; Database Management</li>
+                        <li>Python &amp; R Programming</li>
+                        <li>Tableau &amp; Power BI</li>
                         <li>Statistical Modeling</li>
                         <li>Machine Learning</li>
-                        <li>AWS & Azure Cloud</li>
+                        <li>AWS &amp; Cloud Analytics</li>
                         <li>Business Intelligence</li>
                         <li>Process Optimization</li>
                         <li>Strategic Planning</li>
@@ -607,55 +259,52 @@ I’m especially interested in how analytics shows up outside traditional techni
         </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Experience</h2>
+        <div class="section-header"><h2 class="section-title">Experience</h2></div>
+
+        <div class="modal-card">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-company">Boston University Information Services &amp; Technology</div>
+                    <div class="experience-title">Student Assistant · Part-time</div>
+                </div>
+                <div class="experience-date">Jul 2025 – Jan 2026 &nbsp;|&nbsp; Boston, MA (On-site)</div>
+            </div>
+            <div class="experience-description">
+                <ul>
+                    <li>Managed and validated operational reporting systems and datasets to ensure accuracy for internal planning and analysis</li>
+                    <li>Identified data inconsistencies and improved tracking workflows, increasing reliability of departmental reports</li>
+                    <li>Supported inventory and operational processes across multiple offices, ensuring smooth day-to-day operations</li>
+                </ul>
+            </div>
         </div>
 
-
-        
-       <div class="modal-card experience-card">
-    <div class="experience-header">
-        <div>
-            <div class="experience-company">The Youth Complex</div>
-            <div class="experience-title">Business Operations Analytics Intern · Internship</div>
+        <div class="modal-card">
+            <div class="experience-header">
+                <div>
+                    <div class="experience-company">The Youth Complex</div>
+                    <div class="experience-title">Business Operations Analytics Intern</div>
+                </div>
+                <div class="experience-date">Oct 2025 – Dec 2025 &nbsp;|&nbsp; Manchester, NH (Hybrid)</div>
+            </div>
+            <div class="experience-description">
+                <ul>
+                    <li>Led development of a centralized KPI dashboard across 5+ programs, transforming fragmented data into a structured system for tracking performance and outcomes</li>
+                    <li>Reduced reporting time by 40% by automating data collection and reporting workflows using Google Forms and Sheets</li>
+                    <li>Analyzed operational data to identify inefficiencies and support program planning and decision-making</li>
+                    <li>Worked directly with leadership to translate data challenges into structured reporting systems</li>
+                </ul>
+            </div>
         </div>
-        <div class="experience-date">Oct 2025 – Dec 2025 · Manchester, NH (Hybrid)</div>
-    </div>
-    <div class="experience-description">
-        <ul>
-            <li>Led development of a centralized KPI dashboard across 5+ programs, transforming fragmented data into a structured system for tracking performance and outcomes</li>
-            <li>Reduced reporting time by 40% by automating data collection and reporting workflows using Google Forms and Sheets</li>
-            <li>Analyzed operational data to identify inefficiencies and support program planning and decision-making</li>
-            <li>Worked directly with leadership to translate data challenges into structured reporting systems</li>
-        </ul>
-    </div>
-</div>
 
-         <div class="modal-card experience-card">
-    <div class="experience-header">
-        <div>
-            <div class="experience-company">Boston University Information Services & Technology</div>
-            <div class="experience-title">Student Assistant · Part-time</div>
-        </div>
-        <div class="experience-date">Jul 2025 – Jan 2026 · Boston, MA (On-site)</div>
-    </div>
-    <div class="experience-description">
-        <ul>
-            <li>Managed and validated operational reporting systems and datasets to ensure accuracy for internal planning and analysis</li>
-            <li>Identified data inconsistencies and improved tracking workflows, increasing reliability of departmental reports</li>
-            <li>Supported inventory and operational processes across multiple offices, ensuring smooth day-to-day operations</li>
-        </ul>
-    </div>
-</div>
-
-        <div class="modal-card experience-card">
+        <div class="modal-card">
             <div class="experience-header">
                 <div>
                     <div class="experience-company">Pimpri Chinchwad Media Communications Pvt. Ltd.</div>
                     <div class="experience-title">Information Technology Operations Analyst · Full-time</div>
                 </div>
-                <div class="experience-date">Jun 2022 – Jul 2024 · Hybrid</div>
+                <div class="experience-date">Jun 2022 – Jul 2024 &nbsp;|&nbsp; Hybrid</div>
             </div>
             <div class="experience-description">
                 <ul>
@@ -667,13 +316,12 @@ I’m especially interested in how analytics shows up outside traditional techni
             </div>
         </div>
 
-        <div class="modal-card experience-card">
+        <div class="modal-card">
             <div class="experience-header">
                 <div>
                     <div class="experience-company">Community Impact</div>
-                    <div class="experience-title">Volunteer & Social Impact</div>
+                    <div class="experience-title">Volunteer &amp; Social Impact</div>
                 </div>
-                
             </div>
             <div class="experience-description">
                 <ul>
@@ -685,342 +333,208 @@ I’m especially interested in how analytics shows up outside traditional techni
         </div>
     </section>
 
+    <!-- CERTIFICATIONS -->
     <section id="certifications" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Certifications</h2>
-        </div>
-        
+        <div class="section-header"><h2 class="section-title">Certifications</h2></div>
         <div class="modal-card">
-            <div class="certifications-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div class="certification-item">
-                    <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Technical Certifications</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            AWS Academy Graduate – Cloud Foundations (AWS)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Python Basics (University of Michigan)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            CS50x Introduction to Computer Science (HarvardX)
-                        </li>
+            <div class="certifications-grid">
+                <div>
+                    <h3 style="color:#fff;font-size:16px;margin-bottom:10px;">Technical</h3>
+                    <ul class="cert-list">
+                        <li>AWS Academy Graduate – Cloud Foundations</li>
+                        <li>Python Basics (University of Michigan)</li>
+                        <li>CS50x Intro to Computer Science (HarvardX)</li>
                     </ul>
                 </div>
-                <div class="certification-item">
-                    <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Development & AI</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Generative AI: Introduction and Applications (IBM)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Front-End Development (Meta)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            HTML, CSS, and JavaScript for Web Developers (Johns Hopkins)
-                        </li>
+                <div>
+                    <h3 style="color:#fff;font-size:16px;margin-bottom:10px;">Development &amp; AI</h3>
+                    <ul class="cert-list">
+                        <li>Generative AI: Introduction and Applications (IBM)</li>
+                        <li>Front-End Development (Meta)</li>
+                        <li>HTML, CSS &amp; JavaScript for Web Developers (Johns Hopkins)</li>
                     </ul>
                 </div>
-                <div class="certification-item">
-                    <h3 style="color: #ffffff; font-size: 16px; margin-bottom: 10px;">Business & Methodology</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Introduction to Agile Development and Scrum (IBM)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Data Privacy Fundamentals (Northeastern University)
-                        </li>
-                        <li style="color: rgba(255,255,255,0.8); margin-bottom: 8px; padding-left: 15px; position: relative;">
-                            <span style="position: absolute; left: 0; color: rgba(255,255,255,0.5);">•</span>
-                            Introduction to Psychology (Yale)
-                        </li>
+                <div>
+                    <h3 style="color:#fff;font-size:16px;margin-bottom:10px;">Business &amp; Methodology</h3>
+                    <ul class="cert-list">
+                        <li>Intro to Agile Development and Scrum (IBM)</li>
+                        <li>Data Privacy Fundamentals (Northeastern University)</li>
+                        <li>Introduction to Psychology (Yale)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- RECOMMENDATIONS -->
     <section id="recommendations" class="section">
-        <div class="section-header">
-            <h2 class="section-title">Recommendations</h2>
-        </div>
-        
+        <div class="section-header"><h2 class="section-title">Recommendations</h2></div>
+
         <div class="modal-card">
-            <div class="recommendation-card" style="border-left: 4px solid rgba(255,255,255,0.5); padding-left: 30px;">
-                <div class="recommendation-header" style="margin-bottom: 25px;">
-                    <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 5px;">Dean J. Saluti, MBA, Ed.D.</h3>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Metropolitan College Adjunct Faculty, Boston University</p>
-                </div>
-                <blockquote style="font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 20px;">
-                    "Vidhi received the highest grade in the class. Her quantitative knowledge base is outstanding. Her written and oral skills are exceptional. She was perceived as a leader by her classmates... It is my opinion that Vidhi is the caliber of individual that should be recruited by your corporation, not just hired. In the future, she will bring only pride to your company."
-                </blockquote>
-                <div class="recommendation-context" style="font-size: 14px; color: rgba(255,255,255,0.6);">
-                    <p>From Letter of Recommendation - AD 605 Operations Management Course</p>
-                    <p>July 10, 2025</p>
-                </div>
+            <div class="rec-card">
+                <h3 class="rec-name">Dean J. Saluti, MBA, Ed.D.</h3>
+                <p class="rec-role">Metropolitan College Adjunct Faculty, Boston University</p>
+                <blockquote class="rec-quote">"Vidhi received the highest grade in the class. Her quantitative knowledge base is outstanding. Her written and oral skills are exceptional. She was perceived as a leader by her classmates... It is my opinion that Vidhi is the caliber of individual that should be recruited by your corporation, not just hired. In the future, she will bring only pride to your company."</blockquote>
+                <div class="rec-context"><p>Letter of Recommendation — AD 605 Operations Management</p><p>July 10, 2025</p></div>
             </div>
         </div>
+
         <div class="modal-card">
-    <div class="recommendation-card" style="border-left: 4px solid rgba(255,255,255,0.5); padding-left: 30px;">
-        <div class="recommendation-header" style="margin-bottom: 25px;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 5px;">Isaiah Roig</h3>
-            <p style="color: rgba(255,255,255,0.7); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
-                Founder & Executive Director, The Youth Complex
-            </p>
+            <div class="rec-card">
+                <h3 class="rec-name">Isaiah Roig</h3>
+                <p class="rec-role">Founder &amp; Executive Director, The Youth Complex</p>
+                <blockquote class="rec-quote">"Vidhi independently scoped and led the creation of our Youth Outcomes Snapshot Dashboard, transforming fragmented data spread across multiple Google Sheets into a structured, sustainable system supporting analysis, reporting, and long-term program development. This system will continue to support our programs for many years to come."</blockquote>
+                <div class="rec-context"><p>LinkedIn Recommendation</p><p>January 18, 2026</p></div>
+            </div>
         </div>
-        <blockquote style="font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 20px;">
-            “Vidhi independently scoped and led the creation of our Youth Outcomes Snapshot Dashboard, transforming fragmented data spread across multiple Google Sheets into a structured, sustainable system supporting analysis, reporting, and long-term program development. This system will continue to support our programs for many years to come.”
-        </blockquote>
-        <div class="recommendation-context" style="font-size: 14px; color: rgba(255,255,255,0.6);">
-            <p>LinkedIn Recommendation</p>
-            <p>January 18, 2026</p>
-        </div>
-    </div>
-</div>
 
-<div class="modal-card">
-    <div class="recommendation-card" style="border-left: 4px solid rgba(255,255,255,0.5); padding-left: 30px;">
-        <div class="recommendation-header" style="margin-bottom: 25px;">
-            <h3 style="color: #ffffff; font-size: 20px; margin-bottom: 5px;">Anna Mellios</h3>
-            <p style="color: rgba(255,255,255,0.7); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
-                Financial Administrator, Boston University IS&T
-            </p>
+        <div class="modal-card">
+            <div class="rec-card">
+                <h3 class="rec-name">Anna Mellios</h3>
+                <p class="rec-role">Financial Administrator, Boston University IS&amp;T</p>
+                <blockquote class="rec-quote">"Vidhi has been an outstanding Student Assistant. She brings a thoughtful, detail-oriented approach to everything she does and consistently goes above and beyond what is asked of her. Her ability to pick up new processes quickly and contribute meaningfully from day one has been a real asset to our team."</blockquote>
+                <div class="rec-context"><p>LinkedIn Recommendation</p><p>2026</p></div>
+            </div>
         </div>
-        <blockquote style="font-style: italic; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 20px;">
-            “Vidhi consistently identifies workflow gaps and implements practical, data-informed improvements that enhance efficiency across teams. Her professionalism, reliability, and analytical mindset make her a highly valued colleague in a fast-paced operational environment.”
-        </blockquote>
-        <div class="recommendation-context" style="font-size: 14px; color: rgba(255,255,255,0.6);">
-            <p>LinkedIn Recommendation</p>
-            <p>January 17, 2026</p>
-        </div>
-    </div>
-</div>
-
     </section>
 
-  <section id="projects" class="section">
-    <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-    </div>
-    
-    <div class="projects-grid">
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <div class="section-header"><h2 class="section-title">Projects</h2></div>
+        <div class="projects-grid">
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">The Office NLP Project</h3>
-            <p class="project-description">
-                Processed and analysed dialogue from Season 4 of The Office using NLP techniques. Created TF-IDF profiles for main characters, mapped sentiment trends across episodes, and extracted bigrams and trigrams to study recurring themes.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">NLP</span>
-                <span class="skill-tag">TF-IDF</span>
-                <span class="skill-tag">Sentiment Analysis</span>
-                <span class="skill-tag">Topic Modeling</span>
-                <span class="skill-tag">Python</span>
+            <div class="modal-card">
+                <h3 class="project-title">Detecting Business Logic Failures in Financial Data</h3>
+                <p class="project-description">Applied a structured analyst framework to a 700-transaction dataset to uncover $777K in hidden Enterprise segment losses — costs exceeded revenue yet profit was recorded as NULL. Audited data inconsistencies, quantified impact, and delivered an executive dashboard with a clear S→C→R business narrative and concrete recommendations to fix pricing and reporting failures.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Power BI</span><span class="skill-tag">Excel</span><span class="skill-tag">Financial Analysis</span><span class="skill-tag">Data Auditing</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Zurich Airbnb Data Analytics</h3>
-            <p class="project-description">
-                Analysed Airbnb listings in Zurich to understand pricing behaviour, neighbourhood patterns, and host performance using regression, classification, and clustering models.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Regression</span>
-                <span class="skill-tag">Classification</span>
-                <span class="skill-tag">Clustering</span>
-                <span class="skill-tag">EDA</span>
+            <div class="modal-card">
+                <h3 class="project-title">Youth Outcomes Demo Dashboard</h3>
+                <p class="project-description">Built during capstone internship at The Youth Complex. Cleaned and standardised scattered engagement and outcomes data, introduced automation, and designed a Looker Studio dashboard unifying KPIs for internal tracking and grant reporting. Demo uses non-sensitive data to reflect the live system's structure.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Looker Studio</span><span class="skill-tag">Process Automation</span><span class="skill-tag">Google Sheets</span><span class="skill-tag">KPI Design</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Spotify 2023 Global Music Trends Analysis</h3>
-            <p class="project-description">
-                Explored Spotify’s 2023 dataset to identify key drivers of popularity using feature analysis, clustering, and regression techniques.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">EDA</span>
-                <span class="skill-tag">Clustering</span>
-                <span class="skill-tag">Regression</span>
+            <div class="modal-card">
+                <h3 class="project-title">The Office NLP Project</h3>
+                <p class="project-description">Processed and analysed dialogue from Season 4 of The Office. Created TF-IDF character profiles, mapped sentiment trends across episodes, and extracted bigrams/trigrams to study recurring themes via topic modelling.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">NLP</span><span class="skill-tag">Python</span><span class="skill-tag">Topic Modeling</span><span class="skill-tag">Sentiment Analysis</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Lobster Land Analytics</h3>
-            <p class="project-description">
-                Case study on revenue and operations optimisation for a fictional amusement park using A/B testing, predictive modelling, and time-series analysis.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">A/B Testing</span>
-                <span class="skill-tag">Predictive Modeling</span>
-                <span class="skill-tag">Time Series</span>
+            <div class="modal-card">
+                <h3 class="project-title">Zurich Airbnb Data Analytics</h3>
+                <p class="project-description">Analysed Airbnb listings in Zurich to understand pricing behaviour, neighbourhood patterns, and host performance. Built regression and classification models with strong predictive accuracy; applied clustering to uncover market segments.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Regression</span><span class="skill-tag">Classification</span><span class="skill-tag">Clustering</span><span class="skill-tag">EDA</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">IMD Help Desk Optimisation</h3>
-            <p class="project-description">
-                Optimised workforce allocation using queueing theory and simulation, projecting a 30 percent cost reduction while improving service levels.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Queueing Theory</span>
-                <span class="skill-tag">Simulation</span>
-                <span class="skill-tag">Workforce Planning</span>
+            <div class="modal-card">
+                <h3 class="project-title">Spotify 2023 Global Music Trends Analysis</h3>
+                <p class="project-description">Explored Spotify's 2023 dataset to identify drivers of track popularity. Performed feature analysis, clustering, and regression to study audio attributes, artist patterns, and listener trends.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Python</span><span class="skill-tag">EDA</span><span class="skill-tag">Clustering</span><span class="skill-tag">Regression</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Lightcast Job Postings Analysis</h3>
-            <p class="project-description">
-                Analysed labour-market trends using Python and AWS to identify in-demand skills and support workforce planning decisions.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">EDA</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Python</span>
+            <div class="modal-card">
+                <h3 class="project-title">Lobster Land Analytics</h3>
+                <p class="project-description">Case study on operations and revenue optimisation for a fictional amusement park. Delivered EDA, clustering, hypothesis testing, A/B testing, logistic regression for passholder renewal, and time series analysis.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">A/B Testing</span><span class="skill-tag">Predictive Modeling</span><span class="skill-tag">Time Series</span><span class="skill-tag">Python</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Baychester, Bronx – Real Estate Analytics</h3>
-            <p class="project-description">
-                Analysed 17 years of property transactions to uncover pricing trends and optimise commission strategies using predictive analytics.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">R</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Regression</span>
+            <div class="modal-card">
+                <h3 class="project-title">IMD Help Desk Optimisation</h3>
+                <p class="project-description">Analysed workforce allocation using queueing theory (M/M/s models) and discrete event simulation. Recommended a combined model projecting 30% cost reduction while cutting average wait times and improving service levels.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Queueing Theory</span><span class="skill-tag">Simulation</span><span class="skill-tag">Workforce Planning</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Agile Sprint Planning – IBM Capstone</h3>
-            <p class="project-description">
-                Simulated a full Agile sprint using GitHub Projects with hands-on experience in Kanban workflows and sprint planning.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Agile</span>
-                <span class="skill-tag">Scrum</span>
-                <span class="skill-tag">Kanban</span>
+            <div class="modal-card">
+                <h3 class="project-title">Lightcast Job Postings Analysis</h3>
+                <p class="project-description">Analysed a Lightcast dataset to uncover labour-market trends and in-demand skills across industries. Used AWS for data processing and Python (pandas, matplotlib, seaborn) to support workforce planning decisions.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">EDA</span><span class="skill-tag">AWS</span><span class="skill-tag">Python</span><span class="skill-tag">Data Viz</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">AI vs Non-AI Job Growth Analysis</h3>
-            <p class="project-description">
-                Academic project analysing employment trends across AI and non-AI roles using AWS and real-time dashboards.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Statistical Modeling</span>
-                <span class="skill-tag">Dashboards</span>
+            <div class="modal-card">
+                <h3 class="project-title">Baychester, Bronx – Real Estate Analytics</h3>
+                <p class="project-description">Analysed 17 years of property transactions (2003–2020) to identify market trends and investment opportunities. Automated predictive models reduced manual processing by 50%; recommended a 4% commission rate to maximise profitability.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">R</span><span class="skill-tag">Power BI</span><span class="skill-tag">Regression</span><span class="skill-tag">Predictive Analytics</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Skincare Sales Analytics Dashboard</h3>
-            <p class="project-description">
-                Self-driven dashboard project exploring beauty industry sales trends using Streamlit.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Streamlit</span>
-                <span class="skill-tag">BI</span>
+            <div class="modal-card">
+                <h3 class="project-title">Agile Sprint Planning – IBM Capstone</h3>
+                <p class="project-description">Simulated a full Agile sprint using GitHub Projects. Created 10 user stories, organised tasks into Icebox, Backlog, and Sprint views, and ran a mock sprint from planning to completion.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Agile</span><span class="skill-tag">Scrum</span><span class="skill-tag">Kanban</span><span class="skill-tag">DevOps</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Northwind Database Analytics</h3>
-            <p class="project-description">
-                SQL and Python analysis uncovering sales trends, customer segmentation, and seasonality patterns.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Data Storytelling</span>
+            <div class="modal-card">
+                <h3 class="project-title">Craft Beer Business Simulation</h3>
+                <p class="project-description">Simulated a craft beer microbrewery launch in Austin. Achieved break-even in 9 months with $4.3M median profit over 36 months using PESTLE, SWOT, what-if, and sensitivity analyses.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Simulation</span><span class="skill-tag">Financial Forecasting</span><span class="skill-tag">Strategy</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Craft Beer Business Simulation</h3>
-            <p class="project-description">
-                Simulated microbrewery launch achieving break-even in 9 months through analytics-driven decision making.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Simulation</span>
-                <span class="skill-tag">Forecasting</span>
-                <span class="skill-tag">Strategy</span>
+            <div class="modal-card">
+                <h3 class="project-title">Northwind Database Analytics</h3>
+                <p class="project-description">Analyzed the Northwind database with SQL and Python to uncover insights on sales, employee performance, product profitability, and customer segmentation. Identified seasonal peaks (+21–48%) and declines (–21–31%).</p>
+                <div class="project-skills">
+                    <span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Data Storytelling</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Operations Process Optimisation</h3>
-            <p class="project-description">
-                Identified operational bottlenecks and proposed data-driven workflow improvements.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Operations</span>
-                <span class="skill-tag">Process Optimisation</span>
-                <span class="skill-tag">KPIs</span>
+            <div class="modal-card">
+                <h3 class="project-title">Skincare Sales Analytics Dashboard</h3>
+                <p class="project-description">Self-driven passion project exploring beauty industry sales trends, consumer behaviour, and pricing strategies. Built a Streamlit dashboard to visualise purchasing patterns and seasonal shifts.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Python</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Dashboards</span><span class="skill-tag">EDA</span>
+                </div>
             </div>
-        </div>
 
-        <!-- MEDIUM ARTICLE -->
-        <div class="modal-card project-card">
-            <h3 class="project-title">Analytics for the People Who Do Not Think They Are Doing Analytics</h3>
-            <p class="project-description">
-                Published article on Medium (Women Write) exploring how everyday decision-making already involves analytics and reframing data thinking for non-technical audiences.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Data Storytelling</span>
-                <span class="skill-tag">Analytics Communication</span>
-                <span class="skill-tag">Thought Leadership</span>
+            <div class="modal-card">
+                <h3 class="project-title">Stickley Adhesives – Operations Analysis</h3>
+                <p class="project-description">Examined core business processes to identify operational bottlenecks. Proposed and presented data-driven strategies to optimise workflows, enhance productivity, and minimise delays.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Operations</span><span class="skill-tag">Process Optimisation</span><span class="skill-tag">KPIs</span>
+                </div>
             </div>
-        </div>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Detecting Business Logic Failures in Financial Data</h3>
-            <p class="project-description">
-                Applied a structured analyst framework to a 700-transaction dataset to uncover $777K in hidden Enterprise segment losses — costs exceeded revenue yet profit was reported as NULL. Audited data inconsistencies, quantified impact, and delivered an executive dashboard with a clear S→C→R business narrative and concrete recommendations to fix pricing and reporting failures.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Excel</span>
-                <span class="skill-tag">Financial Analysis</span>
-                <span class="skill-tag">Business Narrative</span>
-                <span class="skill-tag">Data Auditing</span>
+            <div class="modal-card">
+                <h3 class="project-title">Analytics for the People Who Don't Think They're Doing Analytics</h3>
+                <p class="project-description">Published article on Medium (Women Write) exploring how everyday decision-making already involves analytics, and reframing data thinking for non-technical audiences.</p>
+                <div class="project-skills">
+                    <span class="skill-tag">Data Storytelling</span><span class="skill-tag">Analytics Communication</span><span class="skill-tag">Thought Leadership</span>
+                </div>
             </div>
+
         </div>
+    </section>
 
-        <div class="modal-card project-card">
-            <h3 class="project-title">Youth Outcomes Demo Dashboard</h3>
-            <p class="project-description">
-                Built as part of a capstone internship at The Youth Complex. Cleaned and standardised scattered engagement and outcomes data, introduced automation, and designed a Looker Studio dashboard unifying key metrics for internal tracking and grant reporting. The demo uses non-sensitive data to reflect the structure and insights of the live system.
-            </p>
-            <div class="project-skills">
-                <span class="skill-tag">Looker Studio</span>
-                <span class="skill-tag">Process Automation</span>
-                <span class="skill-tag">Google Sheets</span>
-                <span class="skill-tag">KPI Design</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="section-header"><h2 class="section-title">Contact</h2></div>
         <div class="modal-card">
             <div class="contact-content">
                 <div class="contact-info">
                     <div>
                         <h3>Email</h3>
-                        <a href="/cdn-cgi/l/email-protection#ee9d868f9c838f98878a8687dddeded6ae89838f8782c08d8183"><span class="__cf_email__" data-cfemail="07746f66756a66716e636f6e3437373f47606a666e6b2964686a">[email&#160;protected]</span></a>
+                        <a href="mailto:vidhisharma@bu.edu">vidhisharma@bu.edu</a>
                     </div>
                     <div>
                         <h3>Resume</h3>
@@ -1036,21 +550,14 @@ I’m especially interested in how analytics shows up outside traditional techni
                     </div>
                     <div>
                         <h3>Location</h3>
-                        <span style="color: #ffffff; font-size: 18px;">Boston, MA</span>
+                        <span class="val">Boston, MA</span>
                     </div>
                 </div>
-                
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="4" placeholder="Your Message" required></textarea>
-                        </div>
+                    <form id="contactForm">
+                        <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                        <div class="form-group"><textarea rows="4" placeholder="Your Message" required></textarea></div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
@@ -1058,164 +565,61 @@ I’m especially interested in how analytics shows up outside traditional techni
         </div>
     </section>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Custom cursor
+    <script>
+        // Cursor
         const cursor = document.querySelector('.custom-cursor');
-        
-        document.addEventListener('mousemove', (e) => {
+        document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-
-        // Hover effects
-        document.querySelectorAll('a, button, .modal-card, .submit-btn').forEach(el => {
+        document.querySelectorAll('a, button, .modal-card').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
         });
+        document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+        document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
 
-        // Smooth scrolling
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll
+        document.querySelectorAll('nav a').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                const offsetTop = targetElement.offsetTop;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Scroll indicator
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset;
-            const docHeight = document.body.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            document.querySelector('.scroll-indicator').style.height = scrollPercent + '%';
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements
-        document.querySelectorAll('.section-title, .modal-card').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Staggered animation for cards
-        document.querySelectorAll('.modal-card').forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.05}s`;
-        });
-
-
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            e.target.reset();
-        });
-
-        // Page indicator animation
-        let currentPage = 1;
-        const totalPages = 7;
-        
-        window.addEventListener('scroll', () => {
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            const newPage = Math.ceil((scrollPercent / 100) * totalPages) || 1;
-            
-            if (newPage !== currentPage) {
-                currentPage = newPage;
-                document.querySelector('.page-indicator').textContent = `00${currentPage}`;
-            }
-        });
-
-        // Parallax effect for dotted background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const dottedBg = document.querySelector('.dotted-background');
-            const codeLines = document.querySelector('.code-lines');
-            
-            dottedBg.style.transform = `translateY(${scrolled * 0.1}px)`;
-            codeLines.style.transform = `translateY(${scrolled * 0.05}px)`;
-        });
-
-        // Dynamic navigation highlight
+        // Scroll indicator + page number + nav highlight
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav a');
+        const scrollInd = document.querySelector('.scroll-indicator');
+        const pageInd = document.querySelector('.page-indicator');
+        let currentPage = 1;
 
         window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docH = document.body.scrollHeight - window.innerHeight;
+            const pct = scrollTop / docH;
+            scrollInd.style.height = (pct * 100) + '%';
+
+            const newPage = Math.ceil(pct * 7) || 1;
+            if (newPage !== currentPage) { currentPage = newPage; pageInd.textContent = '00' + currentPage; }
+
+            document.querySelector('.dotted-background').style.transform = `translateY(${scrollTop * 0.1}px)`;
+            document.querySelector('.code-lines').style.transform = `translateY(${scrollTop * 0.05}px)`;
+
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
+            sections.forEach(s => { if (scrollTop >= s.offsetTop - 200) current = s.id; });
+            navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href').slice(1) === current));
         });
 
-        // Typing effect for hero subtitle
-        const subtitle = document.querySelector('.hero-subtitle');
-        const originalText = 'Data, Business & Operations Analyst';
-        let i = 0;
-
-        function typeWriter() {
-            if (i < originalText.length) {
-                subtitle.textContent = originalText.slice(0, i + 1);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-
-        // Start typing effect after page load
-        setTimeout(typeWriter, 1000);
-
-        // Mouse leave/enter effects for the entire page
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
+        // Form
+        document.getElementById('contactForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert("Thanks for your message! I'll get back to you soon.");
+            e.target.reset();
         });
+    </script>
+</body>
+</html>
 
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-        });
-
-        // Enhanced modal card interactions
-        document.querySelectorAll('.modal-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-                this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = 'none';
-            });
-        });
-
-        // Skills list hover effects
-        document.querySelectorAll('.skills-list li').forEach(skill => {
-            skill.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(10px)';
-                this.style.borderColor = 'rgba(255,255,255,0.5)';
-            });
+    
