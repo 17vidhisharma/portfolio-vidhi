@@ -519,37 +519,7 @@
             }
         }
 
-        /* Loading Screen */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.3s ease;
-        }
 
-        .loader-text {
-            font-size: 2rem;
-            letter-spacing: 5px;
-            animation: pulse 2s infinite;
-            text-transform: uppercase;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
 
         /* Scroll indicator */
         .scroll-indicator {
@@ -571,9 +541,7 @@
     <div class="custom-cursor"></div>
     <div class="page-indicator">001</div>
     
-    <div class="loader">
-        <div class="loader-text">Vidhi Sharma</div>
-    </div>
+
 
     <nav>
         <ul>
@@ -1152,14 +1120,7 @@ I’m especially interested in how analytics shows up outside traditional techni
             card.style.transitionDelay = `${index * 0.05}s`;
         });
 
-        // Loading animation — dismiss quickly and reliably
-        function hideLoader() {
-            const loader = document.querySelector('.loader');
-            if (loader) loader.classList.add('hidden');
-        }
-        setTimeout(hideLoader, 800);
-        document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 400));
-        window.addEventListener('load', hideLoader);
+
 
         // Form submission
         document.querySelector('form').addEventListener('submit', (e) => {
