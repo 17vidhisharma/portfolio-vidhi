@@ -119,6 +119,13 @@
         }
 
         .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start; }
+        .about-photo {
+            width: 160px; height: 160px; border-radius: 50%;
+            object-fit: cover; margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            filter: grayscale(15%);
+        }
+
         .about-text { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.9); }
         .about-text p { margin-bottom: 25px; }
         .skills-list { list-style: none; }
@@ -236,11 +243,12 @@
         <div class="modal-card">
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm Vidhi Sharma, a Business, Data, and Operations Analytics professional completing my Master's at Boston University. I work at the intersection of analysis and execution, helping teams turn fragmented, real-world data into decisions that actually move work forward.</p>
-                    <p>Across roles, I've focused on building systems that last. At The Youth Complex, I led the development of a long-term outcomes dashboard by consolidating data spread across multiple sources into a single, sustainable reporting framework. At Boston University IS&amp;T, I support daily operations through data tracking, process improvement, and workflow reliability.</p>
-                    <p>I'm especially interested in how analytics shows up outside traditional technical roles. I enjoy working with non-technical stakeholders and making data usable in everyday decisions — a perspective reflected in both my project work and my published writing on analytics accessibility.</p>
+                    <p>I find the number that doesn't add up. Then I find out why nobody noticed. Most recently that number was $777,000, sitting inside a dataset that every standard report had already cleared as healthy. It wasn't. I built the framework that proved it.</p>
+                    <p>I have an MS in Applied Business Analytics from Boston University and a habit of not trusting a dashboard until I've checked what it's hiding. At The Youth Complex, I turned five programs' worth of scattered spreadsheets into one system leadership actually opens without dreading it. At Boston University IS&amp;T, I fixed the reporting gaps nobody had time to notice until they became someone else's problem.</p>
+                    <p>I'm good with the technical side, better with the part where I have to explain it to someone who doesn't want a lecture on window functions, just an answer and a reason to trust it. If your data has a story it's not telling you, I'll find it, and I probably won't be gentle about what I find.</p>
                 </div>
                 <div>
+                    <img src="profile%20picture%20headshot.jpg" alt="Vidhi Sharma" class="about-photo">
                     <h3 style="margin-bottom:20px;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:2px;font-size:14px;">Core Skills</h3>
                     <ul class="skills-list">
                         <li>SQL &amp; Database Management</li>
@@ -266,6 +274,24 @@
         <div class="modal-card">
             <div class="experience-header">
                 <div>
+                    <div class="experience-company">The Youth Complex</div>
+                    <div class="experience-title">Growth and Impact Associate · Full-time</div>
+                </div>
+                <div class="experience-date">May 2026 – Present &nbsp;|&nbsp; Manchester, NH (Hybrid)</div>
+            </div>
+            <div class="experience-description">
+                <ul>
+                    <li>Conduct data analysis and build operational reports that surface insights guiding organizational decision-making</li>
+                    <li>Design KPI dashboards and automated data workflows to track program performance</li>
+                    <li>Support business intelligence initiatives and process improvement across 5+ programs</li>
+                    <li>Core tools: SQL, Python, Power BI, Looker Studio, Excel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="modal-card">
+            <div class="experience-header">
+                <div>
                     <div class="experience-company">Boston University Information Services &amp; Technology</div>
                     <div class="experience-title">Student Assistant · Part-time</div>
                 </div>
@@ -273,9 +299,9 @@
             </div>
             <div class="experience-description">
                 <ul>
-                    <li>Managed and validated operational reporting systems and datasets to ensure accuracy for internal planning and analysis</li>
-                    <li>Identified data inconsistencies and improved tracking workflows, increasing reliability of departmental reports</li>
-                    <li>Supported inventory and operational processes across multiple offices, ensuring smooth day-to-day operations</li>
+                    <li>Managed front desk operations and office inventory, coordinating directly with vendors on ordering and supply tracking</li>
+                    <li>Built standardized Excel trackers to replace repetitive manual inventory and scheduling processes</li>
+                    <li>Created staff schedules and trained incoming student workers on office systems and workflows</li>
                 </ul>
             </div>
         </div>
@@ -302,17 +328,18 @@
             <div class="experience-header">
                 <div>
                     <div class="experience-company">Pimpri Chinchwad Media Communications Pvt. Ltd.</div>
-                    <div class="experience-title">Information Technology Operations Analyst · Full-time</div>
+                    <div class="experience-title">Data Operations Analyst · Full-time</div>
                 </div>
-                <div class="experience-date">Jun 2022 – Jul 2024 &nbsp;|&nbsp; Hybrid</div>
+                <div class="experience-date">Jun 2022 – Jul 2024 &nbsp;|&nbsp; Pune, India (Hybrid)</div>
             </div>
             <div class="experience-description">
                 <ul>
-                    <li>Analyzed operational workflows and supporting IT systems to identify inefficiencies, improving process efficiency by 15% and reducing errors by 25%</li>
-                    <li>Ensured data accuracy and consistency across reporting systems and databases, improving reliability of operational data</li>
-                    <li>Delivered structured reports and insights to support business operations and decision-making</li>
-                    <li>Supported system and database troubleshooting, reducing issue resolution time by 20%</li>
+                    <li>Managed operational databases and system records across departments, ensuring data accuracy and process continuity</li>
+                    <li>Delivered structured analytical reports in Excel supporting management decision-making</li>
+                    <li>Trained staff on ERP systems and data entry standards, improving consistency of operational records</li>
+                    <li>Standardized data collection workflows and documentation across the business</li>
                 </ul>
+                <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-top:15px;font-style:italic;">Took a brief academic leave to begin graduate studies at Boston University; resumed role to support family circumstances before continuing the program.</p>
             </div>
         </div>
 
@@ -326,7 +353,7 @@
             <div class="experience-description">
                 <ul>
                     <li>Help Social Welfare Society: Created educational materials and organized fundraising campaigns</li>
-                    <li>Youth Empowerment Foundation: Increased fundraising efficiency by 30% through data-driven strategies</li>
+                    <li>Youth Empowerment Foundation: Supported fundraising campaigns using data-driven outreach strategies</li>
                     <li>Sahas for Animals: Ongoing support through donations and hands-on volunteer work</li>
                 </ul>
             </div>
@@ -538,7 +565,7 @@
                     </div>
                     <div>
                         <h3>Resume</h3>
-                        <a href="#" download="Vidhi_Sharma_Resume.pdf">Download Resume (PDF)</a>
+                        <a href="Vidhi%20Arun%20Sharma%20resume%20cv.pdf" download="Vidhi_Sharma_Resume.pdf">Download Resume (PDF)</a>
                     </div>
                     <div>
                         <h3>LinkedIn</h3>
@@ -621,5 +648,3 @@
     </script>
 </body>
 </html>
-
-    
